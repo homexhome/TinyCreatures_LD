@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=16 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="1_erffx"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gilvy"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="3_hkor4"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton.tscn" id="4_78m61"]
+[ext_resource type="PackedScene" uid="uid://bimlqd0cjgbeh" path="res://scenes/test_scenes/Skeleton.tscn" id="4_78m61"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="4_waaly"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="6_xkoya"]
+[ext_resource type="PackedScene" uid="uid://pbm2gkqj1i6l" path="res://scenes/test_scenes/Skeleton_defender.tscn" id="7_sxau2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hopr2"]
 albedo_color = Color(0.169245, 0.169245, 0.169245, 1)
@@ -13,6 +14,9 @@ albedo_color = Color(0.169245, 0.169245, 0.169245, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_sg5fm"]
 material = SubResource("StandardMaterial3D_hopr2")
 size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_174cp"]
+data = PackedVector3Array(25, -25, 0, -25, -25, 0, 25, 25, 0, -25, -25, 0, -25, 25, 0, 25, 25, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
@@ -27,14 +31,13 @@ height = 0.32
 ambient_light_source = 2
 ambient_light_color = Color(0.943109, 0.774977, 0.946805, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gwiky"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vmhh0"]
 viewport_path = NodePath("UI/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_m8rud"]
-viewport_path = NodePath("UI/SubViewport")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_tg6bd"]
-viewport_path = NodePath("UI/SubViewport")
+[sub_resource type="NavigationMesh" id="NavigationMesh_kmdqr"]
+vertices = PackedVector3Array(-24.8022, 0.499999, -24.6068, -24.8022, 0.499999, 24.3932, 24.1978, 0.499999, 24.3932, 24.1978, 0.499999, -24.6068)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_source_geometry_mode = 1
 
 [node name="test_world" type="Node3D"]
 
@@ -89,9 +92,16 @@ transform = Transform3D(1, 0, 0, 0, 0.0528401, -0.798882, 0, 0.998603, 0.0422721
 visible = false
 size = Vector3(10, 0.2, 10)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="level"]
+[node name="StaticBody3D" type="StaticBody3D" parent="level"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="level/StaticBody3D" groups=["navigation_mesh_source_group"]]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.302165, 0, -0.106842)
 mesh = SubResource("QuadMesh_sg5fm")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.302165, 0, -0.106842)
+shape = SubResource("ConcavePolygonShape3D_174cp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.3485, 6.055, 3.12667)
@@ -128,6 +138,7 @@ place_to_load = NodePath("../Mobs")
 own_world_3d = true
 transparent_bg = true
 size = Vector2i(138, 150)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="UI/SubViewport"]
@@ -156,43 +167,25 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 3
-theme_override_constants/margin_top = 3
-
-[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("ui")]
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 theme = ExtResource("6_xkoya")
-icon = SubResource("ViewportTexture_gwiky")
+icon = SubResource("ViewportTexture_vmhh0")
 script = ExtResource("4_waaly")
 mesh_to_inst = ExtResource("4_78m61")
-ui = NodePath("../../../..")
+ui = NodePath("../../..")
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 3
-theme_override_constants/margin_top = 3
-
-[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/MarginContainer2" node_paths=PackedStringArray("ui")]
+[node name="Button2" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 theme = ExtResource("6_xkoya")
-icon = SubResource("ViewportTexture_m8rud")
+icon = SubResource("ViewportTexture_vmhh0")
 script = ExtResource("4_waaly")
-mesh_to_inst = ExtResource("4_78m61")
-ui = NodePath("../../../..")
-
-[node name="MarginContainer3" type="MarginContainer" parent="UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 3
-theme_override_constants/margin_top = 3
-
-[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/MarginContainer3" node_paths=PackedStringArray("ui")]
-layout_mode = 2
-theme = ExtResource("6_xkoya")
-icon = SubResource("ViewportTexture_tg6bd")
-script = ExtResource("4_waaly")
-mesh_to_inst = ExtResource("4_78m61")
-ui = NodePath("../../../..")
+mesh_to_inst = ExtResource("7_sxau2")
+ui = NodePath("../../..")
 
 [node name="Mobs" type="Node3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_kmdqr")

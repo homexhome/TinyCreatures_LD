@@ -1,13 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://bimlqd0cjgbeh"]
+[gd_scene load_steps=12 format=4 uid="uid://pbm2gkqj1i6l"]
 
-[ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_qhspb"]
-[ext_resource type="Script" path="res://resources/character_stats.gd" id="2_rvf1n"]
-[ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="3_bph6a"]
-[ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="4_d73pj"]
-[ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="4_hspwi"]
+[ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_5hkm0"]
+[ext_resource type="Script" path="res://resources/character_stats.gd" id="2_v0ory"]
+[ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="3_sxm1n"]
+[ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="4_hr3ei"]
+[ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="5_h7i0n"]
 
 [sub_resource type="Resource" id="Resource_l761b"]
-script = ExtResource("2_rvf1n")
+script = ExtResource("2_v0ory")
 type = 0
 max_health = 100.0
 attack_damage = 20.0
@@ -59,10 +59,10 @@ size = Vector3(0.5, 1, 1)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0ga5v"]
 radius = 5.0
 
-[node name="Scene" type="CharacterBody3D" groups=["Attackers"]]
+[node name="Scene" type="CharacterBody3D" groups=["Defenders"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_qhspb")
+script = ExtResource("1_5hkm0")
 character_stats = SubResource("Resource_l761b")
 
 [node name="Cube003" type="MeshInstance3D" parent="."]
@@ -74,10 +74,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_5ckwn")
 
 [node name="Health" type="Node3D" parent="."]
-script = ExtResource("3_bph6a")
+script = ExtResource("3_sxm1n")
 
 [node name="Attack" type="Node3D" parent="." node_paths=PackedStringArray("melee_area", "agressive_area")]
-script = ExtResource("4_hspwi")
+script = ExtResource("4_hr3ei")
 melee_area = NodePath("MeleeAttackArea")
 agressive_area = NodePath("AgressiveArea")
 
@@ -101,7 +101,7 @@ shape = SubResource("CylinderShape3D_0ga5v")
 autostart = true
 
 [node name="Movement" type="Node3D" parent="."]
-script = ExtResource("4_d73pj")
+script = ExtResource("5_h7i0n")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Movement"]
 debug_enabled = true

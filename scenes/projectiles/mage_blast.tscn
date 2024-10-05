@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck22n330fju4f"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e6rmi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1heb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6647b"]
+material = SubResource("StandardMaterial3D_c1heb")
+
+[node name="MageBlast" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+explosiveness = 0.35
+randomness = 0.4
+process_material = SubResource("ParticleProcessMaterial_e6rmi")
+draw_pass_1 = SubResource("QuadMesh_6647b")
