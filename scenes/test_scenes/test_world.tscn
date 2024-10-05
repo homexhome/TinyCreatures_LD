@@ -84,6 +84,7 @@ current = true
 fov = 75.1
 size = 8.001
 script = ExtResource("1_erffx")
+min_x = -5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("mesh_to_take", "camera", "ui")]
 mesh = SubResource("SphereMesh_hrlki")

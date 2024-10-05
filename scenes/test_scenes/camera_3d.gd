@@ -1,7 +1,8 @@
 extends Camera3D
 @export var max_fov : float = 100.0
 @export var min_fov : float = 40
-
+@export var max_x : float = 5
+@export var min_x : float = -25
 @export var camera_speed : float = 10
 func _process(delta):
 	move_camera_with_mouse(delta)
@@ -17,7 +18,9 @@ func move_camera_with_mouse(delta):
 	#rotation.y = clamp(current_rotation.y, deg_to_rad(-50), deg_to_rad(-10))
 	
 	if Input.is_action_pressed("ui_right"):
+		if global_position.x >= max_x : return
 		translate(Vector3.RIGHT * delta * camera_speed)
 	if Input.is_action_pressed("ui_left"):
+		if global_position.x <= min_x : return
 		translate(Vector3.LEFT * delta * camera_speed)
 		
