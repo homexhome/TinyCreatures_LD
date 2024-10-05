@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0etlixamnet5"]
+
+[ext_resource type="PackedScene" uid="uid://b0cmptvie0dtp" path="res://imports/prop_import/Spruce.fbx" id="1_metk3"]
+
+[node name="Spruce" instance=ExtResource("1_metk3")]
