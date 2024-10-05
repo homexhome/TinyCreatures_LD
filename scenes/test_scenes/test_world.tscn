@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="1_erffx"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gilvy"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="3_hkor4"]
-[ext_resource type="PackedScene" uid="uid://bimlqd0cjgbeh" path="res://scenes/test_scenes/Skeleton.tscn" id="4_78m61"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton.tscn" id="4_78m61"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="4_waaly"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="6_xkoya"]
 
@@ -54,16 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -0.997208, 0, 0.219791)
 use_collision = true
 size = Vector3(16.8181, 0.2, 0.888184)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -0.981949, 0, -3.48574)
-use_collision = true
-size = Vector3(17.2129, 0.2, 0.888184)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -1, 0, 1.44951)
-use_collision = true
-size = Vector3(16.666, 0.2, 0.888184)
-
 [node name="CSGBox3D7" type="CSGBox3D" parent="level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -1.0272, 0, -0.984)
 use_collision = true
@@ -74,28 +64,13 @@ transform = Transform3D(0.220309, 0, 0.261716, 0, 1, 0, -0.134862, 0, 0.427534, 
 use_collision = true
 size = Vector3(11.5117, 0.2, 0.888184)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.220309, 0, 0.261716, 0, 1, 0, -0.134862, 0, 0.427534, 2.27619, -0.000990152, -2.91761)
-use_collision = true
-size = Vector3(11.5117, 0.2, 0.888184)
-
 [node name="CSGBox3D13" type="CSGBox3D" parent="level"]
 transform = Transform3D(0.220309, 0, 0.261716, 0, 1, 0, -0.134862, 0, 0.427534, 2.27619, -0.000990152, -0.362433)
 use_collision = true
 size = Vector3(11.5117, 0.2, 0.888184)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.220309, 0, 0.261716, 0, 1, 0, -0.134862, 0, 0.427534, -2.58381, -0.000990152, 0.748332)
-use_collision = true
-size = Vector3(11.5117, 0.2, 0.888184)
-
 [node name="CSGBox3D11" type="CSGBox3D" parent="level"]
 transform = Transform3D(-0.241401, 0, 0.178384, 0, 1, 0, -0.0919213, 0, -0.468465, -2.82202, -0.000990152, -1.6058)
-use_collision = true
-size = Vector3(11.5117, 0.2, 0.888184)
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="level"]
-transform = Transform3D(-0.241401, 0, 0.178384, 0, 1, 0, -0.0919213, 0, -0.468465, -6.90039, -0.000990152, -2.92065)
 use_collision = true
 size = Vector3(11.5117, 0.2, 0.888184)
 
@@ -150,6 +125,7 @@ script = ExtResource("3_hkor4")
 place_to_load = NodePath("../Mobs")
 
 [node name="SubViewport" type="SubViewport" parent="UI"]
+own_world_3d = true
 transparent_bg = true
 size = Vector2i(138, 150)
 render_target_update_mode = 4
