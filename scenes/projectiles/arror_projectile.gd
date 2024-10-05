@@ -13,5 +13,6 @@ func _process(delta):
 			if area_on_target_impact == null:
 				push_error("area on impact is is_null")
 				return
-
-	
+			else:
+				area_on_target_impact.explode(damage,character_owner,type)
+				area_on_target_impact.finished.connect(queue_free)
