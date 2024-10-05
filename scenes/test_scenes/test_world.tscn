@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=15 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="1_erffx"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gilvy"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="3_hkor4"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton.tscn" id="4_78m61"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="4_waaly"]
-[ext_resource type="PackedScene" uid="uid://bcwegn7lo0e28" path="res://scenes/test_scenes/test_mesh.tscn" id="5_d51ea"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="6_xkoya"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hopr2"]
@@ -27,51 +27,66 @@ height = 0.32
 ambient_light_source = 2
 ambient_light_color = Color(0.943109, 0.774977, 0.946805, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_dewu3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_gwiky"]
+viewport_path = NodePath("UI/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_sofeo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_m8rud"]
+viewport_path = NodePath("UI/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tg6bd"]
 viewport_path = NodePath("UI/SubViewport")
 
 [node name="test_world" type="Node3D"]
 
 [node name="level" type="Node3D" parent="."]
 
+[node name="BG" type="CSGBox3D" parent="level"]
+transform = Transform3D(2.33209, 6.50703e-08, 0, -8.01848e-09, 0.0528401, -0.998603, -1.51538e-07, 0.998603, 0.0528401, -3.3104, -1.10075e-08, -5.56913)
+size = Vector3(24.5209, 0.2, 10)
+
 [node name="CSGBox3D" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28302, 0, -3.38452)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -1.01003, 0, -2.23928)
 use_collision = true
-size = Vector3(5.97546, 0.2, 0.888184)
+size = Vector3(17.1196, 0.2, 0.888184)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.634, 0, -1.465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -0.997208, 0, 0.219791)
 use_collision = true
-size = Vector3(5.97546, 0.2, 0.888184)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.919445, 0, -0.39322, 0, 1, 0, 0.39322, 0, 0.919445, 3.519, 0, 1.558)
-use_collision = true
-size = Vector3(5.97546, 0.2, 0.888184)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.442649, 0, -0.896695, 0, 1, 0, 0.896695, 0, 0.442649, -3.934, 0, -1.169)
-use_collision = true
-size = Vector3(5.97546, 0.2, 0.888184)
+size = Vector3(16.8181, 0.2, 0.888184)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.812257, 0, -0.5833, 0, 1, 0, 0.5833, 0, 0.812257, -1.093, 0, 1.737)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -1.0272, 0, -0.984)
 use_collision = true
-size = Vector3(5.97546, 0.2, 0.888184)
+size = Vector3(16.9933, 0.2, 0.888184)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="level"]
+transform = Transform3D(0.220309, 0, 0.261716, 0, 1, 0, -0.134862, 0, 0.427534, -6.14847, -0.000990152, -0.474978)
+use_collision = true
+size = Vector3(11.5117, 0.2, 0.888184)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="level"]
+transform = Transform3D(0.220309, 0, 0.261716, 0, 1, 0, -0.134862, 0, 0.427534, 2.27619, -0.000990152, -0.362433)
+use_collision = true
+size = Vector3(11.5117, 0.2, 0.888184)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="level"]
+transform = Transform3D(-0.241401, 0, 0.178384, 0, 1, 0, -0.0919213, 0, -0.468465, -2.82202, -0.000990152, -1.6058)
+use_collision = true
+size = Vector3(11.5117, 0.2, 0.888184)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="level"]
+transform = Transform3D(-0.231198, 0, 0.22356, 0, 1, 0, -0.115201, 0, -0.448666, -1.38872, -0.000990152, -0.288386)
+use_collision = true
+size = Vector3(11.5117, 0.2, 0.888184)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.998049, 0, 0.0624422, 0, 1, 0, -0.0624422, 0, 0.998049, 3.593, 0, 3.13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -1, 0, 3.13)
 use_collision = true
 size = Vector3(5.97546, 0.2, 0.888184)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 0.0528414, -0.998603, 0, 0.998603, 0.0528414, -0.270752, 0, -5)
-size = Vector3(10, 0.2, 10)
-
 [node name="CSGBox3D3" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.502431, -0.863409, -0.0456876, 0, 0.0528414, -0.998603, 0.864617, 0.50173, 0.0265492, 5.47401, 0, -0.95619)
+transform = Transform3D(1, 0, 0, 0, 0.0528401, -0.798882, 0, 0.998603, 0.0422721, 5.47401, 0, -0.95619)
+visible = false
 size = Vector3(10, 0.2, 10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="level"]
@@ -79,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.302
 mesh = SubResource("QuadMesh_sg5fm")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.87462, 0.467177, -0.12956, 0, 0.267238, 0.96363, 0.48481, -0.84281, 0.233732, 0.08, 6.055, 1.595)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.3485, 6.055, 3.12667)
 current = true
 fov = 75.1
 size = 8.001
@@ -121,10 +136,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.329, 0, 0.971)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="UI/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1992, 0, 3.66713)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="UI/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.329, 0, -0.252417)
-mesh = SubResource("SphereMesh_dewu3")
-skeleton = NodePath("")
+[node name="Scene" parent="UI/SubViewport" instance=ExtResource("4_78m61")]
+transform = Transform3D(-0.59238, 0.129154, -0.795239, 0.214181, 0.976793, -0.000905187, 0.776667, -0.170862, -0.606296, -12.3904, -0.404044, 0.30842)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI"]
 clip_contents = false
@@ -151,9 +164,9 @@ theme_override_constants/margin_top = 3
 [node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("ui")]
 layout_mode = 2
 theme = ExtResource("6_xkoya")
-icon = SubResource("ViewportTexture_sofeo")
+icon = SubResource("ViewportTexture_gwiky")
 script = ExtResource("4_waaly")
-mesh_to_inst = ExtResource("5_d51ea")
+mesh_to_inst = ExtResource("4_78m61")
 ui = NodePath("../../../..")
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/ScrollContainer/VBoxContainer"]
@@ -164,9 +177,9 @@ theme_override_constants/margin_top = 3
 [node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/MarginContainer2" node_paths=PackedStringArray("ui")]
 layout_mode = 2
 theme = ExtResource("6_xkoya")
-icon = SubResource("ViewportTexture_sofeo")
+icon = SubResource("ViewportTexture_m8rud")
 script = ExtResource("4_waaly")
-mesh_to_inst = ExtResource("5_d51ea")
+mesh_to_inst = ExtResource("4_78m61")
 ui = NodePath("../../../..")
 
 [node name="MarginContainer3" type="MarginContainer" parent="UI/ScrollContainer/VBoxContainer"]
@@ -177,9 +190,9 @@ theme_override_constants/margin_top = 3
 [node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/MarginContainer3" node_paths=PackedStringArray("ui")]
 layout_mode = 2
 theme = ExtResource("6_xkoya")
-icon = SubResource("ViewportTexture_sofeo")
+icon = SubResource("ViewportTexture_tg6bd")
 script = ExtResource("4_waaly")
-mesh_to_inst = ExtResource("5_d51ea")
+mesh_to_inst = ExtResource("4_78m61")
 ui = NodePath("../../../..")
 
 [node name="Mobs" type="Node3D" parent="."]

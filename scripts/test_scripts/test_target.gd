@@ -7,6 +7,9 @@ extends MeshInstance3D
 
 var mouse_position_3D : Vector3
 
+func _ready():
+	mesh_to_take.hide()
+
 func _physics_process(delta: float) -> void:
 	var window_size = DisplayServer.window_get_size()
 	var viewport = get_viewport()
@@ -44,4 +47,5 @@ func _input(event: InputEvent) -> void:
 	if mesh_to_take.visible and event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			ui.monster_spawn_from_button(mouse_position_3D)
+			mesh_to_take.hide()
 		
