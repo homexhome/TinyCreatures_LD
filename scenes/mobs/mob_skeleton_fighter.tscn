@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd8mb4ei6cffv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ir6k8"]
+radius = 3.0
+
+[node name="Mob" type="Node3D"]
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Health" type="Node" parent="."]
+
+[node name="DetectionRange" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionRange"]
+shape = SubResource("CylinderShape3D_ir6k8")

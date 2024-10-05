@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=14 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="1_erffx"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gilvy"]
@@ -26,6 +26,8 @@ height = 0.32
 [sub_resource type="Environment" id="Environment_l0yfs"]
 ambient_light_source = 2
 ambient_light_color = Color(0.943109, 0.774977, 0.946805, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_dewu3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_sofeo"]
 viewport_path = NodePath("UI/SubViewport")
@@ -78,6 +80,7 @@ mesh = SubResource("QuadMesh_sg5fm")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.87462, 0.467177, -0.12956, 0, 0.267238, 0.96363, 0.48481, -0.84281, 0.233732, 0.08, 6.055, 1.595)
+current = true
 fov = 75.1
 size = 8.001
 script = ExtResource("1_erffx")
@@ -111,13 +114,16 @@ transparent_bg = true
 size = Vector2i(138, 150)
 render_target_update_mode = 4
 
-[node name="MeshInstance3D" parent="UI/SubViewport" instance=ExtResource("5_d51ea")]
-
 [node name="Camera3D" type="Camera3D" parent="UI/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.329, 0, 0.971)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="UI/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1992, 0, 3.66713)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="UI/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.329, 0, -0.252417)
+mesh = SubResource("SphereMesh_dewu3")
+skeleton = NodePath("")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI"]
 clip_contents = false
