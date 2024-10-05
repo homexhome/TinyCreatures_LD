@@ -12,6 +12,7 @@ func monster_spawn_from_button(target_pos : Vector3):
 		place_to_load.add_child(new_mob)
 		new_mob.global_position = target_pos
 		active_monster_button.queue_free()
+		active_monster_button = null
 
 func active_monster_button_set(new_active_button : MonsterButton):
 	active_monster_button = new_active_button
