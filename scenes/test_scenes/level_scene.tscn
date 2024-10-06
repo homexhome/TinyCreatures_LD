@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dthee126247on"]
+
+[ext_resource type="PackedScene" uid="uid://d01tg7x1ruyw2" path="res://imports/level_import/LevelScene.glb" id="1_1iiwn"]
+
+[node name="LevelScene" instance=ExtResource("1_1iiwn")]
