@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bimlqd0cjgbeh" path="res://scenes/test_scenes/Skeleton.tscn" id="3_i11hk"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="4_nnfht"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="5_4ld7p"]
-[ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="6_1paby"]
-[ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="7_0bdev"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="6_1paby"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="7_0bdev"]
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
+[ext_resource type="PackedScene" uid="uid://dthee126247on" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
 [ext_resource type="Texture2D" uid="uid://8y683p5o2reg" path="res://imports/texture_import/background.png" id="12_pkw7w"]
@@ -24,10 +24,13 @@ height = 0.32
 
 [sub_resource type="Environment" id="Environment_l0yfs"]
 background_mode = 1
-background_color = Color(0.536343, 0.393856, 0.984815, 1)
+background_color = Color(0.8, 0.423529, 0.847059, 1)
 background_energy_multiplier = 0.7
 ambient_light_source = 2
-ambient_light_color = Color(0.943109, 0.774977, 0.946805, 1)
+ambient_light_color = Color(0.8, 0.423529, 0.847059, 1)
+fog_enabled = true
+fog_mode = 1
+fog_density = 0.482
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vmhh0"]
 viewport_path = NodePath("UI/SubViewport")
@@ -63,7 +66,7 @@ roughness = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_5l2fy"]
 material = SubResource("StandardMaterial3D_kosd3")
-size = Vector2(100, 35)
+size = Vector2(5000, 1000)
 
 [node name="test_world" type="Node3D"]
 
@@ -75,7 +78,7 @@ camera = NodePath("../Path3D/PathFollow3D/Camera3D")
 ui = NodePath("../UI")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.333963, 1.80632, 0)
+transform = Transform3D(0.952023, -1.33769e-08, 0.306028, -0.288856, 0.330267, 0.898602, -0.101071, -0.943887, 0.314422, -0.333963, 1.80632, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l0yfs")
@@ -102,6 +105,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.329, 0, 0.971)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="UI/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1992, 0, 3.66713)
+visible = false
 
 [node name="Scene" parent="UI/SubViewport" instance=ExtResource("3_i11hk")]
 transform = Transform3D(-0.59238, 0.129154, -0.795239, 0.214181, 0.976793, -0.000905187, 0.776667, -0.170862, -0.606296, -12.3904, -0.404044, 0.30842)
@@ -206,5 +210,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27781, 0)
 curve = SubResource("Curve3D_860qd")
 
 [node name="Background" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.775154, 0.631772, 0, -0.631772, 0.775154, 14, -9, -12.0966)
+transform = Transform3D(1.29574, 0, 0, 0, 2.65485, 1.81425, 0, -2.16377, 2.22599, -11.6702, -661.871, -934.611)
 mesh = SubResource("QuadMesh_5l2fy")

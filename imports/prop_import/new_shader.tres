@@ -1,0 +1,14 @@
+[gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://bxly3gjwxgnst"]
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_d67na"]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+
+
+"
+graph_offset = Vector2(-354.97, 65.7009)
+nodes/fragment/2/node = SubResource("VisualShaderNodeIf_d67na")
+nodes/fragment/2/position = Vector2(-20, 160)
