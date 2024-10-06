@@ -30,7 +30,10 @@ func component_physics_process(delta):
 	pick_destination()
 
 func _nav_movement(delta):
-	if !need_movement: return
+	if !need_movement: 
+		if !character.animation_busy and !target_movement:
+			animation_player.play(character.anim_lib_name+"idle")
+		return
 	nav_agent.target_position = movement_target
 	var target = nav_agent.get_next_path_position()
 	update_rotation(delta)

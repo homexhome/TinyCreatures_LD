@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv2knyckvx3rg"]
+[gd_scene load_steps=8 format=3 uid="uid://b5il61mrc6fj6"]
 
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="1_aww74"]
 [ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://parallax/1.png" id="2_c0v85"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://ck6ekw8uaxrf5" path="res://parallax/photo_2024-10-06_00-31-52.jpg" id="3_llfc2"]
 [ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://parallax/5.png" id="3_t4l83"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="4_tf2hm"]
-[ext_resource type="AudioStream" uid="uid://ce1mfxjxlk5gk" path="res://parallax/хтонь.mp3" id="8_rti6f"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -84,7 +83,7 @@ text = "The Crystal Shkulls"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartGameButton" type="Button" parent="."]
+[node name="StartGameButton" type="Button" parent="." node_paths=PackedStringArray("loading_screen")]
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -102,6 +101,7 @@ theme_override_font_sizes/font_size = 50
 text = "START GAME"
 script = ExtResource("2_kgnwx")
 scene_to_load = "res://scenes/test_scenes/world.tscn"
+loading_screen = NodePath("../LoadingScreen")
 
 [node name="OptionsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(400, 200)
@@ -121,7 +121,36 @@ theme_override_font_sizes/font_size = 50
 text = "OPTIONS"
 script = ExtResource("3_j5uo2")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_rti6f")
-autoplay = true
-parameters/looping = true
+[node name="LoadingScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="LoadingScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LoadingScreen/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.5
+offset_right = 20.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+text = "LOADING..."

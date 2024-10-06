@@ -37,4 +37,5 @@ func handle_options_input():
 		
 func go_to_main_menu():
 	get_tree().change_scene_to_file(main_menu_scene_path)
+	GameManager.change_game_state(GameManager.GAME_STATE.MENU)
 	handle_options_input()
