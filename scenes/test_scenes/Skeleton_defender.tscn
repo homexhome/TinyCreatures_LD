@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="4_hr3ei"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="5_h7i0n"]
 
-[sub_resource type="Resource" id="Resource_l761b"]
+[sub_resource type="Resource" id="Resource_kly62"]
 script = ExtResource("2_v0ory")
 type = 0
 max_health = 100.0
@@ -271,10 +271,11 @@ _data = {
 }
 
 [node name="Scene" type="CharacterBody3D" node_paths=PackedStringArray("animation_player") groups=["Defenders"]]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_5hkm0")
-character_stats = SubResource("Resource_l761b")
+character_stats = SubResource("Resource_kly62")
 anim_lib_name = "Skeleton_warrior/"
 animation_player = NodePath("AnimationPlayer")
 
