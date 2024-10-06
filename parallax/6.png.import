@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkmkrsvavbmo"
-path.s3tc="res://.godot/imported/7.png-de4223a1bb54815da7035e1939db23e6.s3tc.ctex"
+uid="uid://df4sdhith7ho7"
+path.s3tc="res://.godot/imported/6.png-20684bcbdced50f042722f75ff1f3333.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Паралакс/7.png"
-dest_files=["res://.godot/imported/7.png-de4223a1bb54815da7035e1939db23e6.s3tc.ctex"]
+source_file="res://parallax/6.png"
+dest_files=["res://.godot/imported/6.png-20684bcbdced50f042722f75ff1f3333.s3tc.ctex"]
 
 [params]
 

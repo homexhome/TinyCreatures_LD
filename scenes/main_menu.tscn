@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5il61mrc6fj6"]
+[gd_scene load_steps=5 format=3 uid="uid://b5il61mrc6fj6"]
 
+[ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="1_aww74"]
 [ext_resource type="Texture2D" uid="uid://daxkb8xbieoo8" path="res://imports/texture_import/kenney's_prototype_textures/texture_11.png" id="1_ldljl"]
 [ext_resource type="Script" path="res://scripts/ui/start_game_button.gd" id="2_kgnwx"]
 [ext_resource type="Script" path="res://scripts/ui/options_button.gd" id="3_j5uo2"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_aww74")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -28,11 +30,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -0.5
-offset_right = 0.5
-offset_bottom = 23.0
+offset_left = -339.5
+offset_top = 193.0
+offset_right = 339.5
+offset_bottom = 336.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 37
+theme_override_font_sizes/font_size = 142
 text = "ШКЕЛЕТОН ГЕЙМ"
 horizontal_alignment = 1
 vertical_alignment = 1

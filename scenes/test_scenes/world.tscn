@@ -1,26 +1,24 @@
-[gd_scene load_steps=50 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=48 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="2_w5nye"]
 [ext_resource type="PackedScene" uid="uid://bimlqd0cjgbeh" path="res://scenes/test_scenes/Skeleton.tscn" id="3_i11hk"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="4_nnfht"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="5_4ld7p"]
-[ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="6_1paby"]
-[ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="7_0bdev"]
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
 [ext_resource type="PackedScene" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
-[ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://Паралакс/кристаллы.png" id="12_fidbp"]
-[ext_resource type="Texture2D" uid="uid://dtp5dhtyxy68j" path="res://Паралакс/2.png" id="12_o7nie"]
-[ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://Паралакс/1.png" id="13_abg1y"]
-[ext_resource type="Texture2D" uid="uid://dvtabbs4t8lhb" path="res://Паралакс/9.png" id="13_id7hc"]
-[ext_resource type="Texture2D" uid="uid://b6ry085rrwhge" path="res://Паралакс/8.png" id="14_jijr3"]
-[ext_resource type="Texture2D" uid="uid://dkmkrsvavbmo" path="res://Паралакс/7.png" id="15_ji2e0"]
-[ext_resource type="Texture2D" uid="uid://df4sdhith7ho7" path="res://Паралакс/6.png" id="16_mw4bo"]
-[ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://Паралакс/5.png" id="17_nqkna"]
-[ext_resource type="Texture2D" uid="uid://c7jhfh3bmm3om" path="res://Паралакс/4.png" id="19_47lxb"]
-[ext_resource type="Texture2D" uid="uid://cacb8ihpllrvm" path="res://Паралакс/3.png" id="20_qr5ac"]
+[ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="12_fidbp"]
+[ext_resource type="Texture2D" uid="uid://dtp5dhtyxy68j" path="res://parallax/2.png" id="12_o7nie"]
+[ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://parallax/1.png" id="13_abg1y"]
+[ext_resource type="Texture2D" uid="uid://dvtabbs4t8lhb" path="res://parallax/9.png" id="13_id7hc"]
+[ext_resource type="Texture2D" uid="uid://b6ry085rrwhge" path="res://parallax/8.png" id="14_jijr3"]
+[ext_resource type="Texture2D" uid="uid://dkmkrsvavbmo" path="res://parallax/7.png" id="15_ji2e0"]
+[ext_resource type="Texture2D" uid="uid://df4sdhith7ho7" path="res://parallax/6.png" id="16_mw4bo"]
+[ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://parallax/5.png" id="17_nqkna"]
+[ext_resource type="Texture2D" uid="uid://c7jhfh3bmm3om" path="res://parallax/4.png" id="19_47lxb"]
+[ext_resource type="Texture2D" uid="uid://cacb8ihpllrvm" path="res://parallax/3.png" id="20_qr5ac"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
@@ -216,33 +214,6 @@ script = ExtResource("5_4ld7p")
 mesh_to_inst = ExtResource("3_i11hk")
 ui = NodePath("../../..")
 
-[node name="Button2" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme = ExtResource("4_nnfht")
-icon = SubResource("ViewportTexture_vmhh0")
-script = ExtResource("5_4ld7p")
-mesh_to_inst = ExtResource("6_vufao")
-ui = NodePath("../../..")
-
-[node name="Button3" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme = ExtResource("4_nnfht")
-icon = SubResource("ViewportTexture_vmhh0")
-script = ExtResource("5_4ld7p")
-mesh_to_inst = ExtResource("6_vufao")
-ui = NodePath("../../..")
-
-[node name="Button4" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme = ExtResource("4_nnfht")
-icon = SubResource("ViewportTexture_vmhh0")
-script = ExtResource("5_4ld7p")
-mesh_to_inst = ExtResource("6_vufao")
-ui = NodePath("../../..")
-
 [node name="Mobs" type="Node3D" parent="."]
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -250,7 +221,7 @@ transform = Transform3D(1, 0, 0, 0, 0.988228, -0.152986, 0, 0.152986, 0.988228, 
 curve = SubResource("Curve3D_sv3w4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 0.979652, -0.200665, 0, 0.200665, 0.979652, 0, 6.03188, -0.31185)
+transform = Transform3D(1, 0, 0, 0, 0.979652, -0.200663, 0, 0.200663, 0.979652, 0, 6.03188, -0.31185)
 loop = false
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" node_paths=PackedStringArray("path_follow", "path")]
