@@ -45,4 +45,4 @@ func get_modified_damage(damage, attack_type : CharacterStats.COMBAT_TYPE) -> fl
 	return 0
 
 func on_death():
-	character.on_death_signal.emit()
+	character.death()

@@ -12,6 +12,8 @@ var attack_controller
 signal took_damage_signal
 signal on_death_signal
 
+var current_target
+
 func _ready():
 	for child in get_children():
 		if child is BaseCharacterComponent:
@@ -41,6 +43,10 @@ func move_to(target_pos : Vector3):
 func stop():
 	movement_controller.stop()
 
+func death():
+	on_death_signal.emit()
+	queue_free()
+
 func take_damage(damage : float, damage_owner : Character, _attack_type : CharacterStats.COMBAT_TYPE):
 	return health_component.take_damage(damage, damage_owner,_attack_type)
 
@@ -65,3 +71,7 @@ func check_controller(type : CONTROLLER_TYPE):
 					if component.has_method("attack"):
 						attack_controller = component
 						break
+
+func set_current_target(target):
+	current_target = target
+	print("set target ",target)
