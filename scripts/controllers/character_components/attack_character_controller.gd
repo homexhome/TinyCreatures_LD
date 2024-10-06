@@ -15,8 +15,10 @@ var minimum_distance_to_attack : float = 1
 @export var agressive_area : Area3D 
 var projectile : PackedScene = null
 
+@export var animation_player : AnimationPlayer
 @export var projectile_start_path : Node3D
 var current_target : Character
+
 
 func initialize():
 	character = get_parent()
@@ -35,6 +37,8 @@ func initialize():
 		push_error("Projectile start path doesn't exists for archer")
 	if melee_area != null:
 		melee_area.monitoring = true
+	if animation_player == null:
+		push_error("Animation player in attack controller is null")
 	check_for_target()
 
 func component_process(delta):
@@ -95,13 +99,14 @@ func validate_target(target: Character):
 func attack():
 	if attack_cooldown > 0: return
 	if type == CharacterStats.COMBAT_TYPE.CLOSE_COMBAT:
+		animation_player.play(character.anim_lib_name+"melee_attack")
 		area_attack(melee_area)
 	if type == CharacterStats.COMBAT_TYPE.ARCHER or type == CharacterStats.COMBAT_TYPE.MAGE:
 		var proj = projectile.instantiate()
 		Projectiles.add_child(proj)
 		proj.setup_projectile(current_target, type,attack_damage, character, projectile_start_path.global_position)
 	attack_cooldown = attack_speed
-	
+
 
 func area_attack(damage_area : Area3D):
 	for body in damage_area.get_overlapping_bodies():

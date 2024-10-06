@@ -11,6 +11,9 @@ var attack_controller
 
 signal took_damage_signal
 signal on_death_signal
+@export var anim_lib_name : String
+@export var animation_player : AnimationPlayer
+var animation_busy : bool = false
 
 var current_target
 
@@ -22,12 +25,28 @@ func _ready():
 	check_controller(CONTROLLER_TYPE.HEALTH)
 	check_controller(CONTROLLER_TYPE.MOVING)
 	check_controller(CONTROLLER_TYPE.ATTACK)
+	animation_player.animation_started.connect(check_incoming_animation)
+	animation_player.animation_finished.connect(check_ending_animation)
+
+func check_incoming_animation(anim_name : String):
+	if anim_name.contains("melee_attack") or anim_name.contains("archer_attack") or anim_name.contains("mage_attack")  or anim_name.contains("death"):
+		animation_busy = true
+
+func check_ending_animation(anim_name : String):
+	if anim_name.contains("death"): 
+		queue_free()
+		return
+	if anim_name.contains("melee_attack") or anim_name.contains("archer_attack") or anim_name.contains("mage_attack")  or anim_name.contains("death"):
+		animation_busy = false
+
 
 func _process(delta):
+	if dying: return
 	for component in components_array:
 		component.component_process(delta)
 
 func _physics_process(delta):
+	if dying: return
 	for component in components_array:
 		component.component_physics_process(delta)
 
@@ -42,10 +61,11 @@ func move_to(target_pos : Vector3):
 
 func stop():
 	movement_controller.stop()
-
+var dying : bool = false
 func death():
 	on_death_signal.emit()
-	queue_free()
+	dying = true
+	animation_player.play(anim_lib_name+"death")
 
 func take_damage(damage : float, damage_owner : Character, _attack_type : CharacterStats.COMBAT_TYPE):
 	return health_component.take_damage(damage, damage_owner,_attack_type)

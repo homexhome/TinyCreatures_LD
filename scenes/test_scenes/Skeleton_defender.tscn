@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://pbm2gkqj1i6l"]
+[gd_scene load_steps=17 format=4 uid="uid://pbm2gkqj1i6l"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_5hkm0"]
 [ext_resource type="Script" path="res://resources/character_stats.gd" id="2_v0ory"]
@@ -14,10 +14,20 @@ attack_damage = 20.0
 movement_speed = 0.3
 attack_speed = 3.0
 cast_speed = 3.0
-minimum_distance_to_attack = 0.5
+minimum_distance_to_attack = 0.7
 recieving_close_combat_damage_modifier = 1.0
 recieving_archer_damage_modifier = 1.0
 recieving_magic_damage_modifier = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ckwn"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jk363"]
+size = Vector3(0.5, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0ga5v"]
+radius = 5.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vw32s"]
 _surfaces = [{
@@ -49,25 +59,130 @@ _surfaces = [{
 }]
 shadow_mesh = SubResource("ArrayMesh_vw32s")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ckwn"]
-radius = 0.25
-height = 1.0
+[sub_resource type="Animation" id="Animation_gevme"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jk363"]
-size = Vector3(0.5, 1, 1)
+[sub_resource type="Animation" id="Animation_euy5y"]
+resource_name = "melee_attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.533333, 0.993333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.251327, -0.251327, 0), Vector3(0.251327, -0.251327, 0), Vector3(-0.837758, 0.20944, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.533333, 0.993333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.105), Vector3(0, 0, 0.105), Vector3(0, 0, -0.015), Vector3(0, 0, 0)]
+}
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_0ga5v"]
-radius = 5.0
+[sub_resource type="Animation" id="Animation_6ptfr"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.666667, 1.00333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.376991, 0.251327, 0.249582), Vector3(-0.198968, 0.00698132, -0.116937), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.666667, 1.00333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.085, 0, 0), Vector3(-0.0449476, 0, 0), Vector3(0, 0, 0)]
+}
 
-[node name="Scene" type="CharacterBody3D" groups=["Defenders"]]
+[sub_resource type="Animation" id="Animation_p3hxa"]
+resource_name = "skeleton_warrior_death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.533333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.680678, 0, 0), Vector3(0.851651, 0, 0), Vector3(1.48004, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.533333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.256, 0), Vector3(0, 0.11577, 0.0638534), Vector3(0, 0.11577, 0.0638534)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2svk"]
+_data = {
+"RESET": SubResource("Animation_gevme"),
+"death": SubResource("Animation_p3hxa"),
+"melee_attack": SubResource("Animation_euy5y"),
+"walk": SubResource("Animation_6ptfr")
+}
+
+[node name="Scene" type="CharacterBody3D" node_paths=PackedStringArray("animation_player") groups=["Defenders"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_5hkm0")
 character_stats = SubResource("Resource_l761b")
-
-[node name="Cube003" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("ArrayMesh_v3src")
+anim_lib_name = "Skeleton_warrior/"
+animation_player = NodePath("AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -76,10 +191,11 @@ shape = SubResource("CapsuleShape3D_5ckwn")
 [node name="Health" type="Node3D" parent="."]
 script = ExtResource("3_sxm1n")
 
-[node name="Attack" type="Node3D" parent="." node_paths=PackedStringArray("melee_area", "agressive_area", "projectile_start_path")]
+[node name="Attack" type="Node3D" parent="." node_paths=PackedStringArray("melee_area", "agressive_area", "animation_player", "projectile_start_path")]
 script = ExtResource("4_hr3ei")
 melee_area = NodePath("MeleeAttackArea")
 agressive_area = NodePath("AgressiveArea")
+animation_player = NodePath("../AnimationPlayer")
 projectile_start_path = NodePath("../ProjectileStartPlace")
 
 [node name="MeleeAttackArea" type="Area3D" parent="Attack"]
@@ -101,13 +217,27 @@ shape = SubResource("CylinderShape3D_0ga5v")
 [node name="CheckTargetTimer" type="Timer" parent="Attack"]
 autostart = true
 
-[node name="Movement" type="Node3D" parent="."]
+[node name="Movement" type="Node3D" parent="." node_paths=PackedStringArray("animation_player")]
 script = ExtResource("5_h7i0n")
+animation_player = NodePath("../AnimationPlayer")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Movement"]
 debug_enabled = true
 
 [node name="ProjectileStartPlace" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564291, -0.300079)
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Cube003" type="MeshInstance3D" parent="Visual"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v3src")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Visual")
+libraries = {
+"Skeleton_warrior": SubResource("AnimationLibrary_w2svk")
+}
 
 [connection signal="timeout" from="Attack/CheckTargetTimer" to="Attack" method="check_for_target"]

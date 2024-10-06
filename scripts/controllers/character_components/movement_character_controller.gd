@@ -5,7 +5,7 @@ var movement_speed : float = 10
 var nav_agent : NavigationAgent3D
 
 var minimum_distance_to_attack
-
+@export var animation_player : AnimationPlayer
 var path_vertices_array : Array[Vector3]
 var current_path_pos : Vector3
 
@@ -22,6 +22,8 @@ func initialize():
 	else: path_vertices_array = nav_node.take_path_array()
 	if character.is_in_group("Attackers"):
 		current_path_pos = path_vertices_array.pop_front()
+	if animation_player == null:
+		push_error("Animation player in movement controller is null")
 
 func component_physics_process(delta):
 	_nav_movement(delta)
@@ -31,8 +33,10 @@ func _nav_movement(delta):
 	if !need_movement: return
 	nav_agent.target_position = movement_target
 	var target = nav_agent.get_next_path_position()
-	character.global_position = character.global_position.lerp(target,movement_speed * delta)
 	update_rotation(delta)
+	if check_movement_distance(target): return
+	character.global_position = character.global_position.lerp(target,movement_speed * delta)
+	play_walk_anim()
 
 func update_rotation(delta):
 	var target_position = movement_target
@@ -44,7 +48,10 @@ func update_rotation(delta):
 
 var rotation_speed = 10
 var min_rotation_angle = deg_to_rad(5.0)
-
+func play_walk_anim():
+	if character.animation_busy == false:
+		if animation_player.current_animation !="walk":
+			animation_player.play(character.anim_lib_name+"walk")
 
 func stop():
 	target_movement = false
@@ -59,6 +66,7 @@ func pick_destination():
 		if path_vertices_array.size() > 0:
 			current_path_pos = path_vertices_array.pop_front()
 	else:
+
 		movement_target = current_path_pos
 		need_movement = true
 		
@@ -79,5 +87,10 @@ func move_to(target_pos : Vector3):
 
 func check_target_distance(target_pos: Vector3):
 	if character.global_position.distance_squared_to(target_pos) <= minimum_distance_to_attack * minimum_distance_to_attack:
+		return true
+	return false
+
+func check_movement_distance(target_pos: Vector3):
+	if character.global_position.distance_squared_to(target_pos) <= 0.2:
 		return true
 	return false
