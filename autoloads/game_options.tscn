@@ -8,6 +8,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("game_options")]
 process_mode = 3
+visible = false
 script = ExtResource("1_41wsl")
 game_options = NodePath("GameOptions")
 
