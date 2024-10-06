@@ -1,17 +1,26 @@
-[gd_scene load_steps=23 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=50 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="2_w5nye"]
 [ext_resource type="PackedScene" uid="uid://bimlqd0cjgbeh" path="res://scenes/test_scenes/Skeleton.tscn" id="3_i11hk"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="4_nnfht"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="5_4ld7p"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="6_1paby"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="7_0bdev"]
+[ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="6_1paby"]
+[ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="7_0bdev"]
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
 [ext_resource type="PackedScene" uid="uid://dthee126247on" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
-[ext_resource type="Texture2D" uid="uid://8y683p5o2reg" path="res://imports/texture_import/background.png" id="12_pkw7w"]
+[ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://Паралакс/кристаллы.png" id="12_fidbp"]
+[ext_resource type="Texture2D" uid="uid://dtp5dhtyxy68j" path="res://Паралакс/2.png" id="12_o7nie"]
+[ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://Паралакс/1.png" id="13_abg1y"]
+[ext_resource type="Texture2D" uid="uid://dvtabbs4t8lhb" path="res://Паралакс/9.png" id="13_id7hc"]
+[ext_resource type="Texture2D" uid="uid://b6ry085rrwhge" path="res://Паралакс/8.png" id="14_jijr3"]
+[ext_resource type="Texture2D" uid="uid://dkmkrsvavbmo" path="res://Паралакс/7.png" id="15_ji2e0"]
+[ext_resource type="Texture2D" uid="uid://df4sdhith7ho7" path="res://Паралакс/6.png" id="16_mw4bo"]
+[ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://Паралакс/5.png" id="17_nqkna"]
+[ext_resource type="Texture2D" uid="uid://c7jhfh3bmm3om" path="res://Паралакс/4.png" id="19_47lxb"]
+[ext_resource type="Texture2D" uid="uid://cacb8ihpllrvm" path="res://Паралакс/3.png" id="20_qr5ac"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
@@ -28,6 +37,8 @@ background_color = Color(0.8, 0.423529, 0.847059, 1)
 background_energy_multiplier = 0.7
 ambient_light_source = 2
 ambient_light_color = Color(0.8, 0.423529, 0.847059, 1)
+ssao_radius = 3.52
+ssao_intensity = 3.35
 fog_enabled = true
 fog_mode = 1
 fog_density = 0.482
@@ -38,10 +49,10 @@ viewport_path = NodePath("UI/SubViewport")
 [sub_resource type="Curve3D" id="Curve3D_sv3w4"]
 bake_interval = 125.2
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 6.03188, -0.31185, 0, 0, 0, 0, 0, 0, 0, 6.70909, -1.68885, 0, 0, 0, 0, 0, 0, 0, 7.65718, -4.01394, 0, 0, 0, 0, 0, 0, 0, 8.22153, -8.55126, 0, 0, 0, 0, 0, 0, 0, 6.77681, -13.2917),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 6.03188, -0.31185, 0, 0, 0, 0, 0, 0, 0, 6.53899, -2.7876, 0, 0, 0, 0, 0, 0, 0, 5.90252, -6.42808, 0, 0, 0, 0, 0, 0, 0, 4.47009, -8.71872),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 5
+point_count = 4
 
 [sub_resource type="Curve3D" id="Curve3D_fdc0o"]
 _data = {
@@ -65,15 +76,77 @@ _data = {
 point_count = 14
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kosd3"]
+transparency = 1
 shading_mode = 2
 disable_ambient_light = true
-albedo_texture = ExtResource("12_pkw7w")
+albedo_texture = ExtResource("12_fidbp")
 metallic_specular = 0.0
 roughness = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_5l2fy"]
 material = SubResource("StandardMaterial3D_kosd3")
 size = Vector2(5000, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g20qa"]
+transparency = 1
+albedo_texture = ExtResource("13_id7hc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_7ta8b"]
+material = SubResource("StandardMaterial3D_g20qa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2543b"]
+transparency = 1
+albedo_texture = ExtResource("14_jijr3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wnh86"]
+material = SubResource("StandardMaterial3D_2543b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nn53j"]
+transparency = 1
+albedo_texture = ExtResource("15_ji2e0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wuxfk"]
+material = SubResource("StandardMaterial3D_nn53j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_defbk"]
+transparency = 1
+albedo_texture = ExtResource("16_mw4bo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pomx8"]
+material = SubResource("StandardMaterial3D_defbk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awnbg"]
+albedo_texture = ExtResource("17_nqkna")
+
+[sub_resource type="QuadMesh" id="QuadMesh_hul7l"]
+material = SubResource("StandardMaterial3D_awnbg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqakr"]
+albedo_texture = ExtResource("13_abg1y")
+
+[sub_resource type="QuadMesh" id="QuadMesh_omvqn"]
+material = SubResource("StandardMaterial3D_tqakr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc7cv"]
+transparency = 1
+albedo_texture = ExtResource("19_47lxb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b3y15"]
+material = SubResource("StandardMaterial3D_bc7cv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f3sm"]
+transparency = 1
+albedo_texture = ExtResource("20_qr5ac")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ditu"]
+material = SubResource("StandardMaterial3D_4f3sm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d4xj"]
+transparency = 1
+albedo_texture = ExtResource("12_o7nie")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cpxrg"]
+material = SubResource("StandardMaterial3D_1d4xj")
 
 [node name="test_world" type="Node3D"]
 
@@ -182,21 +255,21 @@ ui = NodePath("../../..")
 [node name="Mobs" type="Node3D" parent="."]
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.586918, 6.82002)
+transform = Transform3D(1, 0, 0, 0, 0.988228, -0.152986, 0, 0.152986, 0.988228, 0, 4.60876, 7.98048)
 curve = SubResource("Curve3D_sv3w4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 0.89735, -0.441318, 0, 0.441318, 0.89735, 0, 6.03188, -0.31185)
+transform = Transform3D(1, 0, 0, 0, 0.979652, -0.200665, 0, 0.200665, 0.979652, 0, 6.03188, -0.31185)
 loop = false
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" node_paths=PackedStringArray("path_follow", "path")]
-transform = Transform3D(1, 0, 0, 0, 0.322462, 0.946582, 0, -0.946582, 0.322462, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.555457, 0.831555, 0, -0.831555, 0.555457, 0, 0, 0)
 current = true
 fov = 75.1
 size = 8.001
 script = ExtResource("8_gp0kg")
-max_x = 25.0
-min_x = -5.0
+max_x = 35.0
+min_x = 0.0
 path_follow = NodePath("..")
 path = NodePath("../..")
 
@@ -220,6 +293,59 @@ curve = SubResource("Curve3D_860qd")
 [node name="Path3D3" type="Path3D" parent="NavigationMarks"]
 curve = SubResource("Curve3D_asxpc")
 
-[node name="Background" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.29574, 0, 0, 0, 2.65485, 1.81425, 0, -2.16377, 2.22599, -11.6702, -661.871, -934.611)
+[node name="Node" type="Node" parent="."]
+
+[node name="Background" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(0.0102097, 0, 0, 0, 0.0215295, 0, 0, 0, 0.0181764, 16.6037, 0.650646, -14.1539)
 mesh = SubResource("QuadMesh_5l2fy")
+skeleton = NodePath("../..")
+
+[node name="BG2" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(34.1838, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 20.0157, 4.78243, -13.6461)
+mesh = SubResource("QuadMesh_7ta8b")
+skeleton = NodePath("../..")
+
+[node name="BG3" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(56.6381, 0, 0, 0, 34.2777, 0, 0, 0, 20.963, 16.6037, 12.3767, -23.6891)
+mesh = SubResource("QuadMesh_wnh86")
+skeleton = NodePath("../BG4")
+
+[node name="BG4" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.3366, 7.36029, -14.3636)
+mesh = SubResource("QuadMesh_wuxfk")
+skeleton = NodePath("../BG5")
+
+[node name="BG5" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(43.9661, 0, 0, 0, 29.9567, 0, 0, 0, 29.9567, 6.66311, 5.11793, -22.7623)
+mesh = SubResource("QuadMesh_pomx8")
+skeleton = NodePath("../BG6")
+
+[node name="BG6" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(88.441, 0, 0, 0, 34.051, 0, 0, 0, 34.051, 16.6037, 3.08265, -32.0985)
+mesh = SubResource("QuadMesh_hul7l")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="BG7" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(-59.3267, -0.271267, -0.0439394, 0.436975, -6.33526, 1.32327, -2.25161, 5.918, 1.41455, 16.6037, -2.86335, -10.9901)
+mesh = SubResource("QuadMesh_omvqn")
+skeleton = NodePath("../..")
+
+[node name="BG8" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(24.461, 0, 0, 0, 29.2054, 0, 0, 0, 33.5715, 19.9952, 7.92947, -16.291)
+mesh = SubResource("QuadMesh_b3y15")
+skeleton = NodePath("../Background")
+
+[node name="BG9" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 11.4297, 3.08265, -25.9671)
+mesh = SubResource("QuadMesh_0ditu")
+skeleton = NodePath("../Background")
+
+[node name="BG10" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(102.317, 0, 0, 0, 26.1166, 0, 0, 0, 26.1166, 16.6037, 1.29366, -21.1584)
+mesh = SubResource("QuadMesh_cpxrg")
+skeleton = NodePath("../Background")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(0.0102097, 0, 0, 0, 0.0168688, 0, 0, 0, 0.0181764, 16.6037, 4.36078, -13.9739)
+visible = false
+skeleton = NodePath("../Background")
