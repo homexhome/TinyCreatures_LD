@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b86vq0kckcj0w"]
+
+[ext_resource type="PackedScene" uid="uid://culs3cnduxndu" path="res://imports/character_import/ArcherSkeleton.glb" id="1_foxfv"]
+
+[node name="ArcherSkeleton" instance=ExtResource("1_foxfv")]
