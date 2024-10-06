@@ -41,6 +41,8 @@ func component_process(delta):
 	attack_cooldown = clampf(attack_cooldown - delta, 0, attack_speed)
 	if !is_instance_valid(current_target):
 		current_target = null
+		character.set_current_target(current_target)
+		
 
 func component_physics_process(delta):
 	if is_instance_valid(current_target):
@@ -69,6 +71,9 @@ func check_for_target():
 			if distance_to < distance:
 				distance = distance_to
 				current_target = body
+		if current_target != null:
+			character.set_current_target(current_target)
+				
 				
 var rotation_speed = 10
 var min_rotation_angle = deg_to_rad(5.0)

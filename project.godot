@@ -31,6 +31,7 @@ window/stretch/mode="viewport"
 Defenders=""
 Attackers=""
 navigation_mesh_source_group=""
+NavigationMarks=""
 
 [input]
 
