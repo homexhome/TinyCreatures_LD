@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://baib70yqk2gva"]
+
+[ext_resource type="PackedScene" uid="uid://1eedeyw34en7" path="res://imports/character_import/Arrow.glb" id="1_n2qfm"]
+
+[node name="Arrow2" instance=ExtResource("1_n2qfm")]

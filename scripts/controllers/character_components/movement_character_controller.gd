@@ -29,10 +29,20 @@ func component_physics_process(delta):
 	_nav_movement(delta)
 	pick_destination()
 
+var time_for_random_rotation : float = 0
+var max_time_for_random_rotation : float = 4
+var random_rotation 
+
 func _nav_movement(delta):
+	time_for_random_rotation = clampf(time_for_random_rotation - delta, 0, max_time_for_random_rotation)
 	if !need_movement: 
 		if !character.animation_busy and !target_movement:
 			animation_player.play(character.anim_lib_name+"idle")
+			if time_for_random_rotation <= 0:
+				random_rotation = character.global_position + Vector3(randf_range(-10,10),randf_range(-10,10),randf_range(-10,10))
+				time_for_random_rotation = max_time_for_random_rotation
+			update_random_rotation(delta,random_rotation)
+
 		return
 	nav_agent.target_position = movement_target
 	var target = nav_agent.get_next_path_position()
@@ -47,6 +57,14 @@ func update_rotation(delta):
 	character.transform  = character.transform.interpolate_with(new_transform, rotation_speed * delta)
 	character.rotation.x = 0
 	character.rotation.z = 0
+
+func update_random_rotation(delta, random_target):
+	var target_position = random_target
+	var new_transform = character.transform.looking_at(target_position, Vector3.UP)
+	character.transform  = character.transform.interpolate_with(new_transform, rotation_speed * delta)
+	character.rotation.x = 0
+	character.rotation.z = 0
+
 
 
 var rotation_speed = 10
