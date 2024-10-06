@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=8 format=3 uid="uid://b5il61mrc6fj6"]
+=======
+[gd_scene load_steps=9 format=3 uid="uid://b5il61mrc6fj6"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="1_aww74"]
 [ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://parallax/1.png" id="2_c0v85"]
@@ -7,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://ck6ekw8uaxrf5" path="res://parallax/photo_2024-10-06_00-31-52.jpg" id="3_llfc2"]
 [ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://parallax/5.png" id="3_t4l83"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="4_tf2hm"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="AudioStream" uid="uid://dmxjo4c8abedc" path="res://audio/хтонь.ogg" id="8_lggwm"]
+>>>>>>> Stashed changes
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -121,6 +129,14 @@ theme_override_font_sizes/font_size = 50
 text = "OPTIONS"
 script = ExtResource("3_j5uo2")
 
+<<<<<<< Updated upstream
+=======
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lggwm")
+autoplay = true
+parameters/looping = true
+
+>>>>>>> Stashed changes
 [node name="LoadingScreen" type="Control" parent="."]
 visible = false
 layout_mode = 1

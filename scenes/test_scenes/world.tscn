@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=67 format=4 uid="uid://dvpglwl63g1gk"]
+=======
+[gd_scene load_steps=75 format=4 uid="uid://dvpglwl63g1gk"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="2_w5nye"]
@@ -8,8 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="7_2sesb"]
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
 [ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="8_uenqx"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
+=======
+[ext_resource type="PackedScene" uid="uid://dthee126247on" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/Adventurer_archer_attacker.tscn" id="9_y4crk"]
+[ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/Adventurer_monk_attacker.tscn" id="10_yark5"]
+[ext_resource type="Script" path="res://scenes/test_scenes/test_bones_label.gd" id="11_lpkmg"]
+>>>>>>> Stashed changes
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="12_fidbp"]
 [ext_resource type="Texture2D" uid="uid://dtp5dhtyxy68j" path="res://parallax/2.png" id="12_o7nie"]
@@ -21,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://parallax/5.png" id="17_nqkna"]
 [ext_resource type="Texture2D" uid="uid://c7jhfh3bmm3om" path="res://parallax/4.png" id="19_47lxb"]
 [ext_resource type="Texture2D" uid="uid://cacb8ihpllrvm" path="res://parallax/3.png" id="20_qr5ac"]
+[ext_resource type="AudioStream" uid="uid://bxr2wquyif2uu" path="res://audio/маршскелетов.ogg" id="28_bn8ct"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
@@ -470,6 +483,99 @@ script = ExtResource("5_4ld7p")
 mesh_to_inst = ExtResource("8_uenqx")
 ui = NodePath("../..")
 
+<<<<<<< Updated upstream
+=======
+[node name="Button" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 878.0
+offset_right = 224.0
+offset_bottom = 1030.0
+theme = ExtResource("4_nnfht")
+theme_override_font_sizes/font_size = 60
+text = "CALL"
+
+[node name="Node3D" type="Node3D" parent="UI/Control/Button" node_paths=PackedStringArray("mobs_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40322, 2.23104, -1.475)
+script = ExtResource("8_hpgin")
+characters_to_spawn = Array[PackedScene]([ExtResource("9_y4crk"), ExtResource("10_yark5"), ExtResource("10_yark5")])
+mobs_node = NodePath("../../../../Mobs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="UI/Control/Button/Node3D"]
+visible = false
+mesh = SubResource("BoxMesh_pl3og")
+
+[node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_left = 1769.0
+offset_top = 318.0
+offset_right = 1879.0
+offset_bottom = 389.0
+theme = ExtResource("4_nnfht")
+theme_override_constants/shadow_offset_x = 110
+theme_override_constants/shadow_offset_y = 210
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 70
+text = "100"
+
+[node name="Label2" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_left = 1787.0
+offset_top = 581.0
+offset_right = 1897.0
+offset_bottom = 652.0
+theme = ExtResource("4_nnfht")
+theme_override_constants/shadow_offset_x = 110
+theme_override_constants/shadow_offset_y = 210
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 70
+text = "80"
+
+[node name="Label3" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_left = 1787.0
+offset_top = 841.0
+offset_right = 1897.0
+offset_bottom = 912.0
+theme = ExtResource("4_nnfht")
+theme_override_constants/shadow_offset_x = 110
+theme_override_constants/shadow_offset_y = 210
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 70
+text = "120"
+
+[node name="Label" type="Label" parent="UI" node_paths=PackedStringArray("label")]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 879.0
+offset_right = 666.0
+offset_bottom = 1034.0
+theme = ExtResource("4_nnfht")
+theme_override_constants/shadow_offset_x = 110
+theme_override_constants/shadow_offset_y = 215
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 80
+text = "BONES : 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_lpkmg")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="UI/Label"]
+visible = false
+layout_mode = 0
+offset_left = 305.0
+offset_top = 4.0
+offset_right = 415.0
+offset_bottom = 75.0
+theme_override_constants/shadow_offset_x = 110
+theme_override_constants/shadow_offset_y = 210
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 70
+text = "+100"
+script = ExtResource("13_18scs")
+
+>>>>>>> Stashed changes
 [node name="Mobs" type="Node3D" parent="."]
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -580,3 +686,13 @@ skeleton = NodePath("../Background")
 transform = Transform3D(0.0102097, 0, 0, 0, 0.0168688, 0, 0, 0, 0.0181764, 16.6037, 4.36078, -13.9739)
 visible = false
 skeleton = NodePath("../Background")
+<<<<<<< Updated upstream
+=======
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_bn8ct")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="UI/Control/Button" to="UI/Control/Button/Node3D" method="spawn_hostiles"]
+>>>>>>> Stashed changes
