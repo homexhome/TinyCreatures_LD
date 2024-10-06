@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv2knyckvx3rg"]
+[gd_scene load_steps=10 format=3 uid="uid://b5il61mrc6fj6"]
 
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="1_aww74"]
 [ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://parallax/1.png" id="2_c0v85"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ck6ekw8uaxrf5" path="res://parallax/photo_2024-10-06_00-31-52.jpg" id="3_llfc2"]
 [ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://parallax/5.png" id="3_t4l83"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="4_tf2hm"]
+[ext_resource type="Theme" uid="uid://dqsqm8fsfp85p" path="res://themes/ui_menu_theme.tres" id="6_nih5m"]
 [ext_resource type="AudioStream" uid="uid://ce1mfxjxlk5gk" path="res://parallax/хтонь.mp3" id="8_rti6f"]
 
 [node name="MainMenu" type="Control"]
@@ -98,6 +99,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_nih5m")
 theme_override_font_sizes/font_size = 50
 text = "START GAME"
 script = ExtResource("2_kgnwx")
@@ -118,6 +120,7 @@ offset_right = 200.0
 offset_bottom = 345.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_nih5m")
 theme_override_font_sizes/font_size = 50
 text = "OPTIONS"
 script = ExtResource("3_j5uo2")

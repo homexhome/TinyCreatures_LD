@@ -12,5 +12,4 @@ func print_name():
 	print(name)
 
 func _on_pressed():
-	Session.remove_bones(bone_cost)
 	ui.active_monster_button_set(self)

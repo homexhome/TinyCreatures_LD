@@ -14,6 +14,8 @@ func _physics_process(delta: float) -> void:
 	var window_size = DisplayServer.window_get_size()
 	var viewport = get_viewport()
 	var mouse_position = viewport.get_mouse_position()
+	if Session.blocked:
+		mesh_to_take.hide()
 	#print("Mouse : ", mouse_position, "window size : ", window_size)
 	if (mouse_position.x < 0 or mouse_position.x > window_size.x or
 			mouse_position.y < 0 or mouse_position.y > window_size.y):
@@ -44,6 +46,8 @@ func _physics_process(delta: float) -> void:
 			mesh_to_take.hide()
 		
 func _input(event: InputEvent) -> void:
+	if Session.blocked:
+		return
 	if mesh_to_take.visible and event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			ui.monster_spawn_from_button(mouse_position_3D)
