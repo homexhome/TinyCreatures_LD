@@ -32,10 +32,8 @@ func move_camera_with_mouse(delta):
 		path_follow.progress += delta * camera_speed
 	if Input.is_action_pressed("ui_down"):
 		path_follow.progress -= delta * camera_speed
-
-@export var scroll_speed : float = 0.1
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_UP:
-		path_follow.progress += scroll_speed
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-		path_follow.progress -= scroll_speed
+	if Input.is_action_just_released("scroll_up"):
+		path_follow.progress += delta * camera_speed
+	if Input.is_action_just_released("scroll_down"):
+		path_follow.progress -= delta * camera_speed
+		
