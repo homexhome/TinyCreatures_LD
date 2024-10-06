@@ -51,6 +51,8 @@ func stop():
 
 var max_distance_to_nav_target : float = 2
 func pick_destination():
+	if is_instance_valid(character.current_target) == false:
+		target_movement = false
 	if target_movement or is_instance_valid(character.current_target): return
 	if !character.is_in_group("Attackers"): return
 	if character.global_position.distance_squared_to(current_path_pos) <= max_distance_to_nav_target * max_distance_to_nav_target:

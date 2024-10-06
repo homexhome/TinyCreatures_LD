@@ -74,4 +74,3 @@ func check_controller(type : CONTROLLER_TYPE):
 
 func set_current_target(target):
 	current_target = target
-	print("set target ",target)
