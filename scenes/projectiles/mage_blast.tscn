@@ -38,8 +38,10 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_c1heb")
 size = Vector2(0.3, 0.3)
 
-[node name="MageBlast" type="Node3D"]
+[node name="MageBlast" type="Node3D" node_paths=PackedStringArray("particles", "area")]
 script = ExtResource("1_krjn1")
+particles = NodePath("GPUParticles3D")
+area = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
@@ -52,6 +54,7 @@ shape = SubResource("CylinderShape3D_ngvcy")
 emitting = false
 amount = 16
 lifetime = 2.0
+one_shot = true
 explosiveness = 1.0
 randomness = 0.1
 local_coords = true

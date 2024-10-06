@@ -1,20 +1,22 @@
-[gd_scene load_steps=12 format=4 uid="uid://pbm2gkqj1i6l"]
+[gd_scene load_steps=13 format=4 uid="uid://4cp5qnbsbf0b"]
 
-[ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_5hkm0"]
-[ext_resource type="Script" path="res://resources/character_stats.gd" id="2_v0ory"]
-[ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="3_sxm1n"]
-[ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="4_hr3ei"]
-[ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="5_h7i0n"]
+[ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_snmm4"]
+[ext_resource type="PackedScene" uid="uid://b78d1ajo7if0k" path="res://scenes/projectiles/arrow_projectile.tscn" id="2_n4rx6"]
+[ext_resource type="Script" path="res://resources/character_stats.gd" id="2_yhsf5"]
+[ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="3_f4kbd"]
+[ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="4_53gcv"]
+[ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="5_5170c"]
 
 [sub_resource type="Resource" id="Resource_l761b"]
-script = ExtResource("2_v0ory")
-type = 0
+script = ExtResource("2_yhsf5")
+type = 1
 max_health = 100.0
 attack_damage = 20.0
 movement_speed = 0.3
 attack_speed = 3.0
 cast_speed = 3.0
-minimum_distance_to_attack = 0.5
+minimum_distance_to_attack = 3.0
+projectile_scene = ExtResource("2_n4rx6")
 recieving_close_combat_damage_modifier = 1.0
 recieving_archer_damage_modifier = 1.0
 recieving_magic_damage_modifier = 1.0
@@ -62,7 +64,7 @@ radius = 5.0
 [node name="Scene" type="CharacterBody3D" groups=["Defenders"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_5hkm0")
+script = ExtResource("1_snmm4")
 character_stats = SubResource("Resource_l761b")
 
 [node name="Cube003" type="MeshInstance3D" parent="."]
@@ -74,10 +76,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_5ckwn")
 
 [node name="Health" type="Node3D" parent="."]
-script = ExtResource("3_sxm1n")
+script = ExtResource("3_f4kbd")
 
 [node name="Attack" type="Node3D" parent="." node_paths=PackedStringArray("melee_area", "agressive_area", "projectile_start_path")]
-script = ExtResource("4_hr3ei")
+script = ExtResource("4_53gcv")
 melee_area = NodePath("MeleeAttackArea")
 agressive_area = NodePath("AgressiveArea")
 projectile_start_path = NodePath("../ProjectileStartPlace")
@@ -102,7 +104,7 @@ shape = SubResource("CylinderShape3D_0ga5v")
 autostart = true
 
 [node name="Movement" type="Node3D" parent="."]
-script = ExtResource("5_h7i0n")
+script = ExtResource("5_5170c")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Movement"]
 debug_enabled = true

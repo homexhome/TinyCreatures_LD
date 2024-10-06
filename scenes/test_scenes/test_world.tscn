@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=17 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="1_erffx"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gilvy"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bimlqd0cjgbeh" path="res://scenes/test_scenes/Skeleton.tscn" id="4_78m61"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="4_waaly"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="6_xkoya"]
-[ext_resource type="PackedScene" uid="uid://pbm2gkqj1i6l" path="res://scenes/test_scenes/Skeleton_defender.tscn" id="7_sxau2"]
+[ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="7_hc38v"]
+[ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="8_w6j7m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hopr2"]
 albedo_color = Color(0.169245, 0.169245, 0.169245, 1)
@@ -176,13 +177,40 @@ script = ExtResource("4_waaly")
 mesh_to_inst = ExtResource("4_78m61")
 ui = NodePath("../../..")
 
+[node name="Button3" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("6_xkoya")
+icon = SubResource("ViewportTexture_vmhh0")
+script = ExtResource("4_waaly")
+mesh_to_inst = ExtResource("4_78m61")
+ui = NodePath("../../..")
+
+[node name="Button4" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("6_xkoya")
+icon = SubResource("ViewportTexture_vmhh0")
+script = ExtResource("4_waaly")
+mesh_to_inst = ExtResource("4_78m61")
+ui = NodePath("../../..")
+
 [node name="Button2" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 theme = ExtResource("6_xkoya")
 icon = SubResource("ViewportTexture_vmhh0")
 script = ExtResource("4_waaly")
-mesh_to_inst = ExtResource("7_sxau2")
+mesh_to_inst = ExtResource("7_hc38v")
+ui = NodePath("../../..")
+
+[node name="Button5" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("6_xkoya")
+icon = SubResource("ViewportTexture_vmhh0")
+script = ExtResource("4_waaly")
+mesh_to_inst = ExtResource("8_w6j7m")
 ui = NodePath("../../..")
 
 [node name="Mobs" type="Node3D" parent="."]

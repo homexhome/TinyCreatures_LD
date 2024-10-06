@@ -13,7 +13,9 @@ var minimum_distance_to_attack : float = 1
 
 @export var melee_area : Area3D = null
 @export var agressive_area : Area3D 
+var projectile : PackedScene = null
 
+@export var projectile_start_path : Node3D
 var current_target : Character
 
 func initialize():
@@ -24,8 +26,13 @@ func initialize():
 	cast_speed = char_stats.cast_speed
 	minimum_distance_to_attack = char_stats.minimum_distance_to_attack
 	attack_damage = char_stats.attack_damage
+	projectile = char_stats.projectile_scene
 	if type == CharacterStats.COMBAT_TYPE.CLOSE_COMBAT and melee_area == null:
 		push_error("Melee character doest have damage area")
+	if type == CharacterStats.COMBAT_TYPE.ARCHER and projectile == null:
+		push_error("Projectile doesn't exists for archer")
+	if type == CharacterStats.COMBAT_TYPE.ARCHER and projectile_start_path == null:
+		push_error("Projectile start path doesn't exists for archer")
 	if melee_area != null:
 		melee_area.monitoring = true
 	check_for_target()
@@ -79,6 +86,10 @@ func attack():
 	if attack_cooldown > 0: return
 	if type == CharacterStats.COMBAT_TYPE.CLOSE_COMBAT:
 		area_attack(melee_area)
+	if type == CharacterStats.COMBAT_TYPE.ARCHER or type == CharacterStats.COMBAT_TYPE.MAGE:
+		var proj = projectile.instantiate()
+		Projectiles.add_child(proj)
+		proj.setup_projectile(current_target, type,attack_damage, character, projectile_start_path.global_position)
 	attack_cooldown = attack_speed
 	
 

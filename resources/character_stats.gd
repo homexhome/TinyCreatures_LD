@@ -10,7 +10,11 @@ enum COMBAT_TYPE {CLOSE_COMBAT, ARCHER, MAGE}
 @export var cast_speed : float = 3 
 
 @export var minimum_distance_to_attack : float = 1
+@export var projectile_scene : PackedScene
 @export_group("Recieving Combat Damage Modifiers")
 @export var recieving_close_combat_damage_modifier : float = 1.0
 @export var recieving_archer_damage_modifier : float = 1.0
 @export var recieving_magic_damage_modifier : float = 1.0
+
+
+

@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://b78d1ajo7if0k"]
+[gd_scene load_steps=3 format=3 uid="uid://b78d1ajo7if0k"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/arrow_projectile.gd" id="1_cb08h"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ktmgf"]
+radius = 0.1
+height = 0.185
 
 [node name="ArrowProjectile" type="Node3D"]
+script = ExtResource("1_cb08h")
+speed = 4.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ktmgf")
