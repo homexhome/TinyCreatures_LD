@@ -1,6 +1,28 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bgyun6who488h"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bgyun6who488h"]
 
+[ext_resource type="Texture2D" uid="uid://bji86xwrvuida" path="res://imports/texture_import/ui_import/кнопка.png" id="1_2cq14"]
 [ext_resource type="FontFile" uid="uid://gbiwn84mtw74" path="res://fonts/Burlesk-Regular.ttf" id="1_jfpsc"]
+[ext_resource type="Texture2D" uid="uid://dqgqx4w152fd5" path="res://imports/texture_import/ui_import/кнопка2.png" id="2_exlth"]
+[ext_resource type="Texture2D" uid="uid://i81l6v7ky033" path="res://imports/texture_import/ui_import/окно меню.png" id="3_vnp7h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sryx3"]
+texture = ExtResource("1_2cq14")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_umwb5"]
+texture = ExtResource("2_exlth")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27s6d"]
+texture = ExtResource("1_2cq14")
+modulate_color = Color(0.494799, 0.42577, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cegwc"]
+texture = ExtResource("3_vnp7h")
+texture_margin_left = 435.0
 
 [resource]
 default_font = ExtResource("1_jfpsc")
+Button/constants/outline_size = 0
+Button/styles/hover = SubResource("StyleBoxTexture_sryx3")
+Button/styles/normal = SubResource("StyleBoxTexture_umwb5")
+Button/styles/pressed = SubResource("StyleBoxTexture_27s6d")
+Panel/styles/panel = SubResource("StyleBoxTexture_cegwc")
