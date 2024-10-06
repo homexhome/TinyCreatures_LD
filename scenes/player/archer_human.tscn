@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpibfs6x3rlb1"]
+
+[ext_resource type="PackedScene" uid="uid://b6ohc5y44pfki" path="res://imports/character_import/ArcherHuman.glb" id="1_4atau"]
+
+[node name="ArcherHuman" instance=ExtResource("1_4atau")]
