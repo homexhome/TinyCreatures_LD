@@ -21,6 +21,7 @@ ValidityChecker="*res://autoloads/validity_checker.gd"
 Projectiles="*res://autoloads/projectiles.tscn"
 GameOptions="*res://autoloads/game_options.tscn"
 GameManager="*res://autoloads/game_manager.gd"
+Session="*res://autoloads/session.gd"
 
 [display]
 

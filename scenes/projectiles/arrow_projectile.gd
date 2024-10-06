@@ -4,7 +4,9 @@ var activated : bool = false
 
 func _process(delta):
 	if !initialized: return
-	if !is_instance_valid(target): queue_free()
+	if !is_instance_valid(target): 
+		queue_free()
+		return
 	if activated: return
 	if global_position.distance_squared_to(target.global_position) >= 0.1 :
 		global_position = global_position.lerp(target.global_position,speed * delta)

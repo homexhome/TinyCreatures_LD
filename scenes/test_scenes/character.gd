@@ -65,6 +65,12 @@ var dying : bool = false
 func death():
 	on_death_signal.emit()
 	dying = true
+	
+	if is_in_group("Attackers"):
+		Session.add_bones(100)
+	else:
+		Session.add_bones(50)
+		
 	animation_player.play(anim_lib_name+"death")
 
 func take_damage(damage : float, damage_owner : Character, _attack_type : CharacterStats.COMBAT_TYPE):

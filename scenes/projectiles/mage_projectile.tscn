@@ -1,18 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn7231wsn2w5k"]
+[gd_scene load_steps=5 format=3 uid="uid://bn7231wsn2w5k"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/arrow_projectile.gd" id="1_spbpt"]
 [ext_resource type="PackedScene" uid="uid://ck22n330fju4f" path="res://scenes/projectiles/mage_blast.tscn" id="2_pwbv6"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_ktmgf"]
-radius = 0.1
-height = 0.185
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pepli"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.219608, 1, 0.321569)
+emission_enabled = true
+emission = Color(0.746585, 9.3855e-07, 4.81307e-07, 1)
+emission_energy_multiplier = 3.59
+
+[sub_resource type="SphereMesh" id="SphereMesh_si4t2"]
+material = SubResource("StandardMaterial3D_pepli")
+radius = 0.3
+height = 0.2
 
 [node name="ArrowProjectile" type="Node3D" node_paths=PackedStringArray("area_on_target_impact")]
 script = ExtResource("1_spbpt")
 area_on_target_impact = NodePath("MageBlast")
 speed = 4.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_ktmgf")
-
 [node name="MageBlast" parent="." instance=ExtResource("2_pwbv6")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_si4t2")
