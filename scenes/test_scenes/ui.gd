@@ -8,6 +8,7 @@ var active_monster_button : MonsterButton
 func monster_spawn_from_button(target_pos : Vector3):
 	if is_instance_valid(active_monster_button) == false: return
 	if active_monster_button.mesh_to_inst != null:
+		Session.remove_bones(active_monster_button.bone_cost)
 		var new_mob = active_monster_button.mesh_to_inst.instantiate()
 		place_to_load.add_child(new_mob)
 		new_mob.global_position = target_pos

@@ -1,8 +1,9 @@
-[gd_scene load_steps=74 format=4 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=75 format=4 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/test_world.gd" id="1_brk7t"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="2_w5nye"]
+[ext_resource type="Script" path="res://scenes/test_scenes/test_panel.gd" id="4_52t31"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="4_nnfht"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="5_4ld7p"]
 [ext_resource type="PackedScene" uid="uid://pbm2gkqj1i6l" path="res://scenes/test_scenes/Skeleton_defender.tscn" id="6_n2lj1"]
@@ -303,14 +304,12 @@ albedo_texture = ExtResource("16_mw4bo")
 material = SubResource("StandardMaterial3D_defbk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awnbg"]
-transparency = 1
 albedo_texture = ExtResource("17_nqkna")
 
 [sub_resource type="QuadMesh" id="QuadMesh_hul7l"]
 material = SubResource("StandardMaterial3D_awnbg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqakr"]
-transparency = 1
 albedo_texture = ExtResource("13_abg1y")
 
 [sub_resource type="QuadMesh" id="QuadMesh_omvqn"]
@@ -435,6 +434,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="Panel" type="Panel" parent="UI/Control"]
+layout_mode = 0
+offset_left = 1641.0
+offset_top = 90.0
+offset_right = 1897.0
+offset_bottom = 994.0
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+script = ExtResource("4_52t31")
+
 [node name="Warrior" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
@@ -503,6 +512,7 @@ visible = false
 mesh = SubResource("BoxMesh_pl3og")
 
 [node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 0
 offset_left = 1769.0
 offset_top = 318.0
 offset_right = 1879.0
@@ -515,6 +525,7 @@ theme_override_font_sizes/font_size = 70
 text = "100"
 
 [node name="Label2" type="Label" parent="UI/Control"]
+layout_mode = 0
 offset_left = 1787.0
 offset_top = 581.0
 offset_right = 1897.0
@@ -527,6 +538,7 @@ theme_override_font_sizes/font_size = 70
 text = "80"
 
 [node name="Label3" type="Label" parent="UI/Control"]
+layout_mode = 0
 offset_left = 1787.0
 offset_top = 841.0
 offset_right = 1897.0
@@ -549,7 +561,7 @@ theme_override_constants/shadow_offset_x = 110
 theme_override_constants/shadow_offset_y = 215
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 80
-text = "BONES : 100"
+text = "BONES : 1000"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("11_lpkmg")
@@ -618,12 +630,7 @@ mesh = SubResource("QuadMesh_5l2fy")
 skeleton = NodePath("../..")
 
 [node name="BG2" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(43.2601, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 15.9217, 4.78243, -13.6461)
-mesh = SubResource("QuadMesh_7ta8b")
-skeleton = NodePath("../..")
-
-[node name="BG13" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(43.2601, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 9.32568, -4.26488, -10.6084)
+transform = Transform3D(34.1838, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 20.0157, 4.78243, -13.6461)
 mesh = SubResource("QuadMesh_7ta8b")
 skeleton = NodePath("../..")
 
@@ -633,7 +640,7 @@ mesh = SubResource("QuadMesh_wnh86")
 skeleton = NodePath("../BG4")
 
 [node name="BG4" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.00422, 7.36029, -14.8852)
+transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.3366, 7.36029, -14.3636)
 mesh = SubResource("QuadMesh_wuxfk")
 skeleton = NodePath("../BG5")
 
@@ -648,25 +655,17 @@ mesh = SubResource("QuadMesh_hul7l")
 skeleton = NodePath("../MeshInstance3D5")
 
 [node name="BG7" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(-59.0202, -0.160077, 0, 0.415178, -10.2677, 2.61435, -0.457877, 11.3237, 2.37054, 16.6037, -5.78627, -11.9933)
-visible = false
-layers = 4
-mesh = SubResource("QuadMesh_omvqn")
-skeleton = NodePath("../..")
-
-[node name="BG11" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(-59.0202, -0.160077, 0, 0.618081, -15.2857, 0, 0, 0, 3.52906, 16.6037, 1.52304, -38.9912)
-layers = 4
+transform = Transform3D(-59.3267, -0.271267, -0.0439394, 0.436975, -6.33526, 1.32327, -2.25161, 5.918, 1.41455, 16.6037, -2.86335, -10.9901)
 mesh = SubResource("QuadMesh_omvqn")
 skeleton = NodePath("../..")
 
 [node name="BG8" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(21.3872, 0, 0, 0, 27.2908, 0, 0, 0, 33.5715, 21.9674, 7.20252, -18.5462)
+transform = Transform3D(24.461, 0, 0, 0, 29.2054, 0, 0, 0, 33.5715, 19.9952, 7.92947, -16.291)
 mesh = SubResource("QuadMesh_b3y15")
 skeleton = NodePath("../Background")
 
 [node name="BG9" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 10.4928, 3.71415, -25.9671)
+transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 11.4297, 3.08265, -25.9671)
 mesh = SubResource("QuadMesh_0ditu")
 skeleton = NodePath("../Background")
 
