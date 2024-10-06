@@ -71,9 +71,15 @@ func check_for_target():
 				current_target = body
 				
 var rotation_speed = 10
+
 func update_rotation(delta):
-	character.transform = character.transform.interpolate_with(character.transform.looking_at(current_target.global_position), rotation_speed * delta)
+	#character.transform = character.transform.interpolate_with(character.transform.looking_at(current_target.global_position), rotation_speed * delta)
 	#character.look_at(current_target.global_position)
+	#character.rotation.x = 0
+	#character.rotation.z = 0
+	#character.rotation.y = lerp_angle( character.rotation.y, atan2( current_target.global_position.x, current_target.global_position.z ), delta * rotation_speed )
+	var desired_rotation_y = -atan2(current_target.global_position.x - character.global_position.x,current_target.global_position.z - character.global_position.z)
+	character.rotation.y = lerp_angle(character.rotation.y, desired_rotation_y, rotation_speed * delta)
 
 func validate_target(target: Character):
 	if character.is_in_group("Defenders") and target.is_in_group("Attackers"):

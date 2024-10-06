@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=16 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="1_erffx"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gilvy"]
@@ -8,16 +8,8 @@
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="6_xkoya"]
 [ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="7_hc38v"]
 [ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="8_w6j7m"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hopr2"]
-albedo_color = Color(0.169245, 0.169245, 0.169245, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_sg5fm"]
-material = SubResource("StandardMaterial3D_hopr2")
-size = Vector2(50, 50)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_174cp"]
-data = PackedVector3Array(25, -25, 0, -25, -25, 0, 25, 25, 0, -25, -25, 0, -25, 25, 0, 25, 25, 0)
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/level_scene.tscn" id="9_5kcx0"]
+[ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_ly754"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
@@ -35,82 +27,15 @@ ambient_light_color = Color(0.943109, 0.774977, 0.946805, 1)
 [sub_resource type="ViewportTexture" id="ViewportTexture_vmhh0"]
 viewport_path = NodePath("UI/SubViewport")
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_kmdqr"]
-vertices = PackedVector3Array(-24.8022, 0.499999, -24.6068, -24.8022, 0.499999, 24.3932, 24.1978, 0.499999, 24.3932, 24.1978, 0.499999, -24.6068)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-geometry_source_geometry_mode = 1
-
 [sub_resource type="Curve3D" id="Curve3D_sv3w4"]
 bake_interval = 125.2
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 6.03188, -0.31185, 0, 0, 0, 0, 0, 0, 0, 6.70909, -1.68885, 0, 0, 0, 0, 0, 0, 0, 7.04769, -3.42702, 0, 0, 0, 0, 0, 0, 0, 7.04769, -5.27807, 0, 0, 0, 0, 0, 0, 0, 6.77681, -6.92595),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 6.03188, -0.31185, 0, 0, 0, 0, 0, 0, 0, 6.70909, -1.68885, 0, 0, 0, 0, 0, 0, 0, 7.65718, -4.01394, 0, 0, 0, 0, 0, 0, 0, 8.22153, -8.55126, 0, 0, 0, 0, 0, 0, 0, 6.77681, -13.2917),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
 [node name="test_world" type="Node3D"]
-
-[node name="level" type="Node3D" parent="."]
-
-[node name="BG" type="CSGBox3D" parent="level"]
-transform = Transform3D(2.33209, 6.50703e-08, 0, -8.01848e-09, 0.0528401, -0.998603, -1.51538e-07, 0.998603, 0.0528401, -3.3104, -1.10075e-08, -5.56913)
-size = Vector3(24.5209, 0.2, 10)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -1.01003, 0, -2.23928)
-use_collision = true
-size = Vector3(17.1196, 0.2, 0.888184)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -0.997208, 0, 0.219791)
-use_collision = true
-size = Vector3(16.8181, 0.2, 0.888184)
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -1.0272, 0, -0.984)
-use_collision = true
-size = Vector3(16.9933, 0.2, 0.888184)
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.220309, 0, 0.261716, 0, 1, 0, -0.134862, 0, 0.427534, -6.14847, -0.000990152, -0.474978)
-use_collision = true
-size = Vector3(11.5117, 0.2, 0.888184)
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="level"]
-transform = Transform3D(0.220309, 0, 0.261716, 0, 1, 0, -0.134862, 0, 0.427534, 2.27619, -0.000990152, -0.362433)
-use_collision = true
-size = Vector3(11.5117, 0.2, 0.888184)
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="level"]
-transform = Transform3D(-0.241401, 0, 0.178384, 0, 1, 0, -0.0919213, 0, -0.468465, -2.82202, -0.000990152, -1.6058)
-use_collision = true
-size = Vector3(11.5117, 0.2, 0.888184)
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="level"]
-transform = Transform3D(-0.231198, 0, 0.22356, 0, 1, 0, -0.115201, 0, -0.448666, -1.38872, -0.000990152, -0.288386)
-use_collision = true
-size = Vector3(11.5117, 0.2, 0.888184)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, -1, 0, 3.13)
-use_collision = true
-size = Vector3(5.97546, 0.2, 0.888184)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 0.0528401, -0.798882, 0, 0.998603, 0.0422721, 5.47401, 0, -0.95619)
-visible = false
-size = Vector3(10, 0.2, 10)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="level"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="level/StaticBody3D" groups=["navigation_mesh_source_group"]]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.302165, 0, -0.106842)
-mesh = SubResource("QuadMesh_sg5fm")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.302165, 0, -0.106842)
-shape = SubResource("ConcavePolygonShape3D_174cp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("mesh_to_take", "camera", "ui")]
 mesh = SubResource("SphereMesh_hrlki")
@@ -215,11 +140,8 @@ ui = NodePath("../../..")
 
 [node name="Mobs" type="Node3D" parent="."]
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_kmdqr")
-
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03839, 3.72742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.586918, 6.82002)
 curve = SubResource("Curve3D_sv3w4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
@@ -232,6 +154,13 @@ current = true
 fov = 75.1
 size = 8.001
 script = ExtResource("1_erffx")
+max_x = 25.0
 min_x = -5.0
 path_follow = NodePath("..")
 path = NodePath("../..")
+
+[node name="LevelScene" parent="." instance=ExtResource("9_5kcx0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="NavMesh" parent="LevelScene" groups=["navigation_mesh_source_group"] instance=ExtResource("10_ly754")]
+visible = false
