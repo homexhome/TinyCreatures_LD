@@ -114,12 +114,14 @@ albedo_texture = ExtResource("16_mw4bo")
 material = SubResource("StandardMaterial3D_defbk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awnbg"]
+transparency = 1
 albedo_texture = ExtResource("17_nqkna")
 
 [sub_resource type="QuadMesh" id="QuadMesh_hul7l"]
 material = SubResource("StandardMaterial3D_awnbg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqakr"]
+transparency = 1
 albedo_texture = ExtResource("13_abg1y")
 
 [sub_resource type="QuadMesh" id="QuadMesh_omvqn"]
@@ -263,7 +265,12 @@ mesh = SubResource("QuadMesh_5l2fy")
 skeleton = NodePath("../..")
 
 [node name="BG2" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(34.1838, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 20.0157, 4.78243, -13.6461)
+transform = Transform3D(43.2601, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 15.9217, 4.78243, -13.6461)
+mesh = SubResource("QuadMesh_7ta8b")
+skeleton = NodePath("../..")
+
+[node name="BG13" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(43.2601, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 9.32568, -4.26488, -10.6084)
 mesh = SubResource("QuadMesh_7ta8b")
 skeleton = NodePath("../..")
 
@@ -273,7 +280,7 @@ mesh = SubResource("QuadMesh_wnh86")
 skeleton = NodePath("../BG4")
 
 [node name="BG4" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.3366, 7.36029, -14.3636)
+transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.00422, 7.36029, -14.8852)
 mesh = SubResource("QuadMesh_wuxfk")
 skeleton = NodePath("../BG5")
 
@@ -288,17 +295,25 @@ mesh = SubResource("QuadMesh_hul7l")
 skeleton = NodePath("../MeshInstance3D5")
 
 [node name="BG7" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(-59.3267, -0.271267, -0.0439394, 0.436975, -6.33526, 1.32327, -2.25161, 5.918, 1.41455, 16.6037, -2.86335, -10.9901)
+transform = Transform3D(-59.0202, -0.160077, 0, 0.415178, -10.2677, 2.61435, -0.457877, 11.3237, 2.37054, 16.6037, -5.78627, -11.9933)
+visible = false
+layers = 4
+mesh = SubResource("QuadMesh_omvqn")
+skeleton = NodePath("../..")
+
+[node name="BG11" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(-59.0202, -0.160077, 0, 0.618081, -15.2857, 0, 0, 0, 3.52906, 16.6037, 1.52304, -38.9912)
+layers = 4
 mesh = SubResource("QuadMesh_omvqn")
 skeleton = NodePath("../..")
 
 [node name="BG8" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(24.461, 0, 0, 0, 29.2054, 0, 0, 0, 33.5715, 19.9952, 7.92947, -16.291)
+transform = Transform3D(21.3872, 0, 0, 0, 27.2908, 0, 0, 0, 33.5715, 21.9674, 7.20252, -18.5462)
 mesh = SubResource("QuadMesh_b3y15")
 skeleton = NodePath("../Background")
 
 [node name="BG9" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 11.4297, 3.08265, -25.9671)
+transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 10.4928, 3.71415, -25.9671)
 mesh = SubResource("QuadMesh_0ditu")
 skeleton = NodePath("../Background")
 
