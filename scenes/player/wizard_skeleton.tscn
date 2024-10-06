@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://t6vk8rlohevo"]
+[gd_scene load_steps=2 format=3 uid="uid://pa6ysprwfnxw"]
 
 [ext_resource type="PackedScene" uid="uid://bd2wpb4rwgyjt" path="res://imports/character_import/WizardSkeleton.glb" id="1_aeacw"]
 
