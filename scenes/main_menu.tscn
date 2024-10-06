@@ -40,7 +40,7 @@ text = "ШКЕЛЕТОН ГЕЙМ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartGameButton" type="Button" parent="."]
+[node name="StartGameButton" type="Button" parent="." node_paths=PackedStringArray("loading_screen")]
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -58,6 +58,7 @@ theme_override_font_sizes/font_size = 50
 text = "START GAME"
 script = ExtResource("2_kgnwx")
 scene_to_load = "res://scenes/test_scenes/world.tscn"
+loading_screen = NodePath("../LoadingScreen")
 
 [node name="OptionsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(400, 200)
@@ -76,3 +77,37 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "OPTIONS"
 script = ExtResource("3_j5uo2")
+
+[node name="LoadingScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="LoadingScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LoadingScreen/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.5
+offset_right = 20.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+text = "LOADING..."

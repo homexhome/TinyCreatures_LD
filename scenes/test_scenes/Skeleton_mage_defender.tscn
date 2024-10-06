@@ -131,32 +131,7 @@ _data = {
 "RESET": SubResource("Animation_8j8ij")
 }
 
-[sub_resource type="Animation" id="Animation_nei8m"]
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.488692, 0, 0), Vector3(-0.488692, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visual:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.105), Vector3(0, 0, 0)]
-}
+[sub_resource type="Animation" id="Animation_a6t82"]
 
 [sub_resource type="Animation" id="Animation_mq015"]
 tracks/0/type = "value"
@@ -184,7 +159,32 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0.235, 0), Vector3(0, 0.36, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_a6t82"]
+[sub_resource type="Animation" id="Animation_nei8m"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.488692, 0, 0), Vector3(-0.488692, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.105), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mkqyn"]
 _data = {
@@ -239,7 +239,6 @@ script = ExtResource("6_7qfss")
 animation_player = NodePath("../AnimationPlayer")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Movement"]
-debug_enabled = true
 
 [node name="ProjectileStartPlace" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564291, -0.300079)
