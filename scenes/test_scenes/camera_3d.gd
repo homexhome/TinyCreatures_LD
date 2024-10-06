@@ -4,6 +4,11 @@ extends Camera3D
 @export var max_x : float = 5
 @export var min_x : float = -25
 @export var camera_speed : float = 10
+@export var camera_up_speed : float = 10
+
+@export var path_follow : PathFollow3D
+@export var path : Path3D
+
 func _process(delta):
 	move_camera_with_mouse(delta)
 
@@ -18,9 +23,14 @@ func move_camera_with_mouse(delta):
 	#rotation.y = clamp(current_rotation.y, deg_to_rad(-50), deg_to_rad(-10))
 	
 	if Input.is_action_pressed("ui_right"):
-		if global_position.x >= max_x : return
-		translate(Vector3.RIGHT * delta * camera_speed)
+		if path.global_position.x >= max_x : return
+		path.translate(Vector3.RIGHT * delta * camera_speed)
 	if Input.is_action_pressed("ui_left"):
-		if global_position.x <= min_x : return
-		translate(Vector3.LEFT * delta * camera_speed)
+		if path.global_position.x <= min_x : return
+		path.translate(Vector3.LEFT * delta * camera_speed)
+	if Input.is_action_pressed("ui_up"):
+		path_follow.progress += delta * camera_speed
+	if Input.is_action_pressed("ui_down"):
+		path_follow.progress -= delta * camera_speed
+		
 		

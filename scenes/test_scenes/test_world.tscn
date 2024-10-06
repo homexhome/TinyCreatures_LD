@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=18 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="1_erffx"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gilvy"]
@@ -39,6 +39,14 @@ viewport_path = NodePath("UI/SubViewport")
 vertices = PackedVector3Array(-24.8022, 0.499999, -24.6068, -24.8022, 0.499999, 24.3932, 24.1978, 0.499999, 24.3932, 24.1978, 0.499999, -24.6068)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 geometry_source_geometry_mode = 1
+
+[sub_resource type="Curve3D" id="Curve3D_sv3w4"]
+bake_interval = 125.2
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 6.03188, -0.31185, 0, 0, 0, 0, 0, 0, 0, 6.70909, -1.68885, 0, 0, 0, 0, 0, 0, 0, 7.04769, -3.42702, 0, 0, 0, 0, 0, 0, 0, 7.04769, -5.27807, 0, 0, 0, 0, 0, 0, 0, 6.77681, -6.92595),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="test_world" type="Node3D"]
 
@@ -104,19 +112,11 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.302165, 0, -0.106842)
 shape = SubResource("ConcavePolygonShape3D_174cp")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.3485, 6.055, 3.12667)
-current = true
-fov = 75.1
-size = 8.001
-script = ExtResource("1_erffx")
-min_x = -5.0
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("mesh_to_take", "camera", "ui")]
 mesh = SubResource("SphereMesh_hrlki")
 script = ExtResource("1_gilvy")
 mesh_to_take = NodePath(".")
-camera = NodePath("../Camera3D")
+camera = NodePath("../Path3D/PathFollow3D/Camera3D")
 ui = NodePath("../UI")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -217,3 +217,21 @@ ui = NodePath("../../..")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_kmdqr")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03839, 3.72742)
+curve = SubResource("Curve3D_sv3w4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 0.897349, -0.441319, 0, 0.441319, 0.897349, 0, 6.03188, -0.31185)
+loop = false
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" node_paths=PackedStringArray("path_follow", "path")]
+transform = Transform3D(1, 0, 0, 0, 0.322462, 0.946582, 0, -0.946582, 0.322462, 0, 0, 0)
+current = true
+fov = 75.1
+size = 8.001
+script = ExtResource("1_erffx")
+min_x = -5.0
+path_follow = NodePath("..")
+path = NodePath("../..")

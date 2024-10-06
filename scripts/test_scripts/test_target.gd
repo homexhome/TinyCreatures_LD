@@ -18,11 +18,11 @@ func _physics_process(delta: float) -> void:
 	if (mouse_position.x < 0 or mouse_position.x > window_size.x or
 			mouse_position.y < 0 or mouse_position.y > window_size.y):
 				if mouse_position.x <= 0 :
-					if camera.global_position.x <= camera.min_x : return
-					camera.translate(Vector3.LEFT* delta * camera.camera_speed)
+					if camera.path.global_position.x <= camera.min_x : return
+					camera.path.translate(Vector3.LEFT* delta * camera.camera_speed)
 				elif mouse_position.x >= window_size.x:
-					if camera.global_position.x >= camera.max_x : return
-					camera.translate(Vector3.RIGHT * delta * camera.camera_speed)
+					if camera.path.global_position.x >= camera.max_x : return
+					camera.path.translate(Vector3.RIGHT * delta * camera.camera_speed)
 				return
 
 	if is_instance_valid(ui.active_monster_button):
