@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bb3s8i0g5t2mh"]
+[gd_scene load_steps=24 format=4 uid="uid://bb3s8i0g5t2mh"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_lkwy8"]
 [ext_resource type="PackedScene" uid="uid://bn7231wsn2w5k" path="res://scenes/projectiles/mage_projectile.tscn" id="2_m020j"]
@@ -125,6 +125,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_682x5"]
 _data = {
@@ -186,9 +198,26 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -0.105), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_7tw6s"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.025, 1.025, 1.025), Vector3(1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mkqyn"]
 _data = {
 "death": SubResource("Animation_a6t82"),
+"idle": SubResource("Animation_7tw6s"),
 "mage_attack": SubResource("Animation_mq015"),
 "walk": SubResource("Animation_nei8m")
 }

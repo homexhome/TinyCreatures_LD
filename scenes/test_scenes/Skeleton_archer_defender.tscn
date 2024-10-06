@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://4cp5qnbsbf0b"]
+[gd_scene load_steps=24 format=4 uid="uid://4cp5qnbsbf0b"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_snmm4"]
 [ext_resource type="PackedScene" uid="uid://b78d1ajo7if0k" path="res://scenes/projectiles/arrow_projectile.tscn" id="2_n4rx6"]
@@ -125,6 +125,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4jbl5"]
 _data = {
@@ -210,10 +222,27 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -0.0610865), Vector3(0, 0, 0), Vector3(0, 0, 0.113446), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_rtim0"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.024, 1.024, 1.024), Vector3(1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7v4u0"]
 _data = {
 "archer_attack": SubResource("Animation_o5x51"),
 "death": SubResource("Animation_n1ce6"),
+"idle": SubResource("Animation_rtim0"),
 "walk": SubResource("Animation_g4yo4")
 }
 

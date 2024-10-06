@@ -227,7 +227,7 @@ viewport_path = NodePath("UI/SubViewport3")
 [sub_resource type="Curve3D" id="Curve3D_sv3w4"]
 bake_interval = 125.2
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 6.03188, -0.31185, 0, 0, 0, 0, 0, 0, 0, 6.53899, -2.7876, 0, 0, 0, 0, 0, 0, 0, 5.90252, -6.42808, 0, 0, 0, 0, 0, 0, 0, 4.47009, -8.71872),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 6.03188, -0.31185, 0, 0, 0, 0, 0, 0, 0, 6.58833, -2.79524, 0, 0, 0, 0, 0, 0, 0, 6.38037, -6.50206, 0, 0, 0, 0, 0, 0, -0.421314, 4.58138, -10.521),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -471,17 +471,17 @@ ui = NodePath("../..")
 [node name="Mobs" type="Node3D" parent="."]
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.988228, -0.152986, 0, 0.152986, 0.988228, 0, 4.60876, 7.98048)
+transform = Transform3D(1, 0, 0, 0, 0.988228, -0.152986, 0, 0.152986, 0.988228, 0.165585, 3.03807, 10.1595)
 curve = SubResource("Curve3D_sv3w4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 0.979652, -0.200663, 0, 0.200663, 0.979652, 0, 6.03188, -0.31185)
+transform = Transform3D(1, 0, 0, 0, 0.975796, -0.218645, 0, 0.218645, 0.975796, 0, 6.03188, -0.31185)
 loop = false
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" node_paths=PackedStringArray("path_follow", "path")]
 transform = Transform3D(1, 0, 0, 0, 0.555457, 0.831555, 0, -0.831555, 0.555457, 0, 0, 0)
 current = true
-fov = 75.1
+fov = 55.0
 size = 8.001
 script = ExtResource("8_gp0kg")
 max_x = 35.0
