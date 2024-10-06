@@ -1,14 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=22 format=3 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="2_w5nye"]
 [ext_resource type="PackedScene" uid="uid://bimlqd0cjgbeh" path="res://scenes/test_scenes/Skeleton.tscn" id="3_i11hk"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="4_nnfht"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="5_4ld7p"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="6_1paby"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="7_0bdev"]
+[ext_resource type="PackedScene" uid="uid://pbm2gkqj1i6l" path="res://scenes/test_scenes/Skeleton_defender.tscn" id="6_vufao"]
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
-[ext_resource type="PackedScene" uid="uid://dthee126247on" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
 [ext_resource type="Texture2D" uid="uid://8y683p5o2reg" path="res://imports/texture_import/background.png" id="12_pkw7w"]
@@ -143,13 +142,22 @@ script = ExtResource("5_4ld7p")
 mesh_to_inst = ExtResource("3_i11hk")
 ui = NodePath("../../..")
 
+[node name="Button2" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("4_nnfht")
+icon = SubResource("ViewportTexture_vmhh0")
+script = ExtResource("5_4ld7p")
+mesh_to_inst = ExtResource("6_vufao")
+ui = NodePath("../../..")
+
 [node name="Button3" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 theme = ExtResource("4_nnfht")
 icon = SubResource("ViewportTexture_vmhh0")
 script = ExtResource("5_4ld7p")
-mesh_to_inst = ExtResource("3_i11hk")
+mesh_to_inst = ExtResource("6_vufao")
 ui = NodePath("../../..")
 
 [node name="Button4" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
@@ -158,25 +166,7 @@ layout_mode = 2
 theme = ExtResource("4_nnfht")
 icon = SubResource("ViewportTexture_vmhh0")
 script = ExtResource("5_4ld7p")
-mesh_to_inst = ExtResource("3_i11hk")
-ui = NodePath("../../..")
-
-[node name="Button2" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme = ExtResource("4_nnfht")
-icon = SubResource("ViewportTexture_vmhh0")
-script = ExtResource("5_4ld7p")
-mesh_to_inst = ExtResource("6_1paby")
-ui = NodePath("../../..")
-
-[node name="Button5" type="Button" parent="UI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme = ExtResource("4_nnfht")
-icon = SubResource("ViewportTexture_vmhh0")
-script = ExtResource("5_4ld7p")
-mesh_to_inst = ExtResource("7_0bdev")
+mesh_to_inst = ExtResource("6_vufao")
 ui = NodePath("../../..")
 
 [node name="Mobs" type="Node3D" parent="."]

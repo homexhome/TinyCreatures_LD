@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4bovgdvmubgg"]
+
+[ext_resource type="Script" path="res://autoloads/game_options.gd" id="1_6p7fo"]
+[ext_resource type="Script" path="res://autoloads/canvas_game_options.gd" id="1_41wsl"]
+[ext_resource type="Script" path="res://scripts/options/audio_slider.gd" id="2_u4h8u"]
+
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("game_options")]
+process_mode = 3
+visible = false
+script = ExtResource("1_41wsl")
+game_options = NodePath("GameOptions")
+
+[node name="GameOptions" type="Control" parent="."]
+process_mode = 3
+z_index = 10
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+script = ExtResource("1_6p7fo")
+
+[node name="Panel" type="Panel" parent="GameOptions"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+
+[node name="HSlider" type="HSlider" parent="GameOptions"]
+process_mode = 3
+z_index = 10
+offset_left = 376.0
+offset_top = 352.0
+offset_right = 903.0
+offset_bottom = 368.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("2_u4h8u")
+
+[node name="Label" type="Label" parent="GameOptions"]
+z_index = 10
+offset_left = 430.0
+offset_top = 294.0
+offset_right = 844.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 39
+text = "Sound"
+horizontal_alignment = 1
+vertical_alignment = 1
