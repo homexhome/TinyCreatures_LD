@@ -11,10 +11,10 @@
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_spawner.gd" id="8_hpgin"]
 [ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="8_uenqx"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
-[ext_resource type="PackedScene" uid="uid://h0i54cuo8r5b" path="res://scenes/test_scenes/Adventurer_archer_attacker.tscn" id="9_y4crk"]
+[ext_resource type="PackedScene" uid="uid://dthee126247on" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/Adventurer_archer_attacker.tscn" id="9_y4crk"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
-[ext_resource type="PackedScene" uid="uid://cdwcw8mm4cqsy" path="res://scenes/test_scenes/Adventurer_monk_attacker.tscn" id="10_yark5"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/Adventurer_monk_attacker.tscn" id="10_yark5"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_bones_label.gd" id="11_lpkmg"]
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="12_fidbp"]
@@ -623,61 +623,56 @@ curve = SubResource("Curve3D_860qd")
 [node name="Path3D3" type="Path3D" parent="NavigationMarks"]
 curve = SubResource("Curve3D_asxpc")
 
-[node name="Node" type="Node" parent="."]
+[node name="BG" type="Node" parent="."]
 
-[node name="Background" type="MeshInstance3D" parent="Node"]
+[node name="Background" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(0.0102097, 0, 0, 0, 0.0215295, 0, 0, 0, 0.0181764, 16.6037, 0.650646, -14.1539)
 mesh = SubResource("QuadMesh_5l2fy")
 skeleton = NodePath("../..")
 
-[node name="BG2" type="MeshInstance3D" parent="Node"]
+[node name="BG2" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(34.1838, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 20.0157, 4.78243, -13.6461)
 mesh = SubResource("QuadMesh_7ta8b")
 skeleton = NodePath("../..")
 
-[node name="BG3" type="MeshInstance3D" parent="Node"]
+[node name="BG3" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(56.6381, 0, 0, 0, 34.2777, 0, 0, 0, 20.963, 16.6037, 12.3767, -23.6891)
 mesh = SubResource("QuadMesh_wnh86")
 skeleton = NodePath("../BG4")
 
-[node name="BG4" type="MeshInstance3D" parent="Node"]
+[node name="BG4" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.3366, 7.36029, -14.3636)
 mesh = SubResource("QuadMesh_wuxfk")
 skeleton = NodePath("../BG5")
 
-[node name="BG5" type="MeshInstance3D" parent="Node"]
+[node name="BG5" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(43.9661, 0, 0, 0, 29.9567, 0, 0, 0, 29.9567, 6.66311, 5.11793, -22.7623)
 mesh = SubResource("QuadMesh_pomx8")
 skeleton = NodePath("../BG6")
 
-[node name="BG6" type="MeshInstance3D" parent="Node"]
+[node name="BG6" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(88.441, 0, 0, 0, 34.051, 0, 0, 0, 34.051, 16.6037, 3.08265, -32.0985)
 mesh = SubResource("QuadMesh_hul7l")
-skeleton = NodePath("../MeshInstance3D5")
+skeleton = NodePath("")
 
-[node name="BG7" type="MeshInstance3D" parent="Node"]
+[node name="BG7" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(-59.3267, -0.271267, -0.0439394, 0.436975, -6.33526, 1.32327, -2.25161, 5.918, 1.41455, 16.6037, -2.86335, -10.9901)
 mesh = SubResource("QuadMesh_omvqn")
 skeleton = NodePath("../..")
 
-[node name="BG8" type="MeshInstance3D" parent="Node"]
+[node name="BG8" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(24.461, 0, 0, 0, 29.2054, 0, 0, 0, 33.5715, 19.9952, 7.92947, -16.291)
 mesh = SubResource("QuadMesh_b3y15")
 skeleton = NodePath("../Background")
 
-[node name="BG9" type="MeshInstance3D" parent="Node"]
+[node name="BG9" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 11.4297, 3.08265, -25.9671)
 mesh = SubResource("QuadMesh_0ditu")
 skeleton = NodePath("../Background")
 
-[node name="BG10" type="MeshInstance3D" parent="Node"]
+[node name="BG10" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(102.317, 0, 0, 0, 26.1166, 0, 0, 0, 26.1166, 16.6037, 1.29366, -21.1584)
 mesh = SubResource("QuadMesh_cpxrg")
-skeleton = NodePath("../Background")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(0.0102097, 0, 0, 0, 0.0168688, 0, 0, 0, 0.0181764, 16.6037, 4.36078, -13.9739)
-visible = false
 skeleton = NodePath("../Background")
 
 [connection signal="pressed" from="UI/Control/Button" to="UI/Control/Button/Node3D" method="spawn_hostiles"]
