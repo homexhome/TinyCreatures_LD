@@ -1,30 +1,25 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=67 format=4 uid="uid://dvpglwl63g1gk"]
-=======
 [gd_scene load_steps=75 format=4 uid="uid://dvpglwl63g1gk"]
->>>>>>> Stashed changes
 
+[ext_resource type="Script" path="res://scenes/test_scenes/test_world.gd" id="1_brk7t"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="2_w5nye"]
+[ext_resource type="Script" path="res://scenes/test_scenes/test_panel.gd" id="4_52t31"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="4_nnfht"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="5_4ld7p"]
 [ext_resource type="PackedScene" uid="uid://pbm2gkqj1i6l" path="res://scenes/test_scenes/Skeleton_defender.tscn" id="6_n2lj1"]
 [ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="7_2sesb"]
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
+[ext_resource type="Script" path="res://scenes/test_scenes/test_spawner.gd" id="8_hpgin"]
 [ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="8_uenqx"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
-[ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
-=======
 [ext_resource type="PackedScene" uid="uid://dthee126247on" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
 [ext_resource type="PackedScene" path="res://scenes/test_scenes/Adventurer_archer_attacker.tscn" id="9_y4crk"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
 [ext_resource type="PackedScene" path="res://scenes/test_scenes/Adventurer_monk_attacker.tscn" id="10_yark5"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_bones_label.gd" id="11_lpkmg"]
->>>>>>> Stashed changes
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="12_fidbp"]
 [ext_resource type="Texture2D" uid="uid://dtp5dhtyxy68j" path="res://parallax/2.png" id="12_o7nie"]
+[ext_resource type="Script" path="res://scenes/test_scenes/test_extra_label.gd" id="13_18scs"]
 [ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://parallax/1.png" id="13_abg1y"]
 [ext_resource type="Texture2D" uid="uid://dvtabbs4t8lhb" path="res://parallax/9.png" id="13_id7hc"]
 [ext_resource type="Texture2D" uid="uid://b6ry085rrwhge" path="res://parallax/8.png" id="14_jijr3"]
@@ -33,16 +28,15 @@
 [ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://parallax/5.png" id="17_nqkna"]
 [ext_resource type="Texture2D" uid="uid://c7jhfh3bmm3om" path="res://parallax/4.png" id="19_47lxb"]
 [ext_resource type="Texture2D" uid="uid://cacb8ihpllrvm" path="res://parallax/3.png" id="20_qr5ac"]
-[ext_resource type="AudioStream" uid="uid://bxr2wquyif2uu" path="res://audio/маршскелетов.ogg" id="28_bn8ct"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
-albedo_color = Color(1, 0, 0, 0.290196)
+albedo_color = Color(0, 0.623529, 0, 0.290196)
 
 [sub_resource type="SphereMesh" id="SphereMesh_hrlki"]
 material = SubResource("StandardMaterial3D_t1s38")
-radius = 0.15
-height = 0.32
+radius = 0.3
+height = 0.4
 
 [sub_resource type="Environment" id="Environment_l0yfs"]
 background_mode = 1
@@ -237,6 +231,9 @@ viewport_path = NodePath("UI/SubViewport2")
 [sub_resource type="ViewportTexture" id="ViewportTexture_rym5g"]
 viewport_path = NodePath("UI/SubViewport3")
 
+[sub_resource type="BoxMesh" id="BoxMesh_pl3og"]
+size = Vector3(0.2, 0.2, 0.2)
+
 [sub_resource type="Curve3D" id="Curve3D_sv3w4"]
 bake_interval = 125.2
 _data = {
@@ -307,14 +304,12 @@ albedo_texture = ExtResource("16_mw4bo")
 material = SubResource("StandardMaterial3D_defbk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awnbg"]
-transparency = 1
 albedo_texture = ExtResource("17_nqkna")
 
 [sub_resource type="QuadMesh" id="QuadMesh_hul7l"]
 material = SubResource("StandardMaterial3D_awnbg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqakr"]
-transparency = 1
 albedo_texture = ExtResource("13_abg1y")
 
 [sub_resource type="QuadMesh" id="QuadMesh_omvqn"]
@@ -342,6 +337,7 @@ albedo_texture = ExtResource("12_o7nie")
 material = SubResource("StandardMaterial3D_1d4xj")
 
 [node name="test_world" type="Node3D"]
+script = ExtResource("1_brk7t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("mesh_to_take", "camera", "ui")]
 mesh = SubResource("SphereMesh_hrlki")
@@ -438,14 +434,25 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="Panel" type="Panel" parent="UI/Control"]
+layout_mode = 0
+offset_left = 1641.0
+offset_top = 90.0
+offset_right = 1919.0
+offset_bottom = 994.0
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+theme = ExtResource("4_nnfht")
+script = ExtResource("4_52t31")
+
 [node name="Warrior" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -220.0
+offset_left = -184.0
 offset_top = 199.0
-offset_right = -70.0
+offset_right = -34.0
 offset_bottom = 357.0
 theme = ExtResource("4_nnfht")
 icon = SubResource("ViewportTexture_vmhh0")
@@ -458,14 +465,15 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -220.0
+offset_left = -184.0
 offset_top = 469.0
-offset_right = -70.0
+offset_right = -34.0
 offset_bottom = 627.0
 theme = ExtResource("4_nnfht")
 icon = SubResource("ViewportTexture_2gvm4")
 script = ExtResource("5_4ld7p")
 mesh_to_inst = ExtResource("7_2sesb")
+bone_cost = 80
 ui = NodePath("../..")
 
 [node name="Mage" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
@@ -473,18 +481,17 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 anchor_left = 47.925
 anchor_right = 47.925
-offset_left = -90316.0
+offset_left = -90280.0
 offset_top = 739.0
-offset_right = -90166.0
+offset_right = -90130.0
 offset_bottom = 897.0
 theme = ExtResource("4_nnfht")
 icon = SubResource("ViewportTexture_rym5g")
 script = ExtResource("5_4ld7p")
 mesh_to_inst = ExtResource("8_uenqx")
+bone_cost = 120
 ui = NodePath("../..")
 
-<<<<<<< Updated upstream
-=======
 [node name="Button" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 75.0
@@ -507,9 +514,9 @@ mesh = SubResource("BoxMesh_pl3og")
 
 [node name="Label" type="Label" parent="UI/Control"]
 layout_mode = 0
-offset_left = 1769.0
+offset_left = 1796.0
 offset_top = 318.0
-offset_right = 1879.0
+offset_right = 1906.0
 offset_bottom = 389.0
 theme = ExtResource("4_nnfht")
 theme_override_constants/shadow_offset_x = 110
@@ -520,9 +527,9 @@ text = "100"
 
 [node name="Label2" type="Label" parent="UI/Control"]
 layout_mode = 0
-offset_left = 1787.0
+offset_left = 1814.0
 offset_top = 581.0
-offset_right = 1897.0
+offset_right = 1924.0
 offset_bottom = 652.0
 theme = ExtResource("4_nnfht")
 theme_override_constants/shadow_offset_x = 110
@@ -533,9 +540,9 @@ text = "80"
 
 [node name="Label3" type="Label" parent="UI/Control"]
 layout_mode = 0
-offset_left = 1787.0
+offset_left = 1814.0
 offset_top = 841.0
-offset_right = 1897.0
+offset_right = 1924.0
 offset_bottom = 912.0
 theme = ExtResource("4_nnfht")
 theme_override_constants/shadow_offset_x = 110
@@ -555,7 +562,7 @@ theme_override_constants/shadow_offset_x = 110
 theme_override_constants/shadow_offset_y = 215
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 80
-text = "BONES : 100"
+text = "BONES : 1000"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("11_lpkmg")
@@ -575,7 +582,6 @@ theme_override_font_sizes/font_size = 70
 text = "+100"
 script = ExtResource("13_18scs")
 
->>>>>>> Stashed changes
 [node name="Mobs" type="Node3D" parent="."]
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -617,82 +623,56 @@ curve = SubResource("Curve3D_860qd")
 [node name="Path3D3" type="Path3D" parent="NavigationMarks"]
 curve = SubResource("Curve3D_asxpc")
 
-[node name="Node" type="Node" parent="."]
+[node name="BG" type="Node" parent="."]
 
-[node name="Background" type="MeshInstance3D" parent="Node"]
+[node name="Background" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(0.0102097, 0, 0, 0, 0.0215295, 0, 0, 0, 0.0181764, 16.6037, 0.650646, -14.1539)
 mesh = SubResource("QuadMesh_5l2fy")
 skeleton = NodePath("../..")
 
-[node name="BG2" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(43.2601, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 15.9217, 4.78243, -13.6461)
+[node name="BG2" type="MeshInstance3D" parent="BG"]
+transform = Transform3D(34.1838, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 20.0157, 4.78243, -13.6461)
 mesh = SubResource("QuadMesh_7ta8b")
 skeleton = NodePath("../..")
 
-[node name="BG13" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(43.2601, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 9.32568, -4.26488, -10.6084)
-mesh = SubResource("QuadMesh_7ta8b")
-skeleton = NodePath("../..")
-
-[node name="BG3" type="MeshInstance3D" parent="Node"]
+[node name="BG3" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(56.6381, 0, 0, 0, 34.2777, 0, 0, 0, 20.963, 16.6037, 12.3767, -23.6891)
 mesh = SubResource("QuadMesh_wnh86")
 skeleton = NodePath("../BG4")
 
-[node name="BG4" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.00422, 7.36029, -14.8852)
+[node name="BG4" type="MeshInstance3D" parent="BG"]
+transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.3366, 7.36029, -14.3636)
 mesh = SubResource("QuadMesh_wuxfk")
 skeleton = NodePath("../BG5")
 
-[node name="BG5" type="MeshInstance3D" parent="Node"]
+[node name="BG5" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(43.9661, 0, 0, 0, 29.9567, 0, 0, 0, 29.9567, 6.66311, 5.11793, -22.7623)
 mesh = SubResource("QuadMesh_pomx8")
 skeleton = NodePath("../BG6")
 
-[node name="BG6" type="MeshInstance3D" parent="Node"]
+[node name="BG6" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(88.441, 0, 0, 0, 34.051, 0, 0, 0, 34.051, 16.6037, 3.08265, -32.0985)
 mesh = SubResource("QuadMesh_hul7l")
-skeleton = NodePath("../MeshInstance3D5")
+skeleton = NodePath("")
 
-[node name="BG7" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(-59.0202, -0.160077, 0, 0.415178, -10.2677, 2.61435, -0.457877, 11.3237, 2.37054, 16.6037, -5.78627, -11.9933)
-visible = false
-layers = 4
+[node name="BG7" type="MeshInstance3D" parent="BG"]
+transform = Transform3D(-59.3267, -0.271267, -0.0439394, 0.436975, -6.33526, 1.32327, -2.25161, 5.918, 1.41455, 16.6037, -2.86335, -10.9901)
 mesh = SubResource("QuadMesh_omvqn")
 skeleton = NodePath("../..")
 
-[node name="BG11" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(-59.0202, -0.160077, 0, 0.618081, -15.2857, 0, 0, 0, 3.52906, 16.6037, 1.52304, -38.9912)
-layers = 4
-mesh = SubResource("QuadMesh_omvqn")
-skeleton = NodePath("../..")
-
-[node name="BG8" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(21.3872, 0, 0, 0, 27.2908, 0, 0, 0, 33.5715, 21.9674, 7.20252, -18.5462)
+[node name="BG8" type="MeshInstance3D" parent="BG"]
+transform = Transform3D(24.461, 0, 0, 0, 29.2054, 0, 0, 0, 33.5715, 19.9952, 7.92947, -16.291)
 mesh = SubResource("QuadMesh_b3y15")
 skeleton = NodePath("../Background")
 
-[node name="BG9" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 10.4928, 3.71415, -25.9671)
+[node name="BG9" type="MeshInstance3D" parent="BG"]
+transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 11.4297, 3.08265, -25.9671)
 mesh = SubResource("QuadMesh_0ditu")
 skeleton = NodePath("../Background")
 
-[node name="BG10" type="MeshInstance3D" parent="Node"]
+[node name="BG10" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(102.317, 0, 0, 0, 26.1166, 0, 0, 0, 26.1166, 16.6037, 1.29366, -21.1584)
 mesh = SubResource("QuadMesh_cpxrg")
 skeleton = NodePath("../Background")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(0.0102097, 0, 0, 0, 0.0168688, 0, 0, 0, 0.0181764, 16.6037, 4.36078, -13.9739)
-visible = false
-skeleton = NodePath("../Background")
-<<<<<<< Updated upstream
-=======
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("28_bn8ct")
-autoplay = true
-parameters/looping = true
-
 [connection signal="pressed" from="UI/Control/Button" to="UI/Control/Button/Node3D" method="spawn_hostiles"]
->>>>>>> Stashed changes
