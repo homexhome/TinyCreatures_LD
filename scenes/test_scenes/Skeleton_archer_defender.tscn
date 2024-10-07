@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://4cp5qnbsbf0b"]
+[gd_scene load_steps=28 format=4 uid="uid://4cp5qnbsbf0b"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_snmm4"]
 [ext_resource type="PackedScene" uid="uid://b78d1ajo7if0k" path="res://scenes/projectiles/arrow_projectile.tscn" id="2_n4rx6"]
@@ -6,6 +6,10 @@
 [ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="3_f4kbd"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="4_53gcv"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="5_5170c"]
+[ext_resource type="Script" path="res://scripts/controllers/sound/character_sound.gd" id="7_o72et"]
+[ext_resource type="AudioStream" uid="uid://b300q000ahfyo" path="res://imports/sound_import/смертьскелетаВТОРОЙВАРИАНТ.ogg" id="8_twccs"]
+[ext_resource type="AudioStream" uid="uid://cukyu3y7xrd16" path="res://imports/sound_import/ударпокостям.ogg" id="9_8kfo2"]
+[ext_resource type="AudioStream" uid="uid://dbq5cgnxgtr32" path="res://imports/sound_import/лук2Выстрел.ogg" id="10_ax8lk"]
 
 [sub_resource type="Resource" id="Resource_l761b"]
 script = ExtResource("2_yhsf5")
@@ -314,5 +318,12 @@ libraries = {
 "": SubResource("AnimationLibrary_4jbl5"),
 "Skeleton_archer": SubResource("AnimationLibrary_7v4u0")
 }
+
+[node name="CharacterSound" type="AudioStreamPlayer3D" parent="."]
+unit_size = 5.0
+script = ExtResource("7_o72et")
+death_sound = ExtResource("8_twccs")
+damage_sound = ExtResource("9_8kfo2")
+attack_sound = ExtResource("10_ax8lk")
 
 [connection signal="timeout" from="Attack/CheckTargetTimer" to="Attack" method="check_for_target"]

@@ -103,8 +103,13 @@ func attack():
 		area_attack(melee_area)
 	if type == CharacterStats.COMBAT_TYPE.ARCHER or type == CharacterStats.COMBAT_TYPE.MAGE:
 		var proj = projectile.instantiate()
+		if type == CharacterStats.COMBAT_TYPE.ARCHER :
+			animation_player.play(character.anim_lib_name+"archer_attack")
+		else:
+			animation_player.play(character.anim_lib_name+"mage_attack")
 		Projectiles.add_child(proj)
 		proj.setup_projectile(current_target, type,attack_damage, character, projectile_start_path.global_position)
+	character.character_sound.play_special_sound("attack")
 	attack_cooldown = attack_speed
 
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4bovgdvmubgg"]
+[gd_scene load_steps=7 format=3 uid="uid://b4bovgdvmubgg"]
 
 [ext_resource type="Script" path="res://autoloads/game_options.gd" id="1_6p7fo"]
 [ext_resource type="Script" path="res://autoloads/canvas_game_options.gd" id="1_41wsl"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="2_gshxc"]
 [ext_resource type="Script" path="res://scripts/options/audio_slider.gd" id="2_u4h8u"]
 [ext_resource type="Theme" uid="uid://oat7r4nnwwvr" path="res://themes/ui_options_theme.tres" id="4_iq0v7"]
+[ext_resource type="Theme" uid="uid://dqsqm8fsfp85p" path="res://themes/ui_menu_theme.tres" id="6_brtq6"]
 
 [node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("game_options")]
 process_mode = 3
@@ -95,12 +96,14 @@ theme_override_constants/separation = 50
 [node name="BACK" type="Button" parent="GameOptions/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme = ExtResource("6_brtq6")
 theme_override_font_sizes/font_size = 80
 text = "BACK"
 
 [node name="TO MENU" type="Button" parent="GameOptions/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme = ExtResource("6_brtq6")
 theme_override_font_sizes/font_size = 80
 text = "TO MENU"
 

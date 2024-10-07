@@ -15,6 +15,7 @@ func _input(event: InputEvent) -> void:
 		handle_options_input()
 
 func pause_game():
+	Event.event_game_paused()
 	get_tree().paused = true
 	
 func unpause_game():

@@ -32,7 +32,7 @@ func component_physics_process(delta):
 var time_for_random_rotation : float = 0
 var max_time_for_random_rotation : float = 4
 var random_rotation 
-
+var at_last_place : bool = false
 func _nav_movement(delta):
 	time_for_random_rotation = clampf(time_for_random_rotation - delta, 0, max_time_for_random_rotation)
 	if !need_movement: 
@@ -48,6 +48,7 @@ func _nav_movement(delta):
 	var target = nav_agent.get_next_path_position()
 	update_rotation(delta)
 	if check_movement_distance(target): return
+	if is_instance_valid(character.current_target) and check_target_distance(character.current_target.global_position): return
 	character.global_position = character.global_position.lerp(target,movement_speed * delta)
 	play_walk_anim()
 
@@ -107,6 +108,7 @@ func move_to(target_pos : Vector3):
 	target_movement = true
 
 func check_target_distance(target_pos: Vector3):
+	var a = character.global_position.distance_squared_to(target_pos)
 	if character.global_position.distance_squared_to(target_pos) <= minimum_distance_to_attack * minimum_distance_to_attack:
 		return true
 	return false

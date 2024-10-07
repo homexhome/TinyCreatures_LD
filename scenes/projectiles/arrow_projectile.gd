@@ -8,8 +8,9 @@ func _process(delta):
 		queue_free()
 		return
 	if activated: return
-	if global_position.distance_squared_to(target.global_position) >= 0.1 :
-		global_position = global_position.lerp(target.global_position,speed * delta)
+	if global_position.distance_squared_to(target.global_position) >= 0.3 :
+		update_rotation(delta, target.global_position)
+		global_position = global_position.lerp(target.global_position + Vector3.UP / 2,speed * delta)
 	else:
 		if type == CharacterStats.COMBAT_TYPE.ARCHER:
 			target.take_damage(damage, character_owner, type)
@@ -23,6 +24,14 @@ func _process(delta):
 				activated = true
 				area_on_target_impact.finished.connect(free_projectile)
 				area_on_target_impact.explode(damage,character_owner,type)
-
+				
+var rotation_speed = 50
+func update_rotation(delta, _target):
+	var target_position = _target
+	var new_transform = transform.looking_at(target_position)
+	transform  = transform.interpolate_with(new_transform, rotation_speed * delta)
+	rotation.x = 0
+	rotation.z = 0
+	
 func free_projectile():
 	queue_free()

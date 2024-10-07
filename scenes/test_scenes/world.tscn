@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=100 format=4 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/test_world.gd" id="1_brk7t"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_spawner.gd" id="8_hpgin"]
 [ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="8_uenqx"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
+[ext_resource type="PackedScene" uid="uid://dthee126247on" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
 [ext_resource type="PackedScene" uid="uid://h0i54cuo8r5b" path="res://scenes/test_scenes/Adventurer_archer_attacker.tscn" id="9_y4crk"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
 [ext_resource type="PackedScene" uid="uid://cdwcw8mm4cqsy" path="res://scenes/test_scenes/Adventurer_monk_attacker.tscn" id="10_yark5"]
@@ -23,20 +23,44 @@
 [ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://parallax/1.png" id="13_abg1y"]
 [ext_resource type="Texture2D" uid="uid://dvtabbs4t8lhb" path="res://parallax/9.png" id="13_id7hc"]
 [ext_resource type="Texture2D" uid="uid://b6ry085rrwhge" path="res://parallax/8.png" id="14_jijr3"]
+[ext_resource type="Script" path="res://scenes/test_scenes/ui_audio_stream_player.gd" id="15_buvfd"]
 [ext_resource type="Texture2D" uid="uid://dkmkrsvavbmo" path="res://parallax/7.png" id="15_ji2e0"]
+[ext_resource type="AudioStream" uid="uid://cp813ne1jjvqf" path="res://imports/sound_import/выборскелета1.ogg" id="16_l8p6a"]
 [ext_resource type="Texture2D" uid="uid://df4sdhith7ho7" path="res://parallax/6.png" id="16_mw4bo"]
+[ext_resource type="AudioStream" uid="uid://dcsej34gwo3tg" path="res://imports/sound_import/выборскелета2.ogg" id="17_gwban"]
 [ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://parallax/5.png" id="17_nqkna"]
+[ext_resource type="Script" path="res://scenes/test_scenes/path.gd" id="18_tat1d"]
+[ext_resource type="AudioStream" uid="uid://d1jln43jc11wj" path="res://imports/sound_import/выборскелета3.ogg" id="18_ypakr"]
 [ext_resource type="Texture2D" uid="uid://c7jhfh3bmm3om" path="res://parallax/4.png" id="19_47lxb"]
+[ext_resource type="AudioStream" uid="uid://d0i0yfu4dm8y7" path="res://imports/sound_import/упалКристал.ogg" id="19_k22y2"]
 [ext_resource type="Texture2D" uid="uid://cacb8ihpllrvm" path="res://parallax/3.png" id="20_qr5ac"]
+[ext_resource type="Script" path="res://scripts/controllers/sound/world_sound_player.gd" id="35_easix"]
+[ext_resource type="AudioStream" uid="uid://chaixblv0drk5" path="res://imports/sound_import/паузаИгровая.ogg" id="36_b4b5i"]
+[ext_resource type="Script" path="res://scripts/controllers/sound/extra_world_sound_player.gd" id="36_dq4xk"]
+[ext_resource type="AudioStream" uid="uid://bdewh81lmsouh" path="res://imports/sound_import/боеваятема.ogg" id="37_53mcw"]
+[ext_resource type="AudioStream" uid="uid://c623p1733v3ic" path="res://imports/sound_import/начало.ogg" id="37_84b88"]
+[ext_resource type="AudioStream" uid="uid://b3snnfryhde6a" path="res://imports/sound_import/звукПобеды.ogg" id="38_cl4le"]
+[ext_resource type="Script" path="res://scenes/test_scenes/game_controller.gd" id="41_8n7n1"]
+[ext_resource type="Texture2D" uid="uid://drhi63ftkr17u" path="res://imports/texture_import/ui_import/таймер.png" id="42_x8ws3"]
+[ext_resource type="PackedScene" uid="uid://60cpbrlvds2g" path="res://scenes/test_scenes/wall_light.tscn" id="43_73yys"]
+[ext_resource type="PackedScene" uid="uid://dbj0v2v04oao4" path="res://scenes/test_scenes/wall_light_blue.tscn" id="44_ltiqb"]
+[ext_resource type="LightmapGIData" uid="uid://dyapjk8ycboj2" path="res://scenes/test_scenes/world.lmbake" id="45_ra5ui"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
-albedo_color = Color(0, 0.623529, 0, 0.290196)
+albedo_color = Color(0, 0.686275, 0, 0.486275)
+metallic_specular = 0.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0.968393, 0, 1)
+emission_energy_multiplier = 2.75
 
 [sub_resource type="SphereMesh" id="SphereMesh_hrlki"]
 material = SubResource("StandardMaterial3D_t1s38")
 radius = 0.3
 height = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l6qhu"]
 
 [sub_resource type="Environment" id="Environment_l0yfs"]
 background_mode = 1
@@ -44,11 +68,19 @@ background_color = Color(0.8, 0.423529, 0.847059, 1)
 background_energy_multiplier = 0.7
 ambient_light_source = 2
 ambient_light_color = Color(0.8, 0.423529, 0.847059, 1)
+ambient_light_energy = 0.51
+reflected_light_source = 1
 ssao_radius = 3.52
 ssao_intensity = 3.35
+glow_intensity = 0.0
 fog_enabled = true
 fog_mode = 1
-fog_density = 0.482
+fog_light_color = Color(0.456049, 0.000209994, 0.4794, 1)
+fog_light_energy = 3.99
+fog_density = 0.9684
+fog_sky_affect = 0.0
+fog_height_density = 0.1
+fog_depth_curve = 0.683021
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcw57"]
 shading_mode = 0
@@ -234,6 +266,42 @@ viewport_path = NodePath("UI/SubViewport3")
 [sub_resource type="BoxMesh" id="BoxMesh_pl3og"]
 size = Vector3(0.2, 0.2, 0.2)
 
+[sub_resource type="Animation" id="Animation_sf3qr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(26, 883)]
+}
+
+[sub_resource type="Animation" id="Animation_6n0c4"]
+resource_name = "shake"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.566667, 0.666667, 0.766667, 0.866667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(26, 883), Vector2(15, 867), Vector2(46, 900), Vector2(26, 922), Vector2(49.615, 900.175), Vector2(15, 867), Vector2(46, 900), Vector2(26, 922), Vector2(49.615, 900.175), Vector2(26, 883)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hb7t3"]
+_data = {
+"RESET": SubResource("Animation_sf3qr"),
+"shake": SubResource("Animation_6n0c4")
+}
+
 [sub_resource type="Curve3D" id="Curve3D_sv3w4"]
 bake_interval = 125.2
 _data = {
@@ -241,6 +309,41 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ayec"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.384314, 0.831373, 0.752941, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_onsun"]
+_surfaces = [{
+"aabb": AABB(-5.19761, -3.08232, -37.7724, 11.5095, 3.44367, 37.6924),
+"format": 34359742465,
+"index_count": 285,
+"index_data": PackedByteArray("DgADAA8ADgACAAMAAgAFAAMAAgAEAAUABAAHAAUABAAGAAcABgAJAAcABgAIAAkACAALAAkACAAKAAsACgANAAsACgAMAA0AAAAPAAEAAAAOAA8ADwAQAAEADwARABAAGAAXABYAGAAZABcAFQATABIAFQAUABMAGwAQABEAGwAaABAAEgAfAB4AEgATAB8AGgAdABwAGgAbAB0AFgAUABUAFgAXABQAHgAcAB0AHgAfABwAGAAhABkAGAAgACEAIAAjACEAIAAiACMAIgAlACMAIgAkACUAJAAnACUAJAAmACcAJgApACcAJgAoACkAKAArACkAKAAqACsAUwAtAFIAUQBTACoAUwAsAC0AUwBRACwABwAmACQABwAJACYALAAvAC0ALAAuAC8AMgAwADUAMgAzADAALgA0AC8ALgAwADQAMwA2ADEAMwA4ADYAMgA4ADMAMgA3ADgADAAwAA0ADAA1ADAAMQAwADMAMQA0ADAABgA6AAgABgA5ADoAOQA8ADoAOQA7ADwAAAA+AA4AAAA9AD4APQBAAD4APQA/AEAAPwBCAEAAPwBBAEIAQwBCAEEAQwBEAEIAOwBEAEMAOwA5AEQASABFAEkASABGAEUAPABJADoAPABIAEkARgBMAEUARgBNAEwASgBPAFAASgA1AE8ASgAyADUASgBLADIARwBLAEoARwBOAEsATQBOAEcATABQAE8ARwBKAFAATQBHAEwATABHAFAAKgBSACsAKgBTAFIA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("EIKCv0uxSj2Qx6O9EIKCP0uxSj2Qx6O9BMiLv3/XiD6mvnXALuD0P3/XiD6mvnXAWsrqvyYLrb8dz63ALuD0PyYLrb8dz63AlXKIv1OMlb9aF2/B+ZsrQFOMlb9aF2/BokFEP5gZdL/SpJPBn/8YQJgZdL+eTpDBokFEP16Mi7+EqejBCg0IQJgZdL+yCuLBSl8cPt3OPMDhcAHCrM/tP93OPMDvQvzB+GyEv4OlRj7DxyTAEIKCP4OlRj7DxyTAlBuQQBjUmT5MnyTAnB1nQPZHkj6yiW3Ad4SYQIXk0L9GNqrAZH2/QIXk0L/X0JnASEXFQHxsCcCd9q/AEoqcQHxsCcChfrrAVU+fQLdmKsB39MrARSHJQLdmKsBGZsbA4/SfQKlERcDnGN7AYPvJQKlERcDnGN7AT3WbQAAkbjx4hD7AuS99QAAkbjygxX3AiZuqQDj3Gb/lhWHA4p6JQDj3Gb8o5YvAK8ySQBDwjr9yQJrAskK3QBDwjr/pKYTA4/SfQKlERcDsLzDBYPvJQKlERcDsLzDB4/SfQBzYoL/s+kzBYPvJQBzYoL/s+kzB4/SfQBzYoL/huWPBYPvJQBzYoL/huWPB4/SfQBzYoL/xzoPBYPvJQBzYoL8COobB4/SfQBzYoL/2FpLBYPvJQBzYoL/2FpLB4/SfQCbTP8BuiqDBYPvJQCbTP8BuiqDB4/SfQIKbOcCYkdfBYPvJQIKbOcCYkdfBQHGBQIKbOcBZvPzBB2SnQIKbOcD+nwDCYiwfQKZGO8BpXwTCxatqQIKbOcCWqA/CpE3Wv7D/HcBJDwrC5Al/P05JL8Dw2wzC9VyOQIKbOcBKJAjCyEZHPh+FNMD8SATC6GdqQIKbOcDkFhfCXtXWvxr3JMDkFhfCcfp9P05JL8DkFhfC11w+wJgZdL/eiV/BUKg8wJgZdL/LBY3BD/agwJgZdL80xFzBo/GfwJgZdL/2oovBGGqFwES4Jj5vFjvAd+Y9wI5WeT6K623AzFKmwPSzjz583b3AFJc/wBoDuT67LsXAmmaYwM0ZoD1t2T/BUYI9wDKrIj7zRz7BoqegwFJQa7+UkFfBpGpCwC6ZZ79ejlnB/F5gwBiUUD4AdJ3BoF6fwBG2SD5vJpnBGK9rwB7q0r5UIerB0tCcwOv0TL9GNJHBwudmwBT4G796VJXBdDsnwHD0+r/gRvTBBld0wBx50b/gyALCuLNiwCD5Q769ouXBd3uVwAaZYz7I+9/BXMqGwDwbvL4ekvPBSz/Wv6VVKcBaGvfBjS0JwCG5FMCdsPXB4/SfQLwCNcADDrzBYPvJQLwCNcADDrzBIvi0QLwCNcADDrzB")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_06elj"]
+resource_name = "NavMesh_1_Plane_010"
+_surfaces = [{
+"aabb": AABB(-5.19761, -3.08232, -37.7724, 11.5095, 3.44367, 37.6924),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAADRGrD4AAAAANEasPgAAgD80Rqw+AACAPzRGrD4AACA/ZmbmPgAAgD8AAIA/AAAgP2Zm5j4AAIA/NEasPhYQ9D4EAIA+20jzPgAAgD7cSPM+AACAPsP/Hz/s2sw+w/8fP+7azD4D/h8/VkPNPgAAID+02+Y+AAAgP0p05j7+/78+AgCAPgAAwD4AAIA+mpnZPgAAgD6amdk+AACAPjQz8z4AAIA+NDPzPgAAgD4AACA/zMzMPgAAID/MzMw+AQAgP8rMzD7+/78+AgCAPgAAwD4AAIA+/v+/PgIAgD4AAMA+AACAPv7/vz4CAIA+/v+/PgIAgD4AAMA+AACAPv3/vz4EAIA+/f+/PgQAgD4AAMA+AACAPv7/vz4CAIA+AADAPgAAgD7+/78+AgCAPgAAwD4AAIA+/v+/PgIAgD4AAMA+AACAPv7/vz4CAIA+AADAPgAAgD7+/78+AgCAPjRjmj8AAAAAAADAPgAAgD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA+AAAAPgAAQD4AAAA+AADAPgAAgD4AAAAAAAAAAALztz4AAAAAAADAPgAAgD4AAAAAAAAAAAAAQD4AAAA+AABAPgAAAD4AAEA+AAAAPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAAAA0Rqw+AAAAAAAAgD8AAAAANEasPgAAAAAAAIA/AAAAADRGrD4AAAAA8DI4PgAAAACA6Xc9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/v+/PgIAgD4AAMA+AACAPv//vz4AAIA+"),
+"format": 34359742487,
+"index_count": 285,
+"index_data": PackedByteArray("JwAHACkAJwAFAAcABAAKAAYABAAIAAoACQASAAsACQANABIADAAYABEAEAAWABsAFAAfABkAFwAeACEAHAAlACAAHQAjACYAAAApAAIAAAAnACkAKgAsAAMAKgAuACwANwA2ADUANwA4ADYANAAwAC8ANAAzADAAOgArAC0AOgA5ACsALwA+AD0ALwAxAD4AOQA8ADsAOQA6ADwANQAyADQANQA2ADIAPQA7ADwAPQA/ADsANwBBADgANwBAAEEAQABDAEEAQABCAEMAQgBGAEMAQgBEAEYARABJAEYARABHAEkARwBLAEkARwBKAEsASgBNAEsASgBMAE0AiQBPAIgAhwCJAEwAiQBOAE8AiQCHAE4AEwBIAEUAEwAaAEgATgBRAE8ATgBQAFEAVwBTAFwAVwBYAFMAUABaAFEAUABSAFoAWABdAFQAWABgAF0AVgBhAFkAVQBeAF8AIgBTACQAIgBcAFMAVABSAFgAVABaAFIADgBmABUADwBjAGgAYgBrAGUAYgBpAGsAAQBuACgAAQBtAG4AbQBwAG4AbQBvAHAAbwByAHAAbwBxAHIAcwByAHEAcwB0AHIAagB0AHMAagBkAHQAewB1AHwAewB3AHUAbAB8AGcAbAB7AHwAeQCBAHYAeACCAH8AfQCFAIYAfQBbAIUAfQBXAFsAfQB+AFcAegB+AH0AegCEAH4AgwCEAHoAgACGAIUAegB9AIYAgwB6AIAAgAB6AIYATACIAE0ATACJAIgA"),
+"material": SubResource("StandardMaterial3D_8ayec"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 138,
+"vertex_data": PackedByteArray("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/3+S/f///z8Wh+v0zPve//9///////+/0YEC9v///z9Xft73////P8ZzQ/X///+//3+x9////z//f///////v1iIj/H///8/V37e9////z85vf/s////v5S94Ov///+/xnND9f///7//f///////vzm9/+z///+/xnND9f///79rgSz2////P5S94Ov///+/a4Es9v///z85vf/s////v5S94Ov///+//3/9+P///7+3fqT3////P/9//fj///+/W3wy9////z9ptXzb////v2m1fNv///+/6pDq4f///z/qkOrh////P5LCZewkAPRSpsIc7GbbokOmwhzsLgDtLH7AqvKl5uJCfsCq8pvlKkBuwNHy6+VCQC65s/nb6lc+QLmo+V3yxUDznXT+HvdEwH6dev6y/Rq/18Fu3v///79Uwkbe////v3fHjt98xzxDU8e93////7/bw4XmtM/rP+TDTuahBqco5MNO5pbPDED/fzza////P/9/PNr///8//3882v///z//fzza////P/9//////8YNNoVl+Y7+9///f///////v/9///9Atv+/Fofg9MD73v//f//////GDcqk//94sG3LyqT//3iwbcsoo///////v+mi//////+/M4D//9P/wHVegP//r//DdXN/hv////+/TH9l/////78+hTbz9vuj7T6FNvOp2hVD9oWV+Dj/uJL6iu/4////v8WLPvT///+/onzW+f///z/BhtX38P6rksWLPvT///+/54GO/P///z/nnpLx////v+eekvH///+/TYe0+P///7/6iu/4////v/qK7/j///+/TYe0+P///7/Fiz70////v/9///////+//Izq8v///z9Hcc/+////v/9///////+/0YEC9v///z9AifbV////P/yM6vL///8//3///////7/3cJX+////v/9///////+/j3sn5f///z8ze0/1////Py99WPT///8//3g//f///7/sfVv4////P0JnhvD///+/jUqM+P///78bTeD9////v9OM1f////+/y4zFvv///z82eHT9////v/WYTK////8/maLp2////z82eHT9////v6untdj///+/E36Z3f///z9QgUHW////Pxi0jMv///8/cJpW5P///z+Zounb////P+XGmLP///8/Nnh0/f///7+Zounb////P/S/RMn///+/abBh1P///78HuDen////P3jGzNr///+/boD//////7//fzf+////v/9/B/////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_onsun")
 
 [sub_resource type="Curve3D" id="Curve3D_fdc0o"]
 _data = {
@@ -290,7 +393,9 @@ albedo_texture = ExtResource("14_jijr3")
 material = SubResource("StandardMaterial3D_2543b")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nn53j"]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 1.0
+alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("15_ji2e0")
 
 [sub_resource type="QuadMesh" id="QuadMesh_wuxfk"]
@@ -336,36 +441,62 @@ albedo_texture = ExtResource("12_o7nie")
 [sub_resource type="QuadMesh" id="QuadMesh_cpxrg"]
 material = SubResource("StandardMaterial3D_1d4xj")
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_k2ny2"]
+stream_count = 2
+stream_0/stream = ExtResource("36_b4b5i")
+stream_0/volume = -15.0
+stream_1/stream = ExtResource("37_53mcw")
+stream_1/volume = -60.0
+
 [node name="test_world" type="Node3D"]
 script = ExtResource("1_brk7t")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("mesh_to_take", "camera", "ui")]
+[node name="Target" type="MeshInstance3D" parent="." node_paths=PackedStringArray("mesh_to_take", "camera", "ui", "path_visual_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80913, 0.646878, -0.0164214)
+layers = 3
 mesh = SubResource("SphereMesh_hrlki")
 script = ExtResource("1_gq3bx")
 mesh_to_take = NodePath(".")
 camera = NodePath("../Path3D/PathFollow3D/Camera3D")
+color_yes = Color(0, 0.686275, 0, 0.486275)
+color_no = Color(0.926299, 2.5028e-06, 1.54018e-06, 0.588235)
 ui = NodePath("../UI")
+mesh_with_material = SubResource("SphereMesh_hrlki")
+shape_raycast = SubResource("SphereShape3D_l6qhu")
+path_visual_node = NodePath("../LevelScene/Path")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.952023, -1.33769e-08, 0.306028, -0.288856, 0.330267, 0.898602, -0.101071, -0.943887, 0.314422, -0.333963, 1.80632, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="Target"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.330903, 0)
+visible = false
+layers = 2
+light_color = Color(0, 1, 0, 1)
+light_energy = 0.192
+light_indirect_energy = 1.646
+light_volumetric_fog_energy = 0.0
+light_specular = 16.0
+distance_fade_begin = 1.0
+distance_fade_length = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l0yfs")
 
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("place_to_load")]
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("place_to_load", "label_to_feedback", "ui_sound")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("2_w5nye")
 place_to_load = NodePath("../Mobs")
+label_to_feedback = NodePath("Label")
+ui_sound = NodePath("AudioStreamPlayer")
 
 [node name="SubViewport" type="SubViewport" parent="UI"]
 own_world_3d = true
 transparent_bg = true
-size = Vector2i(138, 150)
+size = Vector2i(100, 120)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
@@ -373,7 +504,7 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.329, 0, 0.971)
 
 [node name="Cube003" type="MeshInstance3D" parent="UI/SubViewport/Camera3D"]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, -0.409, -0.72)
+transform = Transform3D(-0.569221, 0, -0.569221, 0, 0.805, 0, 0.569221, 0, -0.569221, 0.079, -0.339, -0.72)
 mesh = SubResource("ArrayMesh_an2ka")
 skeleton = NodePath("../..")
 
@@ -384,7 +515,7 @@ light_energy = 7.974
 [node name="SubViewport2" type="SubViewport" parent="UI"]
 own_world_3d = true
 transparent_bg = true
-size = Vector2i(138, 150)
+size = Vector2i(100, 120)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
@@ -392,12 +523,12 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.329, 0, 0.971)
 
 [node name="Cube_002" type="MeshInstance3D" parent="UI/SubViewport2/Camera3D"]
-transform = Transform3D(-0.707091, 0.00659728, -0.707091, 0.00466498, 0.999978, 0.00466498, 0.707107, 9.01777e-09, -0.707107, -0.0414467, -0.408431, -0.686983)
+transform = Transform3D(-0.565673, 0.00527783, -0.565673, 0.00373198, 0.799983, 0.00373199, 0.565686, 3.35276e-09, -0.565685, 0.079, -0.363, -0.686983)
 mesh = SubResource("ArrayMesh_t3k8m")
 skeleton = NodePath("")
 
 [node name="Cube_003" type="MeshInstance3D" parent="UI/SubViewport2/Camera3D"]
-transform = Transform3D(-0.707091, 0.00659728, -0.707091, 0.00466498, 0.999978, 0.00466498, 0.707107, 9.01777e-09, -0.707107, -0.0414467, -0.408431, -0.686983)
+transform = Transform3D(-0.565673, 0.00527783, -0.565673, 0.00373198, 0.799983, 0.00373199, 0.565686, 3.35276e-09, -0.565685, 0.079, -0.363, -0.687)
 mesh = SubResource("ArrayMesh_k8dpg")
 skeleton = NodePath("")
 
@@ -406,7 +537,7 @@ skeleton = NodePath("")
 [node name="SubViewport3" type="SubViewport" parent="UI"]
 own_world_3d = true
 transparent_bg = true
-size = Vector2i(138, 150)
+size = Vector2i(100, 120)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
@@ -414,12 +545,12 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.329, 0, 0.971)
 
 [node name="StaffSkel" type="MeshInstance3D" parent="UI/SubViewport3/Camera3D"]
-transform = Transform3D(-0.596141, 0, -0.80288, 0, 1, 0, 0.80288, 0, -0.596141, 0, -0.424785, -0.737157)
+transform = Transform3D(-0.476913, 0, -0.642304, 0, 0.8, 0, 0.642304, 0, -0.476913, 0.079, -0.35, -0.737157)
 mesh = SubResource("ArrayMesh_d4ids")
 skeleton = NodePath("")
 
 [node name="Cube_003" type="MeshInstance3D" parent="UI/SubViewport3/Camera3D"]
-transform = Transform3D(-0.596141, 0, -0.80288, 0, 1, 0, 0.80288, 0, -0.596141, 0, -0.424785, -0.737157)
+transform = Transform3D(-0.476913, 0, -0.642304, 0, 0.8, 0, 0.642304, 0, -0.476913, 0.079, -0.35, -0.737157)
 mesh = SubResource("ArrayMesh_6sorc")
 skeleton = NodePath("")
 
@@ -436,7 +567,7 @@ mouse_filter = 1
 
 [node name="Panel" type="Panel" parent="UI/Control"]
 layout_mode = 0
-offset_left = 1641.0
+offset_left = 1749.0
 offset_top = 90.0
 offset_right = 1919.0
 offset_bottom = 994.0
@@ -446,14 +577,20 @@ theme = ExtResource("4_nnfht")
 script = ExtResource("4_52t31")
 
 [node name="Warrior" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -184.0
-offset_top = 199.0
-offset_right = -34.0
-offset_bottom = 357.0
+offset_left = -128.0
+offset_top = 222.0
+offset_right = -5.0
+offset_bottom = 342.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 theme = ExtResource("4_nnfht")
 icon = SubResource("ViewportTexture_vmhh0")
 script = ExtResource("5_4ld7p")
@@ -461,14 +598,20 @@ mesh_to_inst = ExtResource("6_n2lj1")
 ui = NodePath("../..")
 
 [node name="Archer" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -184.0
-offset_top = 469.0
-offset_right = -34.0
-offset_bottom = 627.0
+offset_left = -128.0
+offset_top = 484.0
+offset_right = -5.0
+offset_bottom = 604.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 theme = ExtResource("4_nnfht")
 icon = SubResource("ViewportTexture_2gvm4")
 script = ExtResource("5_4ld7p")
@@ -477,14 +620,20 @@ bone_cost = 80
 ui = NodePath("../..")
 
 [node name="Mage" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 anchor_left = 47.925
 anchor_right = 47.925
-offset_left = -90280.0
-offset_top = 739.0
-offset_right = -90130.0
-offset_bottom = 897.0
+offset_left = -90223.0
+offset_top = 746.0
+offset_right = -90102.0
+offset_bottom = 866.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 theme = ExtResource("4_nnfht")
 icon = SubResource("ViewportTexture_rym5g")
 script = ExtResource("5_4ld7p")
@@ -492,32 +641,33 @@ mesh_to_inst = ExtResource("8_uenqx")
 bone_cost = 120
 ui = NodePath("../..")
 
-[node name="Button" type="Button" parent="UI/Control"]
+[node name="call" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 75.0
-offset_top = 878.0
+offset_top = 775.0
 offset_right = 224.0
-offset_bottom = 1030.0
+offset_bottom = 927.0
+focus_mode = 0
 theme = ExtResource("4_nnfht")
 theme_override_font_sizes/font_size = 60
 text = "CALL"
 
-[node name="Node3D" type="Node3D" parent="UI/Control/Button" node_paths=PackedStringArray("mobs_node")]
+[node name="Node3D" type="Node3D" parent="UI/Control/call" node_paths=PackedStringArray("mobs_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40322, 2.23104, -1.475)
 script = ExtResource("8_hpgin")
 characters_to_spawn = Array[PackedScene]([ExtResource("9_y4crk"), ExtResource("10_yark5"), ExtResource("10_yark5")])
 mobs_node = NodePath("../../../../Mobs")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="UI/Control/Button/Node3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="UI/Control/call/Node3D"]
 visible = false
 mesh = SubResource("BoxMesh_pl3og")
 
 [node name="Label" type="Label" parent="UI/Control"]
 layout_mode = 0
-offset_left = 1796.0
-offset_top = 318.0
-offset_right = 1906.0
-offset_bottom = 389.0
+offset_left = 1837.0
+offset_top = 319.0
+offset_right = 1913.0
+offset_bottom = 390.0
 theme = ExtResource("4_nnfht")
 theme_override_constants/shadow_offset_x = 110
 theme_override_constants/shadow_offset_y = 210
@@ -527,10 +677,10 @@ text = "100"
 
 [node name="Label2" type="Label" parent="UI/Control"]
 layout_mode = 0
-offset_left = 1814.0
-offset_top = 581.0
-offset_right = 1924.0
-offset_bottom = 652.0
+offset_left = 1854.0
+offset_top = 575.0
+offset_right = 1910.0
+offset_bottom = 646.0
 theme = ExtResource("4_nnfht")
 theme_override_constants/shadow_offset_x = 110
 theme_override_constants/shadow_offset_y = 210
@@ -540,10 +690,10 @@ text = "80"
 
 [node name="Label3" type="Label" parent="UI/Control"]
 layout_mode = 0
-offset_left = 1814.0
-offset_top = 841.0
-offset_right = 1924.0
-offset_bottom = 912.0
+offset_left = 1840.0
+offset_top = 837.0
+offset_right = 1915.0
+offset_bottom = 908.0
 theme = ExtResource("4_nnfht")
 theme_override_constants/shadow_offset_x = 110
 theme_override_constants/shadow_offset_y = 210
@@ -551,12 +701,12 @@ theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 70
 text = "120"
 
-[node name="Label" type="Label" parent="UI" node_paths=PackedStringArray("label")]
+[node name="Label" type="Label" parent="UI" node_paths=PackedStringArray("label", "anim_player")]
 layout_mode = 0
-offset_left = 237.0
-offset_top = 879.0
-offset_right = 666.0
-offset_bottom = 1034.0
+offset_left = 26.0
+offset_top = 883.0
+offset_right = 455.0
+offset_bottom = 1038.0
 theme = ExtResource("4_nnfht")
 theme_override_constants/shadow_offset_x = 110
 theme_override_constants/shadow_offset_y = 215
@@ -567,6 +717,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("11_lpkmg")
 label = NodePath("Label")
+anim_player = NodePath("AnimationPlayer")
 
 [node name="Label" type="Label" parent="UI/Label"]
 visible = false
@@ -581,6 +732,17 @@ theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 70
 text = "+100"
 script = ExtResource("13_18scs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Label"]
+libraries = {
+"": SubResource("AnimationLibrary_hb7t3")
+}
+speed_scale = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI"]
+script = ExtResource("15_buvfd")
+skeleton_spawning_sounds_array = Array[AudioStreamOggVorbis]([ExtResource("16_l8p6a"), ExtResource("17_gwban"), ExtResource("18_ypakr")])
+denied_sound = ExtResource("19_k22y2")
 
 [node name="Mobs" type="Node3D" parent="."]
 
@@ -600,6 +762,7 @@ size = 8.001
 script = ExtResource("8_gp0kg")
 max_x = 35.0
 min_x = 0.0
+camera_up_speed = 30.0
 path_follow = NodePath("..")
 path = NodePath("../..")
 
@@ -608,6 +771,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 
 [node name="NavMesh" parent="LevelScene" groups=["navigation_mesh_source_group"] instance=ExtResource("10_p8nci")]
 visible = false
+
+[node name="Path" type="MeshInstance3D" parent="LevelScene" node_paths=PackedStringArray("ui")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.69037, 2, -1.69844)
+top_level = true
+mesh = SubResource("ArrayMesh_06elj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_8ayec")
+script = ExtResource("18_tat1d")
+ui = NodePath("../../UI")
 
 [node name="NavigationMarks" type="Node3D" parent="." node_paths=PackedStringArray("paths_array") groups=["NavigationMarks"]]
 script = ExtResource("11_te3fi")
@@ -626,22 +798,22 @@ curve = SubResource("Curve3D_asxpc")
 [node name="Node" type="Node" parent="."]
 
 [node name="Background" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(0.0102097, 0, 0, 0, 0.0215295, 0, 0, 0, 0.0181764, 16.6037, 0.650646, -14.1539)
+transform = Transform3D(0.0102097, 0, 0, 0, 0.0215295, 0, 0, 0, 0.0181764, 16.6037, 0.650646, -15.1539)
 mesh = SubResource("QuadMesh_5l2fy")
 skeleton = NodePath("../..")
 
 [node name="BG2" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(34.1838, 0, 0, 0, 14.3937, 0, 0, 0, 5.14087, 20.0157, 4.78243, -13.6461)
+transform = Transform3D(34.1838, 0, 0, 0, 13.7328, 1.5399, 0, -4.31149, 4.90482, 22.5029, 3.6174, -11.8509)
 mesh = SubResource("QuadMesh_7ta8b")
 skeleton = NodePath("../..")
 
 [node name="BG3" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(56.6381, 0, 0, 0, 34.2777, 0, 0, 0, 20.963, 16.6037, 12.3767, -23.6891)
+transform = Transform3D(100, 0, 0, 0, 57.5494, 11.457, 0, -18.7345, 35.1941, 17.9135, 23.9465, -33.5467)
 mesh = SubResource("QuadMesh_wnh86")
 skeleton = NodePath("../BG4")
 
 [node name="BG4" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(24.9661, 0, 0, 0, 24.9661, 0, 0, 0, 24.9661, 8.3366, 7.36029, -14.3636)
+transform = Transform3D(54.571, 0, 0, 0, 23.8063, 7.52072, 0, -7.52072, 23.8063, 18.193, 7.00746, -18.0417)
 mesh = SubResource("QuadMesh_wuxfk")
 skeleton = NodePath("../BG5")
 
@@ -651,27 +823,28 @@ mesh = SubResource("QuadMesh_pomx8")
 skeleton = NodePath("../BG6")
 
 [node name="BG6" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(88.441, 0, 0, 0, 34.051, 0, 0, 0, 34.051, 16.6037, 3.08265, -32.0985)
+transform = Transform3D(88.441, 0, 0, 0, 33.3506, 6.87077, 0, -6.87077, 33.3506, 16.6037, -0.0255108, -29.529)
 mesh = SubResource("QuadMesh_hul7l")
 skeleton = NodePath("../MeshInstance3D5")
 
 [node name="BG7" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(-59.3267, -0.271267, -0.0439394, 0.436975, -6.33526, 1.32327, -2.25161, 5.918, 1.41455, 16.6037, -2.86335, -10.9901)
+transform = Transform3D(-999.254, -4.56927, -0.740223, 0.223835, -86.4494, 26.3127, -38.6313, 117.69, 19.2994, 16.2907, -8.43623, -23.7445)
 mesh = SubResource("QuadMesh_omvqn")
 skeleton = NodePath("../..")
 
 [node name="BG8" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(24.461, 0, 0, 0, 29.2054, 0, 0, 0, 33.5715, 19.9952, 7.92947, -16.291)
+transform = Transform3D(22.6482, -10.7145, -3.02791, 9.24118, 26.2591, 7.42078, 0, -6.9724, 32.6007, 28.4482, 6.33827, -16.4562)
 mesh = SubResource("QuadMesh_b3y15")
 skeleton = NodePath("../Background")
 
 [node name="BG9" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(20.9811, 0, 0, 0, 20.9811, 0, 0, 0, 20.9811, 11.4297, 3.08265, -25.9671)
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 27.2801, 4.8658, -11.7631)
+top_level = true
 mesh = SubResource("QuadMesh_0ditu")
 skeleton = NodePath("../Background")
 
 [node name="BG10" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(102.317, 0, 0, 0, 26.1166, 0, 0, 0, 26.1166, 16.6037, 1.29366, -21.1584)
+transform = Transform3D(102.317, 0, 0, 0, 26.1166, 0, 0, 0, 26.1166, 16.6037, -3.81607, -22.154)
 mesh = SubResource("QuadMesh_cpxrg")
 skeleton = NodePath("../Background")
 
@@ -680,4 +853,136 @@ transform = Transform3D(0.0102097, 0, 0, 0, 0.0168688, 0, 0, 0, 0.0181764, 16.60
 visible = false
 skeleton = NodePath("../Background")
 
-[connection signal="pressed" from="UI/Control/Button" to="UI/Control/Button/Node3D" method="spawn_hostiles"]
+[node name="WorldSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamSynchronized_k2ny2")
+autoplay = true
+script = ExtResource("35_easix")
+ambient_sound = ExtResource("36_b4b5i")
+battle_sound = ExtResource("37_53mcw")
+
+[node name="ExtraSound" type="AudioStreamPlayer" parent="."]
+volume_db = -3.0
+script = ExtResource("36_dq4xk")
+start_sound = ExtResource("37_84b88")
+lose_sound = ExtResource("37_84b88")
+win_sound = ExtResource("38_cl4le")
+
+[node name="GameController" type="Control" parent="." node_paths=PackedStringArray("timer", "label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1079.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("4_nnfht")
+script = ExtResource("41_8n7n1")
+timer = NodePath("Timer")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="GameController"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 45.0
+offset_right = 400.0
+offset_bottom = 226.0
+theme_override_font_sizes/font_size = 60
+text = "5 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GameController"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 87.0
+offset_right = 169.0
+offset_bottom = 174.0
+texture = ExtResource("42_x8ws3")
+
+[node name="Timer" type="Timer" parent="GameController"]
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="WallLight" parent="Light" instance=ExtResource("43_73yys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26587, -0.0890011, 3.27714)
+
+[node name="WallLight2" parent="Light" instance=ExtResource("43_73yys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06855, -0.0890011, 3.27714)
+
+[node name="WallLight3" parent="Light" instance=ExtResource("43_73yys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98841, 1.79674, -3.37211)
+
+[node name="WallLight4" parent="Light" instance=ExtResource("43_73yys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48263, 1.79674, -3.37211)
+
+[node name="WallLight5" parent="Light" instance=ExtResource("43_73yys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.314803, 1.79674, -3.37211)
+
+[node name="WallLight6" parent="Light" instance=ExtResource("44_ltiqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.38421, 3.76081, -1.73452)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
+transform = Transform3D(0.0233601, -0.418691, 0.907828, 0.0107701, 0.908129, 0.418553, -0.999669, 1.86326e-09, 0.0257233, 1.66962, 6.67207, -0.8541)
+light_color = Color(0.176471, 1, 1, 1)
+light_energy = 5.508
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+spot_range = 27.76
+spot_angle_attenuation = 1.10957
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Light"]
+transform = Transform3D(0.00579305, -0.974311, 0.225132, 0.0250625, 0.225206, 0.973989, -0.999669, 2.83691e-09, 0.0257233, 20.3126, 6.67207, -0.8541)
+light_color = Color(0.45846, 0.597679, 1, 1)
+light_energy = 5.508
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+spot_range = 27.76
+spot_angle = 78.1439
+spot_angle_attenuation = 1.10957
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Light"]
+transform = Transform3D(-0.0217516, -0.533821, -0.845318, 0.0137317, -0.845597, 0.533645, -0.999669, 2.79223e-09, 0.0257233, 25.5525, 8.79079, -0.8541)
+light_color = Color(0.829528, 0.411648, 0.680501, 1)
+light_energy = 6.215
+light_indirect_energy = 7.955
+light_volumetric_fog_energy = 0.0
+light_specular = 7.337
+spot_range = 13.4351
+spot_attenuation = 0.44
+spot_angle = 89.72
+spot_angle_attenuation = 3.13834
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Light"]
+transform = Transform3D(-0.00865388, 0.941711, -0.33631, -0.0242239, -0.336421, -0.9414, -0.999669, -7.66273e-09, 0.0257233, 25.5525, -5.35867, -19.4427)
+light_color = Color(7.70092e-07, 0.624026, 0.891086, 1)
+light_energy = 12.138
+light_indirect_energy = 7.955
+light_volumetric_fog_energy = 0.0
+light_specular = 7.337
+spot_range = 15.353
+spot_attenuation = 0.51
+spot_angle = 51.22
+spot_angle_attenuation = 3.13834
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Light"]
+transform = Transform3D(0.00948733, 0.9295, 0.3687, -0.0239098, 0.368822, -0.929192, -0.999669, -1.86466e-09, 0.0257233, 6.40524, -5.35867, -19.4427)
+light_color = Color(7.70092e-07, 0.624026, 0.891086, 1)
+light_energy = 12.138
+light_indirect_energy = 7.955
+light_volumetric_fog_energy = 0.0
+light_specular = 7.337
+spot_range = 15.353
+spot_attenuation = 0.51
+spot_angle = 51.22
+spot_angle_attenuation = 3.13834
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("45_ra5ui")
+
+[connection signal="pressed" from="UI/Control/call" to="UI/Control/call/Node3D" method="spawn_hostiles"]
+[connection signal="timeout" from="GameController/Timer" to="GameController" method="handle_time"]

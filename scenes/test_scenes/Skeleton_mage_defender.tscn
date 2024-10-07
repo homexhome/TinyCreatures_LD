@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bb3s8i0g5t2mh"]
+[gd_scene load_steps=28 format=4 uid="uid://bb3s8i0g5t2mh"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_lkwy8"]
 [ext_resource type="PackedScene" uid="uid://bn7231wsn2w5k" path="res://scenes/projectiles/mage_projectile.tscn" id="2_m020j"]
@@ -6,6 +6,10 @@
 [ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="4_mjsqa"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="5_6tpkv"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="6_7qfss"]
+[ext_resource type="Script" path="res://scripts/controllers/sound/character_sound.gd" id="7_qyv0u"]
+[ext_resource type="AudioStream" uid="uid://du600jl6ely7d" path="res://imports/sound_import/смертьскелетаТРЕТИЙВАРИАНТ.ogg" id="8_lpkww"]
+[ext_resource type="AudioStream" uid="uid://cukyu3y7xrd16" path="res://imports/sound_import/ударпокостям.ogg" id="9_2kj8g"]
+[ext_resource type="AudioStream" uid="uid://cdfpqwix0j5al" path="res://imports/sound_import/магия2выстрел.ogg" id="10_tdjqy"]
 
 [sub_resource type="Resource" id="Resource_nj7na"]
 script = ExtResource("3_n5y07")
@@ -144,6 +148,18 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_a6t82"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.390989, -0.878546, -1.60113e-15), Vector3(1.29245, 0.927544, 0.107785)]
+}
 
 [sub_resource type="Animation" id="Animation_7tw6s"]
 resource_name = "idle"
@@ -172,7 +188,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.533333, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.488692, 0, 0), Vector3(0.390954, 0, 0), Vector3(0.390954, 0, 0), Vector3(-0.488692, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.390954, 0, 0), Vector3(0.390954, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -290,5 +306,12 @@ libraries = {
 "": SubResource("AnimationLibrary_682x5"),
 "Skeleton_wizard": SubResource("AnimationLibrary_mkqyn")
 }
+
+[node name="CharacterSound" type="AudioStreamPlayer3D" parent="."]
+unit_size = 5.0
+script = ExtResource("7_qyv0u")
+death_sound = ExtResource("8_lpkww")
+damage_sound = ExtResource("9_2kj8g")
+attack_sound = ExtResource("10_tdjqy")
 
 [connection signal="timeout" from="Attack/CheckTargetTimer" to="Attack" method="check_for_target"]

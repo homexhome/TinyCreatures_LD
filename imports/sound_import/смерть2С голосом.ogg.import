@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btxkseqyd5x3"
+path="res://.godot/imported/смерть2С голосом.ogg-077e4e0cdb0889ced95c3aab7ab67707.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/sound_import/смерть2С голосом.ogg"
+dest_files=["res://.godot/imported/смерть2С голосом.ogg-077e4e0cdb0889ced95c3aab7ab67707.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

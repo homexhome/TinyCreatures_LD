@@ -1,5 +1,9 @@
 extends Panel
 
+func _ready() -> void:
+	Event.game_lost.connect(hide)
+	Event.game_won.connect(hide)
+
 func _process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	var rect = get_global_rect()
@@ -9,9 +13,9 @@ func _process(delta: float) -> void:
 		unblock_session()
 
 func block_session():
-	print("blocked")
+	#print("blocked")
 	Session.block()
 	
 func unblock_session():
-	print("unblocked")
+	#print("unblocked")
 	Session.unblock()

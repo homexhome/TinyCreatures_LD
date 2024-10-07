@@ -16,6 +16,7 @@ signal on_death_signal
 var animation_busy : bool = false
 
 var current_target
+@onready var character_sound = $CharacterSound
 
 func _ready():
 	for child in get_children():
@@ -65,7 +66,7 @@ var dying : bool = false
 func death():
 	on_death_signal.emit()
 	dying = true
-	
+	character_sound.play_special_sound("death")
 	if is_in_group("Attackers"):
 		Session.add_bones(100)
 	else:

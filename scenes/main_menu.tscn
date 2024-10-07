@@ -126,6 +126,7 @@ text = "OPTIONS"
 script = ExtResource("3_j5uo2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("8_rti6f")
 autoplay = true
 parameters/looping = true

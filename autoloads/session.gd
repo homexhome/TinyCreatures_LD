@@ -6,6 +6,7 @@ var extra_bones : int = 0
 signal bones_amount_changed
 
 var blocked : bool = false
+var spawn_blocked : bool = false
 
 func flush_session():
 	current_bones = starting_bones
@@ -30,3 +31,12 @@ func block():
 	
 func unblock():
 	blocked = false
+
+func block_spawn():
+	spawn_blocked = true
+	
+func unblock_spawn():
+	spawn_blocked = false
+
+func check_if_can_spend(amount):
+	return current_bones - amount <= 0

@@ -1,10 +1,14 @@
-[gd_scene load_steps=22 format=4 uid="uid://pbm2gkqj1i6l"]
+[gd_scene load_steps=26 format=4 uid="uid://pbm2gkqj1i6l"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_5hkm0"]
 [ext_resource type="Script" path="res://resources/character_stats.gd" id="2_v0ory"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="3_sxm1n"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="4_hr3ei"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="5_h7i0n"]
+[ext_resource type="Script" path="res://scripts/controllers/sound/character_sound.gd" id="6_b5hb3"]
+[ext_resource type="AudioStream" uid="uid://b300q000ahfyo" path="res://imports/sound_import/смертьскелетаВТОРОЙВАРИАНТ.ogg" id="7_bwsrt"]
+[ext_resource type="AudioStream" uid="uid://cukyu3y7xrd16" path="res://imports/sound_import/ударпокостям.ogg" id="8_vxrbo"]
+[ext_resource type="AudioStream" uid="uid://7ywyrxvvfyf3" path="res://imports/sound_import/замахмеча.ogg" id="9_7fv3a"]
 
 [sub_resource type="Resource" id="Resource_kly62"]
 script = ExtResource("2_v0ory")
@@ -335,5 +339,12 @@ libraries = {
 "": SubResource("AnimationLibrary_n1wav"),
 "Skeleton_warrior": SubResource("AnimationLibrary_w2svk")
 }
+
+[node name="CharacterSound" type="AudioStreamPlayer3D" parent="."]
+unit_size = 5.0
+script = ExtResource("6_b5hb3")
+death_sound = ExtResource("7_bwsrt")
+damage_sound = ExtResource("8_vxrbo")
+attack_sound = ExtResource("9_7fv3a")
 
 [connection signal="timeout" from="Attack/CheckTargetTimer" to="Attack" method="check_for_target"]

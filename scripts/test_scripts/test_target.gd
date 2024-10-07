@@ -2,10 +2,15 @@ extends MeshInstance3D
 
 @export var mesh_to_take : MeshInstance3D
 @export var camera : Camera3D
-
+@export var color_yes : Color
+@export var color_no : Color
 @export var ui : UIControl
-
+@export var mesh_with_material : Mesh
+@export var shape_raycast : Shape3D
 var mouse_position_3D : Vector3
+@export var path_visual_node : MeshInstance3D
+var min_x_to_move_camera : float = 100
+var max_offset_x_to_move_camera : float = 100
 
 func _ready():
 	mesh_to_take.hide()
@@ -17,12 +22,12 @@ func _physics_process(delta: float) -> void:
 	if Session.blocked:
 		mesh_to_take.hide()
 	#print("Mouse : ", mouse_position, "window size : ", window_size)
-	if (mouse_position.x < 0 or mouse_position.x > window_size.x or
+	if (mouse_position.x - min_x_to_move_camera < 0 or mouse_position.x + max_offset_x_to_move_camera > window_size.x or
 			mouse_position.y < 0 or mouse_position.y > window_size.y):
-				if mouse_position.x <= 0 :
+				if mouse_position.x - min_x_to_move_camera <= 0 :
 					if camera.path.global_position.x <= camera.min_x : return
 					camera.path.translate(Vector3.LEFT* delta * camera.camera_speed)
-				elif mouse_position.x >= window_size.x:
+				elif mouse_position.x + max_offset_x_to_move_camera >= window_size.x:
 					if camera.path.global_position.x >= camera.max_x : return
 					camera.path.translate(Vector3.RIGHT * delta * camera.camera_speed)
 				return
@@ -38,9 +43,22 @@ func _physics_process(delta: float) -> void:
 		mouse_position_3D = end
 
 		if not result.is_empty() and is_instance_valid(ui.active_monster_button):
-			mesh_to_take.show()
 			mouse_position_3D = result["position"]
-			#print("Расстояние : ", (mouse_position_3D - origin).length())
+			var shape_query : PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
+			shape_query.collision_mask = 2
+			shape_query.shape = shape_raycast
+			shape_query.transform.origin = mouse_position_3D
+			var shape_result = space_state.intersect_shape(shape_query)
+			mesh_to_take.show()
+			if shape_result.is_empty():
+				Session.unblock_spawn()
+				mesh_with_material.get_material().set_albedo(color_yes)
+				mesh_with_material.get_material().set_emission(color_yes)
+			else:
+				Session.block_spawn()
+				mesh_with_material.get_material().set_albedo(color_no)
+				mesh_with_material.get_material().set_emission(color_no)
+
 			mesh_to_take.global_position = mouse_position_3D
 		else:
 			mesh_to_take.hide()

@@ -39,6 +39,6 @@ script = ExtResource("1_cb08h")
 speed = 4.0
 
 [node name="Arrow" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.108081, -1.12917, -0.675055, -0.122677, 0.683028, -1.12286, 1.30984, -0.0292017, -0.160868, -0.052878, 0, 0)
+transform = Transform3D(1.30984, -0.0292017, -0.160868, -0.122677, 0.683028, -1.12286, 0.108081, 1.12917, 0.675055, -0.052878, 0, 0)
 mesh = SubResource("ArrayMesh_m4434")
 skeleton = NodePath("")

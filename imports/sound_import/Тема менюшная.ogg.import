@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdwgsih1r7e6q"
+path="res://.godot/imported/Тема менюшная.ogg-42ee4c20407be4d80627b14e7ca56c9f.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/sound_import/Тема менюшная.ogg"
+dest_files=["res://.godot/imported/Тема менюшная.ogg-42ee4c20407be4d80627b14e7ca56c9f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
