@@ -12,9 +12,9 @@
 [ext_resource type="Script" path="res://scenes/test_scenes/test_spawner.gd" id="8_hpgin"]
 [ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="8_uenqx"]
 [ext_resource type="PackedScene" uid="uid://dthee126247on" path="res://scenes/test_scenes/level_scene.tscn" id="9_o0rq1"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/Adventurer_archer_attacker.tscn" id="9_y4crk"]
+[ext_resource type="PackedScene" uid="uid://h0i54cuo8r5b" path="res://scenes/test_scenes/Adventurer_archer_attacker.tscn" id="9_y4crk"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/Adventurer_monk_attacker.tscn" id="10_yark5"]
+[ext_resource type="PackedScene" uid="uid://cdwcw8mm4cqsy" path="res://scenes/test_scenes/Adventurer_monk_attacker.tscn" id="10_yark5"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_bones_label.gd" id="11_lpkmg"]
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="12_fidbp"]
@@ -304,15 +304,18 @@ albedo_texture = ExtResource("16_mw4bo")
 material = SubResource("StandardMaterial3D_defbk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awnbg"]
+transparency = 1
 albedo_texture = ExtResource("17_nqkna")
 
 [sub_resource type="QuadMesh" id="QuadMesh_hul7l"]
 material = SubResource("StandardMaterial3D_awnbg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqakr"]
+transparency = 1
 albedo_texture = ExtResource("13_abg1y")
 
 [sub_resource type="QuadMesh" id="QuadMesh_omvqn"]
+lightmap_size_hint = Vector2i(7, 7)
 material = SubResource("StandardMaterial3D_tqakr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc7cv"]
@@ -585,7 +588,7 @@ script = ExtResource("13_18scs")
 [node name="Mobs" type="Node3D" parent="."]
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.988228, -0.152986, 0, 0.152986, 0.988228, 0.165585, 3.03807, 10.1595)
+transform = Transform3D(1, 0, 0, 0, 0.908201, -0.418533, 0, 0.418533, 0.908201, 5.67307, 1.6427, 11.0618)
 curve = SubResource("Curve3D_sv3w4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
@@ -656,7 +659,12 @@ mesh = SubResource("QuadMesh_hul7l")
 skeleton = NodePath("")
 
 [node name="BG7" type="MeshInstance3D" parent="BG"]
-transform = Transform3D(-59.3267, -0.271267, -0.0439394, 0.436975, -6.33526, 1.32327, -2.25161, 5.918, 1.41455, 16.6037, -2.86335, -10.9901)
+transform = Transform3D(-57.626, -0.523926, -0.0529976, -0.826999, -4.10103, 2.26557, -2.06869, 16.2341, 0.57061, 16.6037, -4.6527, -14.0066)
+mesh = SubResource("QuadMesh_omvqn")
+skeleton = NodePath("../..")
+
+[node name="BG12" type="MeshInstance3D" parent="BG"]
+transform = Transform3D(-56.9728, -0.648774, 0, 1.59139, -23.2266, 0, 0, 0, 1.86738, 16.6037, 0.656259, -43.8639)
 mesh = SubResource("QuadMesh_omvqn")
 skeleton = NodePath("../..")
 
