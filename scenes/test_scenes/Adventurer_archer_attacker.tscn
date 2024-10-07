@@ -15,7 +15,7 @@
 [sub_resource type="Resource" id="Resource_e85ga"]
 script = ExtResource("3_3d04c")
 type = 1
-max_health = 100.0
+max_health = 60.0
 attack_damage = 20.0
 movement_speed = 0.3
 attack_speed = 3.0
@@ -23,8 +23,8 @@ cast_speed = 3.0
 minimum_distance_to_attack = 3.0
 projectile_scene = ExtResource("2_dfov0")
 recieving_close_combat_damage_modifier = 1.0
-recieving_archer_damage_modifier = 1.0
-recieving_magic_damage_modifier = 1.0
+recieving_archer_damage_modifier = 0.75
+recieving_magic_damage_modifier = 1.25
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ckwn"]
 radius = 0.25
