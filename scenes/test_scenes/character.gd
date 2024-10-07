@@ -18,6 +18,8 @@ var animation_busy : bool = false
 var current_target
 @onready var character_sound = $CharacterSound
 
+var at_final_stage : bool = false
+
 func _ready():
 	for child in get_children():
 		if child is BaseCharacterComponent:
@@ -68,7 +70,7 @@ func death():
 	dying = true
 	character_sound.play_special_sound("death")
 	if is_in_group("Attackers"):
-		Session.add_bones(100)
+		Session.add_bones(110)
 	else:
 		Session.add_bones(50)
 		

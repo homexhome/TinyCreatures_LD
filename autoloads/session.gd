@@ -8,6 +8,19 @@ signal bones_amount_changed
 var blocked : bool = false
 var spawn_blocked : bool = false
 
+var camera_on_left : bool = false
+var camera_on_right : bool = false
+
+func set_camera_left():
+	camera_on_left = true
+
+func set_camera_right():
+	camera_on_right = true
+	
+func reset_camera_status():
+	camera_on_right = false
+	camera_on_left = false
+	
 func flush_session():
 	current_bones = starting_bones
 	extra_bones = 0

@@ -9,7 +9,6 @@ extends MeshInstance3D
 @export var shape_raycast : Shape3D
 var mouse_position_3D : Vector3
 @export var path_visual_node : MeshInstance3D
-var min_x_to_move_camera : float = 100
 var max_offset_x_to_move_camera : float = 100
 
 func _ready():
@@ -21,16 +20,17 @@ func _physics_process(delta: float) -> void:
 	var mouse_position = viewport.get_mouse_position()
 	if Session.blocked:
 		mesh_to_take.hide()
-	#print("Mouse : ", mouse_position, "window size : ", window_size)
-	if (mouse_position.x - min_x_to_move_camera < 0 or mouse_position.x + max_offset_x_to_move_camera > window_size.x or
-			mouse_position.y < 0 or mouse_position.y > window_size.y):
-				if mouse_position.x - min_x_to_move_camera <= 0 :
-					if camera.path.global_position.x <= camera.min_x : return
-					camera.path.translate(Vector3.LEFT* delta * camera.camera_speed)
-				elif mouse_position.x + max_offset_x_to_move_camera >= window_size.x:
-					if camera.path.global_position.x >= camera.max_x : return
-					camera.path.translate(Vector3.RIGHT * delta * camera.camera_speed)
-				return
+	#else:
+	##print("Mouse : ", mouse_position, "window size : ", window_size)
+		#if (mouse_position.x  < 0 or mouse_position.x > window_size.x or
+				#mouse_position.y < 0 or mouse_position.y > window_size.y):
+					#if mouse_position.x  <= 0 :
+						#if camera.path.global_position.x <= camera.min_x : return
+						#camera.path.translate(Vector3.LEFT* delta * camera.camera_speed)
+					#elif mouse_position.x >= window_size.x:
+						#if camera.path.global_position.x >= camera.max_x : return
+						#camera.path.translate(Vector3.RIGHT * delta * camera.camera_speed)
+					#return
 
 	if is_instance_valid(ui.active_monster_button):
 		var space_state = get_world_3d().direct_space_state

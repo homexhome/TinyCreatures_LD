@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5il61mrc6fj6"]
+[gd_scene load_steps=11 format=3 uid="uid://b5il61mrc6fj6"]
 
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="1_aww74"]
 [ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://parallax/1.png" id="2_c0v85"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dsp1lwknb5s43" path="res://parallax/5.png" id="3_t4l83"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="4_tf2hm"]
 [ext_resource type="Theme" uid="uid://dqsqm8fsfp85p" path="res://themes/ui_menu_theme.tres" id="6_nih5m"]
-[ext_resource type="AudioStream" uid="uid://ce1mfxjxlk5gk" path="res://parallax/хтонь.mp3" id="8_rti6f"]
+[ext_resource type="AudioStream" uid="uid://cdwgsih1r7e6q" path="res://imports/sound_import/Тема менюшная.ogg" id="9_ws4lt"]
+[ext_resource type="Script" path="res://scripts/controllers/sound/menu_audio.gd" id="10_rt6jt"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -127,9 +128,11 @@ script = ExtResource("3_j5uo2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("8_rti6f")
+stream = ExtResource("9_ws4lt")
+volume_db = -30.0
 autoplay = true
 parameters/looping = true
+script = ExtResource("10_rt6jt")
 
 [node name="LoadingScreen" type="Control" parent="."]
 visible = false

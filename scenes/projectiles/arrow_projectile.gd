@@ -8,7 +8,7 @@ func _process(delta):
 		queue_free()
 		return
 	if activated: return
-	if global_position.distance_squared_to(target.global_position) >= 0.3 :
+	if global_position.distance_squared_to(target.global_position) >= 0.45 :
 		update_rotation(delta, target.global_position)
 		global_position = global_position.lerp(target.global_position + Vector3.UP / 2,speed * delta)
 	else:

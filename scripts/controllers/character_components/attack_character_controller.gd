@@ -66,6 +66,11 @@ func check_for_target():
 	var valid_targets : Array = []
 	var distance : float = 99999
 	if !is_instance_valid(current_target):
+		if character.at_final_stage:
+			current_target = GameManager.final_target
+			character.set_current_target(GameManager.final_target)
+			return
+			
 		for body in agressive_area.get_overlapping_bodies():
 			if validate_target(body):
 				valid_targets.append(body)

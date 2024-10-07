@@ -87,6 +87,8 @@ func pick_destination():
 	if character.global_position.distance_squared_to(current_path_pos) <= max_distance_to_nav_target * max_distance_to_nav_target:
 		if path_vertices_array.size() > 0:
 			current_path_pos = path_vertices_array.pop_front()
+		else:
+			character.at_final_stage = true
 	else:
 
 		movement_target = current_path_pos
