@@ -6,6 +6,8 @@
 [node name="HealthBar" type="Node3D" node_paths=PackedStringArray("label")]
 script = ExtResource("1_odnia")
 label = NodePath("Label3D")
+attack_color = Color(1, 0.193946, 0.14819, 1)
+defend_color = Color(0.431373, 1, 0.4, 1)
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)

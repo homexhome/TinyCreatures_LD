@@ -423,6 +423,7 @@ bone_cost = 80
 ui = NodePath("../..")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Control/Archer"]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 16.0
 offset_right = 102.0
@@ -452,6 +453,7 @@ bone_cost = 120
 ui = NodePath("../..")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Control/Mage"]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 16.0
 offset_right = 102.0
