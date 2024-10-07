@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=4 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=101 format=4 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/test_world.gd" id="1_brk7t"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
@@ -54,6 +54,8 @@
 [ext_resource type="Script" path="res://scripts/controllers/character_components/base_character_component.gd" id="48_kmwq3"]
 [ext_resource type="Script" path="res://scripts/controllers/sound/character_sound.gd" id="50_8ggim"]
 [ext_resource type="Texture2D" uid="uid://bteen2ey6gs7q" path="res://imports/texture_import/ui_import/маг.png" id="52_xdch4"]
+[ext_resource type="Script" path="res://scenes/ui/health_bar.gd" id="55_h8q0k"]
+[ext_resource type="FontFile" uid="uid://gbiwn84mtw74" path="res://fonts/Burlesk-Regular.ttf" id="56_wyb67"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
@@ -291,11 +293,11 @@ recieving_magic_damage_modifier = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4sy3"]
 size = Vector3(3.02234, 1, 3.88434)
 
-[sub_resource type="Animation" id="Animation_bn547"]
-
 [sub_resource type="Animation" id="Animation_md4wb"]
 
 [sub_resource type="Animation" id="Animation_1k7le"]
+
+[sub_resource type="Animation" id="Animation_bn547"]
 
 [sub_resource type="Animation" id="Animation_mk76a"]
 
@@ -894,9 +896,10 @@ stream = ExtResource("19_k22y2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06158, 0, -0.526686)
 shape = SubResource("BoxShape3D_g4sy3")
 
-[node name="Health" type="Node3D" parent="FinalHealthBox" node_paths=PackedStringArray("audio")]
+[node name="Health" type="Node3D" parent="FinalHealthBox" node_paths=PackedStringArray("audio", "health_text")]
 script = ExtResource("46_11xiy")
 audio = NodePath("../CharacterSound")
+health_text = NodePath("../HealthBar")
 
 [node name="Movement" type="Node3D" parent="FinalHealthBox"]
 script = ExtResource("48_kmwq3")
@@ -916,6 +919,22 @@ script = ExtResource("50_8ggim")
 death_sound = ExtResource("19_k22y2")
 damage_sound = ExtResource("19_k22y2")
 attack_sound = ExtResource("19_k22y2")
+
+[node name="HealthBar" type="Node3D" parent="FinalHealthBox" node_paths=PackedStringArray("label")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+script = ExtResource("55_h8q0k")
+label = NodePath("Label3D")
+attack_color = Color(1, 0.193946, 0.14819, 1)
+defend_color = Color(0.431373, 1, 0.4, 1)
+
+[node name="Label3D" type="Label3D" parent="FinalHealthBox/HealthBar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08395, 2.5066, 0)
+billboard = 1
+text = "30 / 30"
+font = ExtResource("56_wyb67")
+font_size = 150
+outline_size = 9
 
 [node name="Label" type="Label" parent="."]
 offset_left = 298.0

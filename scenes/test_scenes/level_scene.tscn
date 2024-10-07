@@ -4509,7 +4509,7 @@ mesh = SubResource("ArrayMesh_r2dfb")
 skeleton = NodePath("")
 
 [node name="Crystal3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.684756, -0.728541, -0.0183845, 0.582582, 0.532065, 0.614415, -0.437845, -0.431434, 0.788769, -2.44679, 5.41574, -33.7258)
+transform = Transform3D(0.684756, -0.728541, -0.0183845, 0.582582, 0.532065, 0.614415, -0.437845, -0.431434, 0.788769, -3.34128, 5.41574, -33.7258)
 material_override = ExtResource("4_xvhbg")
 mesh = SubResource("ArrayMesh_r2dfb")
 skeleton = NodePath("")
