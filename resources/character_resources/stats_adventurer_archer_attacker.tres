@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_pau6p")
+character_name = "Human archer"
 type = 1
 max_health = 60.0
 attack_damage = 20.0

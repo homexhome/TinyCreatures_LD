@@ -281,6 +281,7 @@ material = SubResource("StandardMaterial3D_1d4xj")
 
 [sub_resource type="Resource" id="Resource_1uhww"]
 script = ExtResource("47_u22kf")
+character_name = ""
 type = 0
 max_health = 100.0
 attack_damage = 20.0

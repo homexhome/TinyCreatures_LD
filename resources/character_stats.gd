@@ -1,6 +1,7 @@
 extends Resource
 class_name CharacterStats
 
+@export var character_name : String
 enum COMBAT_TYPE {CLOSE_COMBAT, ARCHER, MAGE}
 @export var type : COMBAT_TYPE
 @export var max_health : float = 100

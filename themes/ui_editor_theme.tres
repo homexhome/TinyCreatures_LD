@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://6mfik02rfbt2"]
+
+[ext_resource type="Texture2D" uid="uid://dqgqx4w152fd5" path="res://imports/texture_import/ui_import/кнопка2.png" id="1_t4q5c"]
+[ext_resource type="Texture2D" uid="uid://c46ogggiyvu1l" path="res://imports/texture_import/ui_import/ползунок.png" id="2_371tx"]
+[ext_resource type="Texture2D" uid="uid://dn78ax5nd1w5y" path="res://imports/texture_import/ui_import/слайдер.png" id="3_5qf6o"]
+[ext_resource type="Texture2D" uid="uid://i81l6v7ky033" path="res://imports/texture_import/ui_import/окно меню.png" id="4_3emy1"]
+[ext_resource type="FontFile" uid="uid://gbiwn84mtw74" path="res://fonts/Burlesk-Regular.ttf" id="5_psp06"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwuqu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0lx4"]
+texture = ExtResource("1_t4q5c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ckh2l"]
+texture = ExtResource("3_5qf6o")
+texture_margin_top = 18.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4ygj"]
+bg_color = Color(0.533037, 0.533037, 0.533037, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8b7qa"]
+texture = ExtResource("4_3emy1")
+
+[resource]
+default_font = ExtResource("5_psp06")
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 40
+Button/styles/focus = SubResource("StyleBoxEmpty_wwuqu")
+Button/styles/normal = SubResource("StyleBoxTexture_i0lx4")
+HSlider/icons/grabber = ExtResource("2_371tx")
+HSlider/icons/grabber_highlight = ExtResource("2_371tx")
+HSlider/styles/slider = SubResource("StyleBoxTexture_ckh2l")
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 40
+MenuButton/styles/normal = SubResource("StyleBoxFlat_s4ygj")
+Panel/styles/panel = SubResource("StyleBoxTexture_8b7qa")

@@ -26,4 +26,5 @@ Button/styles/normal = SubResource("StyleBoxTexture_i0lx4")
 HSlider/icons/grabber = ExtResource("2_mk1bg")
 HSlider/icons/grabber_highlight = ExtResource("2_mk1bg")
 HSlider/styles/slider = SubResource("StyleBoxTexture_ckh2l")
+Label/font_sizes/font_size = 16
 Panel/styles/panel = SubResource("StyleBoxTexture_8b7qa")

@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_4lirc")
+character_name = "Skeleton Mage"
 type = 2
 max_health = 100.0
 attack_damage = 20.0

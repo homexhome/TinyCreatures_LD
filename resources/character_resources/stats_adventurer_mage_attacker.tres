@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_4itjq")
+character_name = "Human Mage"
 type = 2
 max_health = 50.0
 attack_damage = 15.0

@@ -1,0 +1,269 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmdgyiemi8jpp"]
+
+[ext_resource type="Theme" uid="uid://6mfik02rfbt2" path="res://themes/ui_editor_theme.tres" id="1_430t5"]
+[ext_resource type="Script" path="res://addons/editor/editor_character.gd" id="2_5w11g"]
+[ext_resource type="Script" path="res://addons/editor/type_label.gd" id="3_tkpak"]
+
+[node name="EditorCharacter" type="Control" node_paths=PackedStringArray("type_button", "type_label", "name_label", "max_health_label", "max_health_line", "attack_damage_label", "attack_damage_line", "movement_speed_label", "movement_speed_line", "attack_speed_label", "attack_speed_line", "cast_speed_label", "cast_speed_line", "minimum_distance_to_attack_label", "minimum_distance_to_attack_line", "recieving_close_combat_damage_modifier_label", "recieving_close_combat_damage_modifier_line", "recieving_archer_damage_modifier_label", "recieving_archer_damage_modifier_line", "recieving_magic_damage_modifier_label", "recieving_magic_damage_modifier_line", "cost_on_death_label", "cost_on_death_line", "cost_to_create_label", "cost_to_create_line")]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = -1595.0
+offset_bottom = -214.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_430t5")
+script = ExtResource("2_5w11g")
+type_button = NodePath("Control/ScrollContainer/VBoxContainer/MenuButton")
+type_label = NodePath("Control/ScrollContainer/VBoxContainer/MenuButton/Label")
+name_label = NodePath("Name")
+max_health_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer/MaxHealth")
+max_health_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer/LineEdit")
+attack_damage_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer2/AttDamage")
+attack_damage_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer2/LineEdit")
+movement_speed_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer3/MovSpeed")
+movement_speed_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer3/LineEdit")
+attack_speed_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer4/AttSp")
+attack_speed_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer4/LineEdit")
+cast_speed_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer5/CastSp")
+cast_speed_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer5/LineEdit")
+minimum_distance_to_attack_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer6/MinDistToAttack")
+minimum_distance_to_attack_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer6/LineEdit")
+recieving_close_combat_damage_modifier_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer8/RecieveMelee")
+recieving_close_combat_damage_modifier_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer8/LineEdit")
+recieving_archer_damage_modifier_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer9/RecieveArcher")
+recieving_archer_damage_modifier_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer9/LineEdit")
+recieving_magic_damage_modifier_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer10/RecieveMagic")
+recieving_magic_damage_modifier_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer10/LineEdit")
+cost_on_death_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer11/BonesFromDeath")
+cost_on_death_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer11/LineEdit")
+cost_to_create_label = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer12/BonesCost")
+cost_to_create_line = NodePath("Control/ScrollContainer/VBoxContainer/HBoxContainer12/LineEdit")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.5
+offset_top = 2.0
+offset_right = 22.5
+offset_bottom = 37.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 59.0
+offset_right = 315.0
+offset_bottom = 705.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -15.0
+offset_right = 26.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 34.0
+offset_right = -3.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+
+[node name="MenuButton" type="MenuButton" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_430t5")
+text = "Type"
+alignment = 0
+item_count = 3
+popup/item_0/text = "Melee"
+popup/item_1/text = "Range"
+popup/item_1/id = 1
+popup/item_2/text = "Mage"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/MenuButton"]
+layout_mode = 0
+offset_left = 94.0
+offset_right = 265.0
+offset_bottom = 40.0
+text = "WARRIOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_tkpak")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="MaxHealth" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Max health"
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="AttDamage" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Attack Damage"
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="MovSpeed" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Movement Speed"
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="AttSp" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Attack speed"
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="CastSp" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Cast Speed"
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="MinDistToAttack" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+text = "Min distance attack"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="RecieveMelee" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+text = "* Melee damage"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="RecieveArcher" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+text = "* Archer damage"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="RecieveMagic" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+text = "* Magic damage"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="BonesFromDeath" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer11"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+text = "Bones from death"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="BonesCost" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer12"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+text = "Bones cost"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 816.0
+offset_right = 218.0
+offset_bottom = 857.0
+text = "Save"
+
+[connection signal="pressed" from="Button" to="." method="save_character"]
