@@ -740,7 +740,6 @@ autoplay = true
 script = ExtResource("35_easix")
 ambient_sound = ExtResource("36_b4b5i")
 battle_sound = ExtResource("37_53mcw")
-is_ambient = true
 
 [node name="WorldSound2" type="AudioStreamPlayer" parent="."]
 process_mode = 3
@@ -750,6 +749,7 @@ autoplay = true
 script = ExtResource("35_easix")
 ambient_sound = ExtResource("36_b4b5i")
 battle_sound = ExtResource("37_53mcw")
+is_ambient = true
 
 [node name="ExtraSound" type="AudioStreamPlayer" parent="."]
 volume_db = -3.0

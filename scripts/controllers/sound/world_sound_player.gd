@@ -13,7 +13,7 @@ func _ready() -> void:
 	#second_stream_volume = stream.get_sync_stream_volume(1)
 	#
 	#Event.game_started.connect(play_special_sound("battle"))
-	Event.skeleton_spawned.connect(battle_started)
+	Event.game_started.connect(battle_started)
 
 #var is_battle_started : bool
 #func _process(delta: float) -> void:
@@ -29,8 +29,11 @@ func _ready() -> void:
 			#stream.set_sync_stream_volume(0, first_stream_volume - delta * change_speed)
 	#first_stream_volume = stream.get_sync_stream_volume(0)
 	#second_stream_volume = stream.get_sync_stream_volume(1)
-			#
-			#
+var is_battle_started : bool = false
+func battle_started():
+	is_battle_started = true
+	is_ambient = !is_ambient
+	
 func play_special_sound(sound_name : String):
 	match sound_name:
 		"ambient":
@@ -38,17 +41,13 @@ func play_special_sound(sound_name : String):
 		"battle":
 			stream = battle_sound
 	play()
-
-func battle_started():
+func _process(delta: float) -> void:
 	if is_ambient:
-		while get_volume_db() >= -59:
+		if get_volume_db() >= -59:
 			set_volume_db(get_volume_db() - get_process_delta_time() * change_speed)
-			await get_tree().process_frame
 	else:
-		while get_volume_db() <= -15:
+		if get_volume_db() <= -15:
 			set_volume_db(get_volume_db() + get_process_delta_time() * change_speed)
-			await get_tree().process_frame
-	return
 	#if is_battle_started: return
 	#stream.set_sync_stream_volume(1, -30) 
 	#second_stream_volume = stream.get_sync_stream_volume(1)
