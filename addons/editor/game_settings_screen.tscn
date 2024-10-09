@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=3 uid="uid://c20mljbg37dxu"]
+
+[ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="1_xpdhg"]
+[ext_resource type="Script" path="res://addons/editor/editor_game_settings_screen.gd" id="2_0ce4c"]
+[ext_resource type="Theme" uid="uid://oat7r4nnwwvr" path="res://themes/ui_options_theme.tres" id="2_gggm3"]
+[ext_resource type="Resource" uid="uid://dw2ui05w2ev70" path="res://autoloads/game_globals.tres" id="3_2uhk5"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("starting_bones_line", "starting_enemies_count", "max_enemies_line", "time_for_enemies_spawn_line", "chance_to_increase_wave_count_line")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xpdhg")
+script = ExtResource("2_0ce4c")
+game_settings = ExtResource("3_2uhk5")
+starting_bones_line = NodePath("GameSettings/Panel/VBoxContainer/StartingBones/LineEdit")
+starting_enemies_count = NodePath("GameSettings/Panel/VBoxContainer/StartingEnemies/LineEdit")
+max_enemies_line = NodePath("GameSettings/Panel/VBoxContainer/MaxEnemies/LineEdit")
+time_for_enemies_spawn_line = NodePath("GameSettings/Panel/VBoxContainer/Time/LineEdit")
+chance_to_increase_wave_count_line = NodePath("GameSettings/Panel/VBoxContainer/ChanceWaves/LineEdit")
+
+[node name="GameSettings" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 140.0
+offset_top = 52.0
+offset_right = 554.0
+offset_bottom = 489.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GameSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 95.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_gggm3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameSettings/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 91.0
+offset_right = -42.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 29
+
+[node name="StartingBones" type="HBoxContainer" parent="GameSettings/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="Starting Bones" type="Label" parent="GameSettings/Panel/VBoxContainer/StartingBones"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Starting bones"
+
+[node name="LineEdit" type="LineEdit" parent="GameSettings/Panel/VBoxContainer/StartingBones"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "800"
+
+[node name="StartingEnemies" type="HBoxContainer" parent="GameSettings/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="Starting Bones" type="Label" parent="GameSettings/Panel/VBoxContainer/StartingEnemies"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Starting enemies count"
+
+[node name="LineEdit" type="LineEdit" parent="GameSettings/Panel/VBoxContainer/StartingEnemies"]
+layout_mode = 2
+text = "3"
+
+[node name="MaxEnemies" type="HBoxContainer" parent="GameSettings/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="Starting Bones" type="Label" parent="GameSettings/Panel/VBoxContainer/MaxEnemies"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Max enemies count"
+
+[node name="LineEdit" type="LineEdit" parent="GameSettings/Panel/VBoxContainer/MaxEnemies"]
+layout_mode = 2
+text = "8"
+
+[node name="Time" type="HBoxContainer" parent="GameSettings/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="Starting Bones" type="Label" parent="GameSettings/Panel/VBoxContainer/Time"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Time Between Waves"
+
+[node name="LineEdit" type="LineEdit" parent="GameSettings/Panel/VBoxContainer/Time"]
+layout_mode = 2
+text = "15"
+
+[node name="ChanceWaves" type="HBoxContainer" parent="GameSettings/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="Starting Bones" type="Label" parent="GameSettings/Panel/VBoxContainer/ChanceWaves"]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Chance to increase enemies count between waves"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="GameSettings/Panel/VBoxContainer/ChanceWaves"]
+layout_mode = 2
+text = "50"
+
+[node name="Label" type="Label" parent="GameSettings"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 14.0
+offset_right = 435.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 50
+text = "GAME SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="GameSettings"]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 515.0
+offset_right = 324.0
+offset_bottom = 555.0
+text = "SAVE"

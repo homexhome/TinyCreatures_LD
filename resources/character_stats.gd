@@ -16,5 +16,7 @@ enum COMBAT_TYPE {CLOSE_COMBAT, ARCHER, MAGE}
 @export var recieving_archer_damage_modifier : float = 1.0
 @export var recieving_magic_damage_modifier : float = 1.0
 
+@export_group("Costs")
 
-
+@export var cost_on_death : int = 50
+@export var cost_to_create : int = 0

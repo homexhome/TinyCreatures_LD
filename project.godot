@@ -19,9 +19,9 @@ config/icon="res://icon.svg"
 
 ValidityChecker="*res://autoloads/validity_checker.gd"
 Projectiles="*res://autoloads/projectiles.tscn"
+Session="*res://autoloads/session.tscn"
 GameOptions="*res://autoloads/game_options.tscn"
 GameManager="*res://autoloads/game_manager.gd"
-Session="*res://autoloads/session.gd"
 Event="*res://autoloads/events.gd"
 ResultScreen="*res://autoloads/game_over_screen.tscn"
 
@@ -30,6 +30,11 @@ ResultScreen="*res://autoloads/game_over_screen.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://imports/texture_import/ui_import/курсор.png"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/editor/plugin.cfg")
 
 [global_group]
 

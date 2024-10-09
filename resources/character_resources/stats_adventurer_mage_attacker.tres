@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://dy1odlflvdo5u"]
+
+[ext_resource type="PackedScene" uid="uid://bn7231wsn2w5k" path="res://scenes/projectiles/mage_projectile.tscn" id="1_kbr68"]
+[ext_resource type="Script" path="res://resources/character_stats.gd" id="2_4itjq"]
+
+[resource]
+script = ExtResource("2_4itjq")
+type = 2
+max_health = 50.0
+attack_damage = 15.0
+movement_speed = 0.3
+attack_speed = 3.0
+cast_speed = 3.0
+minimum_distance_to_attack = 4.0
+projectile_scene = ExtResource("1_kbr68")
+recieving_close_combat_damage_modifier = 1.25
+recieving_archer_damage_modifier = 1.0
+recieving_magic_damage_modifier = 0.75
+cost_on_death = 80
+cost_to_create = 0

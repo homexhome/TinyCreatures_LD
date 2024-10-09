@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://h0i54cuo8r5b"]
+[gd_scene load_steps=24 format=4 uid="uid://h0i54cuo8r5b"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_mn1s3"]
-[ext_resource type="PackedScene" uid="uid://b78d1ajo7if0k" path="res://scenes/projectiles/arrow_projectile.tscn" id="2_dfov0"]
-[ext_resource type="Script" path="res://resources/character_stats.gd" id="3_3d04c"]
+[ext_resource type="Resource" uid="uid://8s7kj0mcs8uo" path="res://resources/character_resources/stats_adventurer_archer_attacker.tres" id="2_575gt"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="4_ogipl"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="5_aq4he"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="6_g008e"]
@@ -11,20 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://bcxfxf83dmd2a" path="res://imports/sound_import/Смерть противника.ogg" id="9_n4c6a"]
 [ext_resource type="AudioStream" uid="uid://celwc7k2rwaco" path="res://imports/sound_import/ударпомясу.ogg" id="10_ngpqi"]
 [ext_resource type="AudioStream" uid="uid://dbq5cgnxgtr32" path="res://imports/sound_import/лук2Выстрел.ogg" id="11_vq2kg"]
-
-[sub_resource type="Resource" id="Resource_e85ga"]
-script = ExtResource("3_3d04c")
-type = 1
-max_health = 60.0
-attack_damage = 20.0
-movement_speed = 0.3
-attack_speed = 3.0
-cast_speed = 3.0
-minimum_distance_to_attack = 3.0
-projectile_scene = ExtResource("2_dfov0")
-recieving_close_combat_damage_modifier = 1.0
-recieving_archer_damage_modifier = 0.75
-recieving_magic_damage_modifier = 1.25
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ckwn"]
 radius = 0.25
@@ -228,7 +213,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_mn1s3")
-character_stats = SubResource("Resource_e85ga")
+character_stats = ExtResource("2_575gt")
 anim_lib_name = "Skeleton_archer/"
 animation_player = NodePath("AnimationPlayer")
 
@@ -270,6 +255,7 @@ script = ExtResource("6_g008e")
 animation_player = NodePath("../AnimationPlayer")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Movement"]
+debug_enabled = true
 
 [node name="ProjectileStartPlace" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564291, -0.300079)

@@ -31,4 +31,6 @@ Button/styles/focus = SubResource("StyleBoxTexture_8plvl")
 Button/styles/hover = SubResource("StyleBoxTexture_sryx3")
 Button/styles/normal = SubResource("StyleBoxTexture_umwb5")
 Button/styles/pressed = SubResource("StyleBoxTexture_27s6d")
+Label/constants/outline_size = 15
+LineEdit/font_sizes/font_size = 35
 Panel/styles/panel = SubResource("StyleBoxTexture_cegwc")

@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://vsuhqhlalmpc"]
+
+[resource]
+resource_name = "FloorStyl"
+render_priority = 0
+shader = null
+shader_parameter/Vector3Parameter = Vector3(0, 0.1, 0)

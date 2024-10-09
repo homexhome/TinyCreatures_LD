@@ -111,7 +111,7 @@ theme = ExtResource("6_nih5m")
 theme_override_font_sizes/font_size = 80
 text = "START GAME"
 script = ExtResource("2_kgnwx")
-scene_to_load = "res://scenes/test_scenes/world.tscn"
+scene_to_load = "res://scenes/levels/loading_scene.tscn"
 loading_screen = NodePath("../LoadingScreen")
 
 [node name="OptionsButton" type="Button" parent="."]

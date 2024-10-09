@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnevgymh83mhp"]
+
+[ext_resource type="Script" path="res://autoloads/session.gd" id="1_7teld"]
+[ext_resource type="Resource" uid="uid://dw2ui05w2ev70" path="res://autoloads/game_globals.tres" id="2_p4kd6"]
+
+[node name="Session" type="Node"]
+script = ExtResource("1_7teld")
+game_globals = ExtResource("2_p4kd6")

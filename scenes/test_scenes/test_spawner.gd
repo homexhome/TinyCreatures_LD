@@ -12,7 +12,13 @@ var spawn_places : Array
 @export var timer : Timer
 var game_started
 
+var chance_to_increase_next_wave = 0.5
+
 func _ready() -> void:
+	current_mobs = Session.game_globals.starting_enemies_count
+	max_mobs = Session.game_globals.max_enemies_count
+	timer.wait_time = Session.game_globals.time_for_enemies_to_spawn
+	chance_to_increase_next_wave =  Session.game_globals.chance_to_increase_wave_count / 100
 	Event.game_started.connect(start_spawn)
 	for child in spawn_places_node.get_children():
 		spawn_places.append(child)
@@ -32,7 +38,7 @@ func spawn_hostile_wave():
 	for i in range(current_mobs):
 		current_mob_to_spawn_array.append(characters_to_spawn.pick_random())
 		
-	if randf() > 0.5:
+	if randf() > chance_to_increase_next_wave:
 		current_mobs = clampi(current_mobs + 1, min_mobs, max_mobs)
 	for char in current_mob_to_spawn_array:
 		var new_char = characters.pick_random().duplicate()

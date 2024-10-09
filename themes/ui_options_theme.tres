@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://oat7r4nnwwvr"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://oat7r4nnwwvr"]
 
 [ext_resource type="Texture2D" uid="uid://dqgqx4w152fd5" path="res://imports/texture_import/ui_import/кнопка2.png" id="1_am542"]
 [ext_resource type="FontFile" uid="uid://gbiwn84mtw74" path="res://fonts/Burlesk-Regular.ttf" id="2_8jewc"]
 [ext_resource type="Texture2D" uid="uid://c46ogggiyvu1l" path="res://imports/texture_import/ui_import/ползунок.png" id="2_mk1bg"]
 [ext_resource type="Texture2D" uid="uid://dn78ax5nd1w5y" path="res://imports/texture_import/ui_import/слайдер.png" id="3_g7h4g"]
+[ext_resource type="Texture2D" uid="uid://i81l6v7ky033" path="res://imports/texture_import/ui_import/окно меню.png" id="4_qic8k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwuqu"]
 
@@ -15,8 +16,8 @@ texture = ExtResource("3_g7h4g")
 texture_margin_top = 18.0
 texture_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_babmr"]
-bg_color = Color(0.114897, 0.114897, 0.114897, 0.321569)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8b7qa"]
+texture = ExtResource("4_qic8k")
 
 [resource]
 default_font = ExtResource("2_8jewc")
@@ -25,4 +26,4 @@ Button/styles/normal = SubResource("StyleBoxTexture_i0lx4")
 HSlider/icons/grabber = ExtResource("2_mk1bg")
 HSlider/icons/grabber_highlight = ExtResource("2_mk1bg")
 HSlider/styles/slider = SubResource("StyleBoxTexture_ckh2l")
-Panel/styles/panel = SubResource("StyleBoxFlat_babmr")
+Panel/styles/panel = SubResource("StyleBoxTexture_8b7qa")

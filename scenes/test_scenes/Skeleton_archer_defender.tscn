@@ -1,8 +1,7 @@
-[gd_scene load_steps=28 format=4 uid="uid://4cp5qnbsbf0b"]
+[gd_scene load_steps=26 format=4 uid="uid://4cp5qnbsbf0b"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/character.gd" id="1_snmm4"]
-[ext_resource type="PackedScene" uid="uid://b78d1ajo7if0k" path="res://scenes/projectiles/arrow_projectile.tscn" id="2_n4rx6"]
-[ext_resource type="Script" path="res://resources/character_stats.gd" id="2_yhsf5"]
+[ext_resource type="Resource" uid="uid://0lr1hynr8w6x" path="res://resources/character_resources/stats_skeleton_archer_defender.tres" id="2_vqrrw"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/health_character_controller.gd" id="3_f4kbd"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/attack_character_controller.gd" id="4_53gcv"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/movement_character_controller.gd" id="5_5170c"]
@@ -10,20 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://b300q000ahfyo" path="res://imports/sound_import/смертьскелетаВТОРОЙВАРИАНТ.ogg" id="8_twccs"]
 [ext_resource type="AudioStream" uid="uid://cukyu3y7xrd16" path="res://imports/sound_import/ударпокостям.ogg" id="9_8kfo2"]
 [ext_resource type="AudioStream" uid="uid://dbq5cgnxgtr32" path="res://imports/sound_import/лук2Выстрел.ogg" id="10_ax8lk"]
-
-[sub_resource type="Resource" id="Resource_l761b"]
-script = ExtResource("2_yhsf5")
-type = 1
-max_health = 60.0
-attack_damage = 15.0
-movement_speed = 0.3
-attack_speed = 3.0
-cast_speed = 3.0
-minimum_distance_to_attack = 3.0
-projectile_scene = ExtResource("2_n4rx6")
-recieving_close_combat_damage_modifier = 1.0
-recieving_archer_damage_modifier = 0.75
-recieving_magic_damage_modifier = 1.25
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ckwn"]
 radius = 0.25
@@ -255,7 +240,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_snmm4")
-character_stats = SubResource("Resource_l761b")
+character_stats = ExtResource("2_vqrrw")
 anim_lib_name = "Skeleton_archer/"
 animation_player = NodePath("AnimationPlayer")
 

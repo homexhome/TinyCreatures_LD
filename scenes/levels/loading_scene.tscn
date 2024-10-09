@@ -1,0 +1,75 @@
+[gd_scene load_steps=17 format=3 uid="uid://c7usoh5io1um5"]
+
+[ext_resource type="Script" path="res://scenes/levels/loading_scene.gd" id="1_sk130"]
+[ext_resource type="PackedScene" uid="uid://ctyxbowoe55mf" path="res://scenes/player/archer_skeleton.tscn" id="2_ycgpl"]
+[ext_resource type="PackedScene" uid="uid://pa6ysprwfnxw" path="res://scenes/player/wizard_skeleton.tscn" id="3_g6te8"]
+[ext_resource type="PackedScene" uid="uid://cd8mb4ei6cffv" path="res://scenes/mobs/mob_skeleton_fighter.tscn" id="4_8kv4e"]
+[ext_resource type="PackedScene" uid="uid://dpibfs6x3rlb1" path="res://scenes/player/archer_human.tscn" id="5_hmdch"]
+[ext_resource type="PackedScene" uid="uid://cg5ljwkvddpnn" path="res://scenes/player/monah_human.tscn" id="6_4kaii"]
+[ext_resource type="PackedScene" uid="uid://rrqwmd1gk677" path="res://scenes/player/rogue_human.tscn" id="7_a4slv"]
+[ext_resource type="PackedScene" uid="uid://4lt5rd1q4h5y" path="res://scenes/test_scenes/main_head.tscn" id="7_fpfvt"]
+[ext_resource type="PackedScene" uid="uid://bgvvs4pga3vjw" path="res://scenes/levels/stone.tscn" id="8_q8uwu"]
+[ext_resource type="PackedScene" uid="uid://g8idxy18hfh4" path="res://scenes/player/wizard_human.tscn" id="8_ybym3"]
+[ext_resource type="PackedScene" uid="uid://bx52nw8gj40qh" path="res://scenes/test_scenes/preload_blast_scene.tscn" id="10_e64ab"]
+[ext_resource type="PackedScene" uid="uid://c4ycvutb4qm25" path="res://scenes/levels/light_wall_0.tscn" id="12_6b8ww"]
+[ext_resource type="Texture2D" uid="uid://dlmywu8cmaplf" path="res://parallax/menu.png" id="13_fnb18"]
+[ext_resource type="PackedScene" uid="uid://dncteapungfkj" path="res://scenes/mobs/burn_box.tscn" id="13_j7l27"]
+[ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="14_040s1"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_bkmn2"]
+
+[node name="LoadingScene" type="Node3D" node_paths=PackedStringArray("place_to_load")]
+script = ExtResource("1_sk130")
+scenes_to_preload_array = Array[PackedScene]([ExtResource("2_ycgpl"), ExtResource("3_g6te8"), ExtResource("4_8kv4e"), ExtResource("5_hmdch"), ExtResource("6_4kaii"), ExtResource("7_a4slv"), ExtResource("8_ybym3"), ExtResource("10_e64ab"), ExtResource("8_q8uwu"), ExtResource("7_fpfvt"), ExtResource("12_6b8ww"), ExtResource("13_j7l27")])
+place_to_load = NodePath("Place")
+scene_to_load = "res://scenes/test_scenes/world.tscn"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Place" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2741)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Place"]
+visible = false
+mesh = SubResource("PrismMesh_bkmn2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -108.0
+offset_right = -278.0
+offset_bottom = -247.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.52, 1.52)
+texture = ExtResource("13_fnb18")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_040s1")
+theme_override_font_sizes/font_size = 120
+text = "LOADING . . ."

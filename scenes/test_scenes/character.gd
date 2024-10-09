@@ -69,10 +69,7 @@ func death():
 	on_death_signal.emit()
 	dying = true
 	character_sound.play_special_sound("death")
-	if is_in_group("Attackers"):
-		Session.add_bones(110)
-	else:
-		Session.add_bones(50)
+	Session.add_bones(character_stats.cost_on_death)
 		
 	animation_player.play(anim_lib_name+"death")
 

@@ -4,12 +4,16 @@ var current_bones : int = 1000
 var starting_bones : int = 1000
 var extra_bones : int = 0
 signal bones_amount_changed
+@export var game_globals : GameGlobals
 
 var blocked : bool = false
 var spawn_blocked : bool = false
 
 var camera_on_left : bool = false
 var camera_on_right : bool = false
+
+func _ready() -> void:
+	starting_bones = game_globals.starting_bones
 
 func set_camera_left():
 	camera_on_left = true
@@ -52,4 +56,4 @@ func unblock_spawn():
 	spawn_blocked = false
 
 func check_if_can_spend(amount):
-	return current_bones - amount <= 0
+	return current_bones - amount < 0

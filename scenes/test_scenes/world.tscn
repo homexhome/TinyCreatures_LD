@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=105 format=4 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/test_world.gd" id="1_brk7t"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://pbm2gkqj1i6l" path="res://scenes/test_scenes/Skeleton_defender.tscn" id="6_n2lj1"]
 [ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="7_2sesb"]
 [ext_resource type="Texture2D" uid="uid://uj6w6oawqg8" path="res://imports/texture_import/ui_import/мечник.png" id="8_1jcyd"]
+[ext_resource type="Resource" uid="uid://5em6e5n4eobi" path="res://resources/character_resources/stats_skeleton_defender.tres" id="8_dwf2q"]
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_spawner.gd" id="8_hpgin"]
 [ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="8_uenqx"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://mgwel7d6vaqg" path="res://imports/texture_import/ui_import/лучник.png" id="10_g3blc"]
 [ext_resource type="PackedScene" uid="uid://dkniwytykfpbr" path="res://scenes/test_scenes/nav_mesh.tscn" id="10_p8nci"]
 [ext_resource type="PackedScene" uid="uid://cdwcw8mm4cqsy" path="res://scenes/test_scenes/Adventurer_monk_attacker.tscn" id="10_yark5"]
+[ext_resource type="Resource" uid="uid://0lr1hynr8w6x" path="res://resources/character_resources/stats_skeleton_archer_defender.tres" id="11_ktb4w"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_bones_label.gd" id="11_lpkmg"]
 [ext_resource type="Script" path="res://scripts/navigation/navigation_marks.gd" id="11_te3fi"]
 [ext_resource type="Texture2D" uid="uid://bdu7742reuh3d" path="res://parallax/кристаллы.png" id="12_fidbp"]
@@ -25,6 +27,7 @@
 [ext_resource type="Script" path="res://scenes/test_scenes/test_extra_label.gd" id="13_18scs"]
 [ext_resource type="Texture2D" uid="uid://daintnoik23qw" path="res://parallax/1.png" id="13_abg1y"]
 [ext_resource type="Texture2D" uid="uid://dvtabbs4t8lhb" path="res://parallax/9.png" id="13_id7hc"]
+[ext_resource type="Resource" uid="uid://by34wa2cgwg3q" path="res://resources/character_resources/stats_skeleton_mage_defender.tres" id="14_dsu8j"]
 [ext_resource type="Texture2D" uid="uid://b6ry085rrwhge" path="res://parallax/8.png" id="14_jijr3"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui_audio_stream_player.gd" id="15_buvfd"]
 [ext_resource type="Texture2D" uid="uid://dkmkrsvavbmo" path="res://parallax/7.png" id="15_ji2e0"]
@@ -37,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://c7jhfh3bmm3om" path="res://parallax/4.png" id="19_47lxb"]
 [ext_resource type="AudioStream" uid="uid://d0i0yfu4dm8y7" path="res://imports/sound_import/упалКристал.ogg" id="19_k22y2"]
 [ext_resource type="Texture2D" uid="uid://cacb8ihpllrvm" path="res://parallax/3.png" id="20_qr5ac"]
+[ext_resource type="Script" path="res://scenes/test_scenes/burn_area.gd" id="31_dybl7"]
 [ext_resource type="Script" path="res://scripts/controllers/sound/world_sound_player.gd" id="35_easix"]
 [ext_resource type="AudioStream" uid="uid://chaixblv0drk5" path="res://imports/sound_import/паузаИгровая.ogg" id="36_b4b5i"]
 [ext_resource type="Script" path="res://scripts/controllers/sound/extra_world_sound_player.gd" id="36_dq4xk"]
@@ -287,6 +291,8 @@ minimum_distance_to_attack = 1.0
 recieving_close_combat_damage_modifier = 1.0
 recieving_archer_damage_modifier = 1.0
 recieving_magic_damage_modifier = 1.0
+cost_on_death = 50
+cost_to_create = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_4h5g5"]
 
@@ -374,7 +380,26 @@ mouse_force_pass_scroll_events = false
 theme = ExtResource("4_nnfht")
 script = ExtResource("4_52t31")
 
-[node name="Warrior" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
+[node name="Label4" type="Label" parent="UI/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.005
+anchor_top = 1.002
+anchor_right = 1.005
+anchor_bottom = 1.002
+offset_left = -425.6
+offset_top = -206.16
+offset_right = -166.6
+offset_bottom = -61.1602
+theme = ExtResource("4_nnfht")
+theme_override_font_sizes/font_size = 60
+text = "RMB to reset selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Warrior" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui", "cost_label")]
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
 anchor_left = 1.0
@@ -393,6 +418,8 @@ theme = ExtResource("4_nnfht")
 script = ExtResource("5_4ld7p")
 mesh_to_inst = ExtResource("6_n2lj1")
 ui = NodePath("../..")
+character_stats_to_spawn = ExtResource("8_dwf2q")
+cost_label = NodePath("../Label")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Control/Warrior"]
 layout_mode = 0
@@ -403,7 +430,7 @@ offset_bottom = 107.0
 texture = ExtResource("8_1jcyd")
 expand_mode = 1
 
-[node name="Archer" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
+[node name="Archer" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui", "cost_label")]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 anchor_left = 1.0
@@ -423,6 +450,8 @@ script = ExtResource("5_4ld7p")
 mesh_to_inst = ExtResource("7_2sesb")
 bone_cost = 80
 ui = NodePath("../..")
+character_stats_to_spawn = ExtResource("11_ktb4w")
+cost_label = NodePath("../Label2")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Control/Archer"]
 layout_mode = 0
@@ -433,7 +462,7 @@ offset_bottom = 107.0
 texture = ExtResource("10_g3blc")
 expand_mode = 1
 
-[node name="Mage" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui")]
+[node name="Mage" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui", "cost_label")]
 custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 anchor_left = 47.925
@@ -453,6 +482,8 @@ script = ExtResource("5_4ld7p")
 mesh_to_inst = ExtResource("8_uenqx")
 bone_cost = 120
 ui = NodePath("../..")
+character_stats_to_spawn = ExtResource("14_dsu8j")
+cost_label = NodePath("../Label3")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Control/Mage"]
 layout_mode = 0
@@ -659,6 +690,21 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_8ayec")
 script = ExtResource("18_tat1d")
 ui = NodePath("../../UI")
+
+[node name="BurnArea" type="Area3D" parent="LevelScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86958e-07, 2.74691, 4.27709)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("31_dybl7")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="LevelScene/BurnArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.36363e-08, 0, 1.45583)
+depth = 5.785
+polygon = PackedVector2Array(5.0886, -2.82965, -8.02299, -4.83556, -8.53294, 1.99442, -4.46153, 2.81572, 2.04991, 2.97558, 3.01248, 1.77752, 5.12079, 0.393084)
+
+[node name="Timer" type="Timer" parent="LevelScene/BurnArea"]
+autostart = true
 
 [node name="NavigationMarks" type="Node3D" parent="." node_paths=PackedStringArray("paths_array") groups=["NavigationMarks"]]
 script = ExtResource("11_te3fi")
@@ -970,7 +1016,12 @@ expand_mode = 1
 wait_time = 30.0
 autostart = true
 
+[connection signal="choice_released" from="UI" to="UI/Control/Label4" method="hide"]
+[connection signal="pressed" from="UI/Control/Warrior" to="UI/Control/Label4" method="show"]
+[connection signal="pressed" from="UI/Control/Archer" to="UI/Control/Label4" method="show"]
+[connection signal="pressed" from="UI/Control/Mage" to="UI/Control/Label4" method="show"]
 [connection signal="timeout" from="UI/Control/call/Node3D/WaveTimer" to="UI/Control/call/Node3D" method="spawn_hostile_wave"]
+[connection signal="timeout" from="LevelScene/BurnArea/Timer" to="LevelScene/BurnArea" method="_check_and_burn_bodies"]
 [connection signal="timeout" from="GameController/Timer" to="GameController" method="handle_time"]
 [connection signal="pressed" from="Label/Button" to="Label" method="hide"]
 [connection signal="timeout" from="Label/Timer" to="Label" method="queue_free"]

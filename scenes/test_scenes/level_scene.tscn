@@ -1,4 +1,4 @@
-[gd_scene load_steps=291 format=4 uid="uid://dthee126247on"]
+[gd_scene load_steps=293 format=4 uid="uid://dthee126247on"]
 
 [ext_resource type="Texture2D" uid="uid://byospfdinpc7" path="res://imports/level_import/LevelScene_ground_02_color_1k.png" id="1_6aoxg"]
 [ext_resource type="Texture2D" uid="uid://cd2qkylgy0x4p" path="res://imports/level_import/LevelScene_ground_02_roughness_1k.png" id="2_8mxs8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://v04b7f2gokty" path="res://imports/level_import/LevelScene_T_StonesAtlas_Roughness.png" id="3_3oybc"]
 [ext_resource type="PackedScene" uid="uid://4lt5rd1q4h5y" path="res://scenes/test_scenes/main_head.tscn" id="4_jyf8u"]
 [ext_resource type="Material" uid="uid://dquy2in3wukum" path="res://scenes/test_scenes/main_head_shader.tres" id="4_xvhbg"]
+[ext_resource type="PackedScene" uid="uid://bgvvs4pga3vjw" path="res://scenes/levels/stone.tscn" id="5_ge4fw"]
 [ext_resource type="Texture2D" uid="uid://yjfm73fgoppc" path="res://imports/level_import/LevelScene_floor_tiles_02_baseColor_1k.png" id="6_7emuk"]
 [ext_resource type="Texture2D" uid="uid://c1lutw5euojr" path="res://imports/level_import/LevelScene_Stylized_Stone_Wall_002_basecolor.png" id="7_ccln1"]
 [ext_resource type="Texture2D" uid="uid://cux8m28ctwelk" path="res://imports/level_import/LevelScene_Stylized_Stone_Wall_002_roughness.png" id="8_ame28"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cmdqu526talyn" path="res://imports/level_import/LevelScene_T_StoneTile_Base_color.png" id="11_ur23x"]
 [ext_resource type="Texture2D" uid="uid://cxd30d7ly1ocs" path="res://imports/level_import/LevelScene_WoodStylized_Base_color.png" id="12_oulg4"]
 [ext_resource type="Texture2D" uid="uid://df1dbowg1pdsw" path="res://imports/level_import/LevelScene_WoodStylized_Roughness.png" id="13_y2on7"]
+[ext_resource type="PackedScene" uid="uid://c4ycvutb4qm25" path="res://scenes/levels/light_wall_0.tscn" id="15_bruyx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljlqm"]
 resource_name = "StineTile"
@@ -4381,10 +4383,7 @@ transform = Transform3D(-0.122549, 0.163782, 0.978855, -0.0396781, 0.984692, -0.
 mesh = SubResource("ArrayMesh_utgv1")
 skeleton = NodePath("")
 
-[node name="_MeshInstance3D_51917" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.829911, 0.0621224, 0.554427, -0.0396781, 0.984692, -0.169726, -0.556484, -0.162856, -0.814742, 1.48154, -1.75959, -22.1888)
-mesh = SubResource("ArrayMesh_utgv1")
-skeleton = NodePath("")
+[node name="_MeshInstance3D_51917" parent="." instance=ExtResource("5_ge4fw")]
 
 [node name="_MeshInstance3D_51921" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.82484, 0.226105, 0.518185, 0.0998279, 0.960393, -0.260154, -0.556484, -0.162856, -0.814742, 4.65649, -1.20324, -28.2048)
@@ -5197,3 +5196,5 @@ skeleton = NodePath("")
 
 [node name="MainHead" parent="." instance=ExtResource("4_jyf8u")]
 transform = Transform3D(5.96046e-08, 0, -1.715, 0.541281, 1.62734, 1.88122e-08, 1.62734, -0.541281, 5.65581e-08, -0.452139, -2.38855, -29.4699)
+
+[node name="light_wall" parent="." instance=ExtResource("15_bruyx")]
