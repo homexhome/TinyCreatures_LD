@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://smm46ttt7qia"
+path="res://.godot/imported/навод мышки на интерфейсные штуки.ogg-3fc97467388b3b275dac461a58f35bab.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/sound_import/навод мышки на интерфейсные штуки.ogg"
+dest_files=["res://.godot/imported/навод мышки на интерфейсные штуки.ogg-3fc97467388b3b275dac461a58f35bab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

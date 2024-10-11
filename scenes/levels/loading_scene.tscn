@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://pa6ysprwfnxw" path="res://scenes/player/wizard_skeleton.tscn" id="3_g6te8"]
 [ext_resource type="PackedScene" uid="uid://cd8mb4ei6cffv" path="res://scenes/mobs/mob_skeleton_fighter.tscn" id="4_8kv4e"]
 [ext_resource type="PackedScene" uid="uid://dpibfs6x3rlb1" path="res://scenes/player/archer_human.tscn" id="5_hmdch"]
-[ext_resource type="PackedScene" uid="uid://cg5ljwkvddpnn" path="res://scenes/player/monah_human.tscn" id="6_4kaii"]
-[ext_resource type="PackedScene" uid="uid://rrqwmd1gk677" path="res://scenes/player/rogue_human.tscn" id="7_a4slv"]
+[ext_resource type="PackedScene" path="res://scenes/player/monah_human.tscn" id="6_4kaii"]
+[ext_resource type="PackedScene" path="res://scenes/player/rogue_human.tscn" id="7_a4slv"]
 [ext_resource type="PackedScene" uid="uid://4lt5rd1q4h5y" path="res://scenes/test_scenes/main_head.tscn" id="7_fpfvt"]
 [ext_resource type="PackedScene" uid="uid://bgvvs4pga3vjw" path="res://scenes/levels/stone.tscn" id="8_q8uwu"]
 [ext_resource type="PackedScene" uid="uid://g8idxy18hfh4" path="res://scenes/player/wizard_human.tscn" id="8_ybym3"]
@@ -28,6 +28,7 @@ place_to_load = NodePath("Place")
 scene_to_load = "res://scenes/test_scenes/world.tscn"
 
 [node name="Camera3D" type="Camera3D" parent="."]
+current = true
 
 [node name="Place" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2741)
@@ -76,3 +77,5 @@ grow_vertical = 2
 theme = ExtResource("14_040s1")
 theme_override_font_sizes/font_size = 120
 text = "LOADING . . ."
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

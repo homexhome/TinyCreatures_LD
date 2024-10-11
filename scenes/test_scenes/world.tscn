@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=4 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=109 format=4 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/test_world.gd" id="1_brk7t"]
 [ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" path="res://scenes/test_scenes/test_panel.gd" id="4_52t31"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="4_nnfht"]
 [ext_resource type="Script" path="res://scenes/test_scenes/texture_rect.gd" id="5_4ld7p"]
+[ext_resource type="Texture2D" uid="uid://dqgqx4w152fd5" path="res://imports/texture_import/ui_import/кнопка2.png" id="6_i664x"]
 [ext_resource type="PackedScene" uid="uid://pbm2gkqj1i6l" path="res://scenes/test_scenes/Skeleton_defender.tscn" id="6_n2lj1"]
 [ext_resource type="PackedScene" uid="uid://4cp5qnbsbf0b" path="res://scenes/test_scenes/Skeleton_archer_defender.tscn" id="7_2sesb"]
+[ext_resource type="Theme" uid="uid://dqsqm8fsfp85p" path="res://themes/ui_menu_theme.tres" id="7_vx7fv"]
 [ext_resource type="Texture2D" uid="uid://uj6w6oawqg8" path="res://imports/texture_import/ui_import/мечник.png" id="8_1jcyd"]
 [ext_resource type="Resource" uid="uid://5em6e5n4eobi" path="res://resources/character_resources/stats_skeleton_defender.tres" id="8_dwf2q"]
 [ext_resource type="Script" path="res://scenes/test_scenes/camera_3d.gd" id="8_gp0kg"]
@@ -46,7 +48,6 @@
 [ext_resource type="Script" path="res://scripts/controllers/sound/extra_world_sound_player.gd" id="36_dq4xk"]
 [ext_resource type="AudioStream" uid="uid://bdewh81lmsouh" path="res://imports/sound_import/боеваятема.ogg" id="37_53mcw"]
 [ext_resource type="AudioStream" uid="uid://c623p1733v3ic" path="res://imports/sound_import/начало.ogg" id="37_84b88"]
-[ext_resource type="AudioStream" uid="uid://b3snnfryhde6a" path="res://imports/sound_import/звукПобеды.ogg" id="38_cl4le"]
 [ext_resource type="Script" path="res://scenes/test_scenes/game_controller.gd" id="41_8n7n1"]
 [ext_resource type="Texture2D" uid="uid://drhi63ftkr17u" path="res://imports/texture_import/ui_import/таймер.png" id="42_x8ws3"]
 [ext_resource type="PackedScene" uid="uid://60cpbrlvds2g" path="res://scenes/test_scenes/wall_light.tscn" id="43_73yys"]
@@ -57,9 +58,12 @@
 [ext_resource type="Script" path="res://resources/character_stats.gd" id="47_u22kf"]
 [ext_resource type="Script" path="res://scripts/controllers/character_components/base_character_component.gd" id="48_kmwq3"]
 [ext_resource type="Script" path="res://scripts/controllers/sound/character_sound.gd" id="50_8ggim"]
+[ext_resource type="AudioStream" uid="uid://c0b2hjcgc5g84" path="res://imports/sound_import/поражение.ogg" id="50_xsp6q"]
+[ext_resource type="AudioStream" uid="uid://b2seli2pcv4b4" path="res://imports/sound_import/Победа1.ogg" id="51_mu8xs"]
 [ext_resource type="Texture2D" uid="uid://bteen2ey6gs7q" path="res://imports/texture_import/ui_import/маг.png" id="52_xdch4"]
 [ext_resource type="Script" path="res://scenes/ui/health_bar.gd" id="55_h8q0k"]
 [ext_resource type="FontFile" uid="uid://gbiwn84mtw74" path="res://fonts/Burlesk-Regular.ttf" id="56_wyb67"]
+[ext_resource type="AudioStream" uid="uid://csalpqwwiaowa" path="res://imports/sound_import/удар по кристаллу.ogg" id="61_1k3hd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
 transparency = 1
@@ -400,6 +404,99 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Container" type="Control" parent="UI/Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 500.0
+offset_right = -71.0
+offset_bottom = 590.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/Container"]
+offset_left = 4.0
+offset_top = -1.0
+offset_right = 288.0
+offset_bottom = 89.0
+texture = ExtResource("6_i664x")
+
+[node name="Label" type="Label" parent="UI/Control/Container"]
+layout_mode = 0
+offset_left = 14.84
+offset_top = 6.27
+offset_right = 42.84
+offset_bottom = 91.27
+theme = ExtResource("7_vx7fv")
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 44
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Container2" type="Control" parent="UI/Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 237.0
+offset_right = -71.0
+offset_bottom = 327.0
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Control/Container2"]
+offset_left = 4.0
+offset_top = -1.0
+offset_right = 288.0
+offset_bottom = 89.0
+texture = ExtResource("6_i664x")
+
+[node name="Label" type="Label" parent="UI/Control/Container2"]
+offset_left = 14.84
+offset_top = 6.27
+offset_right = 42.84
+offset_bottom = 91.27
+theme = ExtResource("7_vx7fv")
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 44
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Container3" type="Control" parent="UI/Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 768.0
+offset_right = -71.0
+offset_bottom = 858.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/Container3"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = -1.0
+offset_right = 288.0
+offset_bottom = 89.0
+texture = ExtResource("6_i664x")
+
+[node name="Label" type="Label" parent="UI/Control/Container3"]
+offset_left = 14.84
+offset_top = 6.27
+offset_right = 42.84
+offset_bottom = 91.27
+theme = ExtResource("7_vx7fv")
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 44
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Warrior" type="Button" parent="UI/Control" node_paths=PackedStringArray("ui", "cost_label")]
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
@@ -448,6 +545,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 theme = ExtResource("4_nnfht")
 script = ExtResource("5_4ld7p")
+id = 2
 mesh_to_inst = ExtResource("7_2sesb")
 bone_cost = 80
 ui = NodePath("../..")
@@ -480,6 +578,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 theme = ExtResource("4_nnfht")
 script = ExtResource("5_4ld7p")
+id = 3
 mesh_to_inst = ExtResource("8_uenqx")
 bone_cost = 120
 ui = NodePath("../..")
@@ -651,6 +750,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI"]
+bus = &"Sound"
 script = ExtResource("15_buvfd")
 skeleton_spawning_sounds_array = Array[AudioStreamOggVorbis]([ExtResource("16_l8p6a"), ExtResource("17_gwban"), ExtResource("18_ypakr")])
 denied_sound = ExtResource("19_k22y2")
@@ -784,6 +884,7 @@ process_mode = 3
 stream = ExtResource("36_b4b5i")
 volume_db = -15.0
 autoplay = true
+bus = &"Music"
 script = ExtResource("35_easix")
 ambient_sound = ExtResource("36_b4b5i")
 battle_sound = ExtResource("37_53mcw")
@@ -793,6 +894,7 @@ process_mode = 3
 stream = ExtResource("37_53mcw")
 volume_db = -60.0
 autoplay = true
+bus = &"Music"
 script = ExtResource("35_easix")
 ambient_sound = ExtResource("36_b4b5i")
 battle_sound = ExtResource("37_53mcw")
@@ -800,10 +902,11 @@ is_ambient = true
 
 [node name="ExtraSound" type="AudioStreamPlayer" parent="."]
 volume_db = -3.0
+bus = &"Music"
 script = ExtResource("36_dq4xk")
 start_sound = ExtResource("37_84b88")
-lose_sound = ExtResource("37_84b88")
-win_sound = ExtResource("38_cl4le")
+lose_sound = ExtResource("50_xsp6q")
+win_sound = ExtResource("51_mu8xs")
 
 [node name="GameController" type="Control" parent="." node_paths=PackedStringArray("timer", "label")]
 layout_mode = 3
@@ -938,6 +1041,7 @@ mesh = SubResource("BoxMesh_4h5g5")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="FinalHealthBox"]
 stream = ExtResource("19_k22y2")
+bus = &"Sound"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinalHealthBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06158, 0, -0.526686)
@@ -960,11 +1064,11 @@ libraries = {
 }
 
 [node name="CharacterSound" type="AudioStreamPlayer3D" parent="FinalHealthBox"]
-stream = ExtResource("19_k22y2")
+stream = ExtResource("61_1k3hd")
 unit_size = 5.0
 script = ExtResource("50_8ggim")
-death_sound = ExtResource("19_k22y2")
-damage_sound = ExtResource("19_k22y2")
+death_sound = ExtResource("61_1k3hd")
+damage_sound = ExtResource("61_1k3hd")
 attack_sound = ExtResource("19_k22y2")
 
 [node name="HealthBar" type="Node3D" parent="FinalHealthBox" node_paths=PackedStringArray("label")]

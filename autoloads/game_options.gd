@@ -12,7 +12,11 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		handle_options_input()
+		var focus_owner  = get_viewport().gui_get_focus_owner() 
+		if focus_owner != null:
+			get_viewport().gui_release_focus()
+		else:
+			handle_options_input()
 
 func pause_game():
 	Event.event_game_paused()

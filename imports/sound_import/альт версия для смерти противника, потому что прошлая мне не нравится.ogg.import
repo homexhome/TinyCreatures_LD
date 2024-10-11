@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://e8ig3ndj6kpu"
+path="res://.godot/imported/альт версия для смерти противника, потому что прошлая мне не нравится.ogg-59ca4e23ea61b0710cabdb24751e2f8a.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/sound_import/альт версия для смерти противника, потому что прошлая мне не нравится.ogg"
+dest_files=["res://.godot/imported/альт версия для смерти противника, потому что прошлая мне не нравится.ogg-59ca4e23ea61b0710cabdb24751e2f8a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

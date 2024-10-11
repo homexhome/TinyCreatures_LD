@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://gx213wh48mak"
+path="res://.godot/imported/когда кончился кулдаун в выборе скелета и можно тыкать по нему.ogg-0eed50b8a1e1fb1bf8a6d9a1364709a2.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/sound_import/когда кончился кулдаун в выборе скелета и можно тыкать по нему.ogg"
+dest_files=["res://.godot/imported/когда кончился кулдаун в выборе скелета и можно тыкать по нему.ogg-0eed50b8a1e1fb1bf8a6d9a1364709a2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

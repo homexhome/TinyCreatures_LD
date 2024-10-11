@@ -23,3 +23,16 @@ func print_name():
 
 func _on_pressed():
 	ui.active_monster_button_set(self)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("1") and id == 1:
+		select()
+	if event.is_action_pressed("2") and id == 2:
+		select()
+	if event.is_action_pressed("3") and id == 3:
+		select()
+		
+func select():
+	grab_focus()
+	ui.active_monster_button_set(self)
+	pressed.emit()

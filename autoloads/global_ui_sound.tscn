@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgnfnvqxcubdc"]
+
+[ext_resource type="Script" path="res://autoloads/global_ui_sound.gd" id="1_fm1gb"]
+[ext_resource type="AudioStream" uid="uid://smm46ttt7qia" path="res://imports/sound_import/навод мышки на интерфейсные штуки.ogg" id="2_n23y5"]
+[ext_resource type="AudioStream" uid="uid://dfxgyl71hqqe6" path="res://imports/sound_import/нажатие на интерфейс.ogg" id="3_n1n8l"]
+
+[node name="Node" type="AudioStreamPlayer"]
+volume_db = -10.0
+bus = &"Sound"
+script = ExtResource("1_fm1gb")
+ui_hover_sound = ExtResource("2_n23y5")
+ui_pressed_sound = ExtResource("3_n1n8l")

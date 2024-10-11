@@ -274,6 +274,7 @@ libraries = {
 
 [node name="CharacterSound" type="AudioStreamPlayer3D" parent="."]
 unit_size = 5.0
+bus = &"Sound"
 script = ExtResource("8_ma3as")
 death_sound = ExtResource("9_n4c6a")
 damage_sound = ExtResource("10_ngpqi")
