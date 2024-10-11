@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 						#if camera.path.global_position.x >= camera.max_x : return
 						#camera.path.translate(Vector3.RIGHT * delta * camera.camera_speed)
 					#return
-
+	if is_instance_valid(ui) == false: return
 	if is_instance_valid(ui.active_monster_button):
 		var space_state = get_world_3d().direct_space_state
 		var origin= camera.project_ray_origin(mouse_position)

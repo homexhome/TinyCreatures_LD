@@ -2,7 +2,7 @@ extends Area3D
 
 var current_defenders_inside : Dictionary
 @export var burn_damage : float = 10
-@export var burn_box = preload("res://scenes/mobs/burn_box.tscn")
+@onready var burn_box = preload("res://scenes/mobs/burn_box.tscn")
 func _check_and_burn_bodies():
 	var duplicate_dict : Dictionary = current_defenders_inside.duplicate()
 	for body in get_overlapping_bodies():

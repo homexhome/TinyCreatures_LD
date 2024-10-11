@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c7usoh5io1um5"]
+[gd_scene load_steps=22 format=3 uid="uid://c7usoh5io1um5"]
 
 [ext_resource type="Script" path="res://scenes/levels/loading_scene.gd" id="1_sk130"]
 [ext_resource type="PackedScene" uid="uid://ctyxbowoe55mf" path="res://scenes/player/archer_skeleton.tscn" id="2_ycgpl"]
@@ -18,12 +18,14 @@
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="14_040s1"]
 [ext_resource type="PackedScene" uid="uid://ccbv6maamcgw0" path="res://scenes/projectiles/human_mage_projectile.tscn" id="15_u5r3l"]
 [ext_resource type="PackedScene" uid="uid://bn7231wsn2w5k" path="res://scenes/projectiles/mage_projectile.tscn" id="16_rxfim"]
+[ext_resource type="PackedScene" uid="uid://cqkp0xx1pw6bf" path="res://scenes/test_scenes/target.tscn" id="17_3ax0p"]
+[ext_resource type="PackedScene" uid="uid://bb3s8i0g5t2mh" path="res://scenes/test_scenes/Skeleton_mage_defender.tscn" id="18_fuqso"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_bkmn2"]
 
 [node name="LoadingScene" type="Node3D" node_paths=PackedStringArray("place_to_load")]
 script = ExtResource("1_sk130")
-scenes_to_preload_array = Array[PackedScene]([ExtResource("2_ycgpl"), ExtResource("3_g6te8"), ExtResource("4_8kv4e"), ExtResource("5_hmdch"), ExtResource("6_4kaii"), ExtResource("7_a4slv"), ExtResource("8_ybym3"), ExtResource("10_e64ab"), ExtResource("8_q8uwu"), ExtResource("7_fpfvt"), ExtResource("12_6b8ww"), ExtResource("13_j7l27"), ExtResource("14_4mer8"), ExtResource("15_u5r3l"), ExtResource("16_rxfim")])
+scenes_to_preload_array = Array[PackedScene]([ExtResource("2_ycgpl"), ExtResource("3_g6te8"), ExtResource("4_8kv4e"), ExtResource("5_hmdch"), ExtResource("6_4kaii"), ExtResource("7_a4slv"), ExtResource("8_ybym3"), ExtResource("10_e64ab"), ExtResource("8_q8uwu"), ExtResource("7_fpfvt"), ExtResource("12_6b8ww"), ExtResource("13_j7l27"), ExtResource("14_4mer8"), ExtResource("15_u5r3l"), ExtResource("16_rxfim"), ExtResource("17_3ax0p"), ExtResource("18_fuqso")])
 place_to_load = NodePath("Place")
 scene_to_load = "res://scenes/test_scenes/world.tscn"
 

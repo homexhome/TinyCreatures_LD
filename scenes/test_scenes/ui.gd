@@ -11,6 +11,7 @@ signal choice_released
 func _ready() -> void:
 	Event.game_lost.connect(hide)
 	Event.game_won.connect(hide)
+	Event.before_pause.connect(reset_active_monster_button)
 	
 func monster_spawn_from_button(target_pos : Vector3):
 	if is_instance_valid(active_monster_button) == false: return
@@ -32,10 +33,13 @@ func monster_spawn_from_button(target_pos : Vector3):
 func active_monster_button_set(new_active_button : MonsterButton):
 	active_monster_button = new_active_button
 
-func _input(event: InputEvent) -> void:
-	if is_instance_valid(active_monster_button) == false: return
-	if event.is_action_pressed("reset_pick"):
+func reset_active_monster_button():
 		Session.block()
 		active_monster_button = null
 		get_viewport().gui_release_focus()
 		choice_released.emit()
+
+func _input(event: InputEvent) -> void:
+	if is_instance_valid(active_monster_button) == false: return
+	if event.is_action_pressed("reset_pick"):
+		reset_active_monster_button()

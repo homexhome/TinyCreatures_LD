@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqkp0xx1pw6bf"]
+
+[ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_02fdr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
+transparency = 1
+albedo_color = Color(0, 0.686275, 0, 0.486275)
+metallic_specular = 0.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0.968393, 0, 1)
+emission_energy_multiplier = 2.75
+
+[sub_resource type="SphereMesh" id="SphereMesh_hrlki"]
+material = SubResource("StandardMaterial3D_t1s38")
+radius = 0.3
+height = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l6qhu"]
+
+[node name="Target" type="MeshInstance3D" node_paths=PackedStringArray("mesh_to_take", "camera", "ui", "path_visual_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80913, 0.646878, -0.0164214)
+layers = 3
+mesh = SubResource("SphereMesh_hrlki")
+script = ExtResource("1_02fdr")
+mesh_to_take = NodePath(".")
+camera = NodePath("")
+color_yes = Color(0, 0.686275, 0, 0.486275)
+color_no = Color(0.926299, 2.5028e-06, 1.54018e-06, 0.588235)
+ui = NodePath("")
+mesh_with_material = SubResource("SphereMesh_hrlki")
+shape_raycast = SubResource("SphereShape3D_l6qhu")
+path_visual_node = NodePath("")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.330903, 0)
+visible = false
+layers = 2
+light_color = Color(0, 1, 0, 1)
+light_energy = 0.192
+light_indirect_energy = 1.646
+light_volumetric_fog_energy = 0.0
+light_specular = 16.0
+distance_fade_begin = 1.0
+distance_fade_length = 1.0

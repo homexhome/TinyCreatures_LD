@@ -18,7 +18,9 @@ func initialize():
 	if nav_agent == null:
 		push_error("Forgot to add nav agent")
 	var nav_node = get_tree().get_first_node_in_group("NavigationMarks")
-	if nav_node == null: push_error("Navigation marks node is null!")
+	if nav_node == null: 
+		#push_error("Navigation marks node is null!")
+		return
 	else: path_vertices_array = nav_node.take_path_array()
 	if character.is_in_group("Attackers"):
 		current_path_pos = path_vertices_array.pop_front()

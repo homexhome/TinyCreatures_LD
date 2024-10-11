@@ -6,6 +6,7 @@ signal game_started
 signal skeleton_spawned
 signal game_won
 signal game_lost
+signal before_pause
 
 func event_game_paused():
 	game_paused.emit()
@@ -21,3 +22,6 @@ func event_game_won():
 	
 func event_game_lost():
 	game_lost.emit()
+
+func before_pause_emit():
+	before_pause.emit()

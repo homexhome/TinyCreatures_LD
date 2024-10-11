@@ -1,7 +1,7 @@
-[gd_scene load_steps=109 format=4 uid="uid://dvpglwl63g1gk"]
+[gd_scene load_steps=106 format=4 uid="uid://dvpglwl63g1gk"]
 
 [ext_resource type="Script" path="res://scenes/test_scenes/test_world.gd" id="1_brk7t"]
-[ext_resource type="Script" path="res://scripts/test_scripts/test_target.gd" id="1_gq3bx"]
+[ext_resource type="PackedScene" uid="uid://cqkp0xx1pw6bf" path="res://scenes/test_scenes/target.tscn" id="2_1rmbj"]
 [ext_resource type="Script" path="res://scenes/test_scenes/ui.gd" id="2_w5nye"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_panel.gd" id="4_52t31"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="4_nnfht"]
@@ -64,22 +64,6 @@
 [ext_resource type="Script" path="res://scenes/ui/health_bar.gd" id="55_h8q0k"]
 [ext_resource type="FontFile" uid="uid://gbiwn84mtw74" path="res://fonts/Burlesk-Regular.ttf" id="56_wyb67"]
 [ext_resource type="AudioStream" uid="uid://csalpqwwiaowa" path="res://imports/sound_import/удар по кристаллу.ogg" id="61_1k3hd"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1s38"]
-transparency = 1
-albedo_color = Color(0, 0.686275, 0, 0.486275)
-metallic_specular = 0.0
-roughness = 0.0
-emission_enabled = true
-emission = Color(0, 0.968393, 0, 1)
-emission_energy_multiplier = 2.75
-
-[sub_resource type="SphereMesh" id="SphereMesh_hrlki"]
-material = SubResource("StandardMaterial3D_t1s38")
-radius = 0.3
-height = 0.4
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_l6qhu"]
 
 [sub_resource type="Environment" id="Environment_l0yfs"]
 background_mode = 1
@@ -323,31 +307,9 @@ _data = {
 [node name="test_world" type="Node3D"]
 script = ExtResource("1_brk7t")
 
-[node name="Target" type="MeshInstance3D" parent="." node_paths=PackedStringArray("mesh_to_take", "camera", "ui", "path_visual_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80913, 0.646878, -0.0164214)
-layers = 3
-mesh = SubResource("SphereMesh_hrlki")
-script = ExtResource("1_gq3bx")
-mesh_to_take = NodePath(".")
+[node name="Target" parent="." node_paths=PackedStringArray("camera", "ui") instance=ExtResource("2_1rmbj")]
 camera = NodePath("../Path3D/PathFollow3D/Camera3D")
-color_yes = Color(0, 0.686275, 0, 0.486275)
-color_no = Color(0.926299, 2.5028e-06, 1.54018e-06, 0.588235)
 ui = NodePath("../UI")
-mesh_with_material = SubResource("SphereMesh_hrlki")
-shape_raycast = SubResource("SphereShape3D_l6qhu")
-path_visual_node = NodePath("../LevelScene/Path")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Target"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.330903, 0)
-visible = false
-layers = 2
-light_color = Color(0, 1, 0, 1)
-light_energy = 0.192
-light_indirect_energy = 1.646
-light_volumetric_fog_energy = 0.0
-light_specular = 16.0
-distance_fade_begin = 1.0
-distance_fade_length = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l0yfs")
@@ -414,8 +376,10 @@ offset_left = -170.0
 offset_top = 500.0
 offset_right = -71.0
 offset_bottom = 590.0
+grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="UI/Control/Container"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = -1.0
 offset_right = 288.0
@@ -445,8 +409,10 @@ offset_left = -170.0
 offset_top = 237.0
 offset_right = -71.0
 offset_bottom = 327.0
+grow_horizontal = 0
 
 [node name="TextureRect2" type="TextureRect" parent="UI/Control/Container2"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = -1.0
 offset_right = 288.0
@@ -454,6 +420,7 @@ offset_bottom = 89.0
 texture = ExtResource("6_i664x")
 
 [node name="Label" type="Label" parent="UI/Control/Container2"]
+layout_mode = 0
 offset_left = 14.84
 offset_top = 6.27
 offset_right = 42.84
@@ -486,6 +453,7 @@ offset_bottom = 89.0
 texture = ExtResource("6_i664x")
 
 [node name="Label" type="Label" parent="UI/Control/Container3"]
+layout_mode = 0
 offset_left = 14.84
 offset_top = 6.27
 offset_right = 42.84
