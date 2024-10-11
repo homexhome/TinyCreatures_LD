@@ -15,5 +15,5 @@ minimum_distance_to_attack = 0.7
 recieving_close_combat_damage_modifier = 0.75
 recieving_archer_damage_modifier = 1.25
 recieving_magic_damage_modifier = 1.0
-cost_on_death = 10
-cost_to_create = 105
+cost_on_death = 20
+cost_to_create = 100

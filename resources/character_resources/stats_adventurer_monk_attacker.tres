@@ -6,7 +6,7 @@
 script = ExtResource("1_cxmgd")
 character_name = "Human Monk"
 type = 0
-max_health = 100.0
+max_health = 120.0
 attack_damage = 20.0
 movement_speed = 0.4
 attack_speed = 3.0
