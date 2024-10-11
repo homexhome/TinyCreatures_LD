@@ -253,12 +253,12 @@ albedo_texture = ExtResource("19_47lxb")
 [sub_resource type="QuadMesh" id="QuadMesh_b3y15"]
 material = SubResource("StandardMaterial3D_bc7cv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f3sm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43maf"]
 transparency = 1
 albedo_texture = ExtResource("20_qr5ac")
 
 [sub_resource type="QuadMesh" id="QuadMesh_0ditu"]
-material = SubResource("StandardMaterial3D_4f3sm")
+material = SubResource("StandardMaterial3D_43maf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d4xj"]
 transparency = 1
