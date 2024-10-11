@@ -1,11 +1,10 @@
-[gd_scene load_steps=295 format=4 uid="uid://dthee126247on"]
+[gd_scene load_steps=291 format=4 uid="uid://dthee126247on"]
 
 [ext_resource type="Texture2D" uid="uid://byospfdinpc7" path="res://imports/level_import/LevelScene_ground_02_color_1k.png" id="1_6aoxg"]
 [ext_resource type="Texture2D" uid="uid://cd2qkylgy0x4p" path="res://imports/level_import/LevelScene_ground_02_roughness_1k.png" id="2_8mxs8"]
 [ext_resource type="Texture2D" uid="uid://giup2sdxokgx" path="res://imports/level_import/LevelScene_T_StonesAtlas_Base_color.png" id="2_ey8wr"]
 [ext_resource type="Texture2D" uid="uid://v04b7f2gokty" path="res://imports/level_import/LevelScene_T_StonesAtlas_Roughness.png" id="3_3oybc"]
 [ext_resource type="PackedScene" uid="uid://4lt5rd1q4h5y" path="res://scenes/test_scenes/main_head.tscn" id="4_jyf8u"]
-[ext_resource type="Material" uid="uid://dquy2in3wukum" path="res://scenes/test_scenes/main_head_shader.tres" id="4_xvhbg"]
 [ext_resource type="PackedScene" uid="uid://bgvvs4pga3vjw" path="res://scenes/levels/stone.tscn" id="5_ge4fw"]
 [ext_resource type="Texture2D" uid="uid://yjfm73fgoppc" path="res://imports/level_import/LevelScene_floor_tiles_02_baseColor_1k.png" id="6_7emuk"]
 [ext_resource type="Texture2D" uid="uid://c1lutw5euojr" path="res://imports/level_import/LevelScene_Stylized_Stone_Wall_002_basecolor.png" id="7_ccln1"]
@@ -101,38 +100,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_utmpd")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbwwf"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_7l8i0"]
-_surfaces = [{
-"aabb": AABB(-1, -3.63996, -1, 2, 7.27993, 2),
-"format": 34896613377,
-"index_count": 24,
-"index_data": PackedByteArray("AgADAAEAAwAEAAEABAAFAAEABQACAAEAAAACAAUAAAAFAAQAAAAEAAMAAAADAAIA"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 6,
-"vertex_data": PackedByteArray("/38AAP9/AAD/f////38AAAAA/3///wAAAAD/fwAAAAD///9/AAAAAP///3///wAA")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_r2dfb"]
-resource_name = "LevelScene_Cube_012"
-_surfaces = [{
-"aabb": AABB(-1, -3.63996, -1, 2, 7.27993, 2),
-"attribute_data": PackedByteArray("/1//P/9f/7//X/9//1////+fAAD/n/9//5//P/+f/7//fwAA/38AAP9/////f////3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//3//f/8//3//P/9//z//f/8/"),
-"format": 34896613399,
-"index_count": 24,
-"index_data": PackedByteArray("CgAOAAcADAAQAAUAEgAWAAYAFAAIAAQAAAAJABUAAgAXABMAAQARAA0AAwAPAAsA"),
-"material": SubResource("StandardMaterial3D_rbwwf"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("/38AAP9/Y7b/fwAA/39Y+f9/AAD/fzrK/38AAP9/i9X/f////39jtv9/////f1j5/3////9/i9X/f////386ygAA/3///2O2AAD/f///Y7YAAP9///86ygAA/3///4vVAAD/fwAAWPkAAP9/AABY+QAA/38AADrKAAD/fwAAi9X///9/AABY+f///38AAFj5////fwAAi9X///9/AAA6yv///3///2O2////f///Y7b///9///+L1f///3///zrKLA3g7kZMyTwaL4kvispB4dLyHhG4szXDdDW9HuTQdtDS8h4RLA3g7uTQdtCKykHhuLM1w0ZMyTzk0HbQispB4bizNcNGTMk8dDW9HhoviC/S8h4RLA3g7nQ1vR4aL4gv")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_7l8i0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4swrd"]
 resource_name = "FloorStyl"
@@ -4495,12 +4462,6 @@ skeleton = NodePath("")
 [node name="Cliff1_low_038" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.00967241, -0.983658, 0.17979, 0.865156, -0.0983892, -0.491757, 0.50141, 0.15079, 0.851969, 1.30127, -0.710134, -2.43443)
 mesh = SubResource("ArrayMesh_utgv1")
-skeleton = NodePath("")
-
-[node name="Crystal" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.669542, 0.114392, -0.733913, 0.582582, 0.532065, 0.614415, 0.460773, -0.838941, 0.289596, -0.827171, 5.41574, -37.3212)
-material_override = ExtResource("4_xvhbg")
-mesh = SubResource("ArrayMesh_r2dfb")
 skeleton = NodePath("")
 
 [node name="Plane" type="MeshInstance3D" parent="."]
