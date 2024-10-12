@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c20mljbg37dxu"]
+[gd_scene load_steps=6 format=3 uid="uid://c20mljbg37dxu"]
 
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="1_xpdhg"]
 [ext_resource type="Script" path="res://addons/editor/editor_game_settings_screen.gd" id="2_0ce4c"]
 [ext_resource type="Theme" uid="uid://oat7r4nnwwvr" path="res://themes/ui_options_theme.tres" id="2_gggm3"]
-[ext_resource type="Resource" uid="uid://dw2ui05w2ev70" path="res://autoloads/game_globals.tres" id="3_vmw6d"]
 [ext_resource type="Script" path="res://addons/editor/grid_container.gd" id="4_u1grm"]
 [ext_resource type="PackedScene" uid="uid://bmdgyiemi8jpp" path="res://addons/editor/editor_character.tscn" id="5_1scd5"]
 
@@ -18,7 +17,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_xpdhg")
 script = ExtResource("2_0ce4c")
-game_settings = ExtResource("3_vmw6d")
 res_path = "res://autoloads/game_globals.tres"
 starting_bones_line = NodePath("GameSettings/Panel/VBoxContainer/StartingBones/LineEdit")
 starting_enemies_count = NodePath("GameSettings/Panel/VBoxContainer/StartingEnemies/LineEdit")
@@ -106,7 +104,7 @@ text = "Starting bones"
 [node name="LineEdit" type="LineEdit" parent="GameSettings/Panel/VBoxContainer/StartingBones"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "800"
+text = "700"
 
 [node name="StartingEnemies" type="HBoxContainer" parent="GameSettings/Panel/VBoxContainer"]
 layout_mode = 2
@@ -164,7 +162,7 @@ autowrap_mode = 3
 
 [node name="LineEdit" type="LineEdit" parent="GameSettings/Panel/VBoxContainer/ChanceWaves"]
 layout_mode = 2
-text = "50"
+text = "33"
 
 [node name="Label" type="Label" parent="GameSettings"]
 layout_mode = 0

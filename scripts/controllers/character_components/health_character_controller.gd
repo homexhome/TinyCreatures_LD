@@ -21,7 +21,7 @@ func initialize():
 	recieving_magic_damage_modifier = char_stats.recieving_magic_damage_modifier
 	health_bar = health_bar_scene.instantiate()
 	add_child(health_bar)
-	health_bar.set_text(current_health,max_health,character)
+	health_bar.set_text(roundi(current_health),max_health,character)
 	
 func is_alive() -> bool:
 	return current_health > 0
@@ -31,7 +31,7 @@ func take_damage(damage : float, _damage_owner : Character, _attack_type : Chara
 	if !is_alive() : return
 	var temp_health = current_health - get_modified_damage(damage, _attack_type)
 	current_health = temp_health
-	health_bar.set_text(current_health,max_health,character)
+	health_bar.set_text(roundi(current_health),max_health,character)
 	if current_health <= 0:
 		on_death()
 		return
