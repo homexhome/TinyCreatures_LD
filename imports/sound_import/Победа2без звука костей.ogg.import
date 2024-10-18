@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bssc7so57xef"
+path="res://.godot/imported/Победа2без звука костей.ogg-941bccc54c24ba264210eb63e9fa2a55.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/sound_import/Победа2без звука костей.ogg"
+dest_files=["res://.godot/imported/Победа2без звука костей.ogg-941bccc54c24ba264210eb63e9fa2a55.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

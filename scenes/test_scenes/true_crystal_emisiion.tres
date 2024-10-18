@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://kbjpeq3ws7bp"]
+
+[ext_resource type="Texture2D" uid="uid://dtws8ol0fihqa" path="res://imports/character_import/Crystals_Crystals_Base_color.png" id="1_dtn2l"]
+[ext_resource type="Texture2D" uid="uid://cij3t876x5ob" path="res://imports/character_import/Crystals_Crystals_Emissive.png" id="2_k4ua1"]
+[ext_resource type="Texture2D" uid="uid://bc17us2egug2a" path="res://imports/character_import/Crystals_Crystals_Roughness.png" id="3_mrmp7"]
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_dtn2l")
+metallic_texture = ExtResource("3_mrmp7")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_mrmp7")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_k4ua1")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfxgyl71hqqe6"
+path="res://.godot/imported/нажатие на интерфейс.ogg-6326b634ed994aa78c6cc27684ec36d7.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/sound_import/нажатие на интерфейс.ogg"
+dest_files=["res://.godot/imported/нажатие на интерфейс.ogg-6326b634ed994aa78c6cc27684ec36d7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

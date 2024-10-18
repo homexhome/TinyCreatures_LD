@@ -18,10 +18,13 @@ func initialize():
 	if nav_agent == null:
 		push_error("Forgot to add nav agent")
 	var nav_node = get_tree().get_first_node_in_group("NavigationMarks")
-	if nav_node == null: push_error("Navigation marks node is null!")
+	if nav_node == null: 
+		#push_error("Navigation marks node is null!")
+		return
 	else: path_vertices_array = nav_node.take_path_array()
 	if character.is_in_group("Attackers"):
 		current_path_pos = path_vertices_array.pop_front()
+		nav_agent.target_position = current_path_pos
 	if animation_player == null:
 		push_error("Animation player in movement controller is null")
 
@@ -32,6 +35,8 @@ func component_physics_process(delta):
 var time_for_random_rotation : float = 0
 var max_time_for_random_rotation : float = 4
 var random_rotation 
+var at_last_place : bool = false
+var last_frame_target_valid : bool = false
 
 func _nav_movement(delta):
 	time_for_random_rotation = clampf(time_for_random_rotation - delta, 0, max_time_for_random_rotation)
@@ -44,10 +49,24 @@ func _nav_movement(delta):
 			update_random_rotation(delta,random_rotation)
 
 		return
-	nav_agent.target_position = movement_target
-	var target = nav_agent.get_next_path_position()
+	if is_instance_valid(character.current_target):
+		last_frame_target_valid = true
+	elif last_frame_target_valid:
+		last_frame_target_valid = false
+		if character.is_in_group("Attackers"):
+			nav_agent.target_position = current_path_pos
+	if character.is_in_group("Defenders"):
+		if is_instance_valid(character.current_target)== false:
+			nav_agent.target_position  = character.global_position + Vector3(0.01, 0.0, -0.01)
+			movement_target = character.global_position + Vector3(0.01, 0.0, -0.01)
+			return
+		
 	update_rotation(delta)
+	if nav_agent.is_navigation_finished():
+		nav_agent.target_position = movement_target
+	var target = nav_agent.get_next_path_position()
 	if check_movement_distance(target): return
+	if is_instance_valid(character.current_target) and check_target_distance(character.current_target.global_position): return
 	character.global_position = character.global_position.lerp(target,movement_speed * delta)
 	play_walk_anim()
 
@@ -86,6 +105,8 @@ func pick_destination():
 	if character.global_position.distance_squared_to(current_path_pos) <= max_distance_to_nav_target * max_distance_to_nav_target:
 		if path_vertices_array.size() > 0:
 			current_path_pos = path_vertices_array.pop_front()
+		else:
+			character.at_final_stage = true
 	else:
 
 		movement_target = current_path_pos
@@ -107,6 +128,7 @@ func move_to(target_pos : Vector3):
 	target_movement = true
 
 func check_target_distance(target_pos: Vector3):
+	var a = character.global_position.distance_squared_to(target_pos)
 	if character.global_position.distance_squared_to(target_pos) <= minimum_distance_to_attack * minimum_distance_to_attack:
 		return true
 	return false

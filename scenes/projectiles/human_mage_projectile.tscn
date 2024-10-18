@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccbv6maamcgw0"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/arrow_projectile.gd" id="1_ohgxq"]
+[ext_resource type="PackedScene" uid="uid://1dnj7a3cna8p" path="res://scenes/projectiles/human_mage_blast.tscn" id="2_y8bah"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pepli"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 1, 0.239216, 0.321569)
+emission_enabled = true
+emission = Color(0.746585, 9.3855e-07, 4.81307e-07, 1)
+emission_energy_multiplier = 3.59
+
+[sub_resource type="SphereMesh" id="SphereMesh_si4t2"]
+material = SubResource("StandardMaterial3D_pepli")
+radius = 0.3
+height = 0.2
+
+[node name="ArrowProjectile" type="Node3D" node_paths=PackedStringArray("area_on_target_impact")]
+script = ExtResource("1_ohgxq")
+area_on_target_impact = NodePath("")
+speed = 4.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_si4t2")
+
+[node name="MageBlast" parent="." instance=ExtResource("2_y8bah")]

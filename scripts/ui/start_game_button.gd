@@ -3,6 +3,7 @@ extends Button
 @export var loading_screen : Control
 func _ready() -> void:
 	pressed.connect(_on_pressed)
+	ResultScreen.reset_game_over()
 	
 func _on_pressed():
 	loading_screen.show()

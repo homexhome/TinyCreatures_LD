@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=4 uid="uid://c4ycvutb4qm25"]
+
+[ext_resource type="Material" uid="uid://3kvn2ef0feda" path="res://scenes/levels/light_wall_material.tres" id="1_0pgj0"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mdier"]
+resource_name = "light_wall_Cube_015"
+_surfaces = [{
+"aabb": AABB(-12.1583, 0, -0.431741, 30.3062, 39.8107, 4.3777),
+"attribute_data": PackedByteArray("QT7//565//+P6f//QT4AAJ65AACP6QAATnv//3SX//9OewAAdJcAAA=="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AQAFAAIAAQAEAAUAAAAEAAEAAAADAAQABwAIAAYABwAJAAgA"),
+"material": ExtResource("1_0pgj0"),
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("9h4AAP//AIAEwQAA/v8AgP//AAD+/wCA9h7/////AIAEwf///v8AgP/////+/wCA9h4AAP7/AAAAAAAAAAAAAPYe///+/wAAAAD//wAAAAD/f////3////9/////f////3////9///9BV/9/QVf/f0FX/39BV/9/")
+}]
+blend_shape_mode = 0
+
+[node name="light_wall" type="Node3D"]
+
+[node name="Cube_001" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.322045, 0, 4.86275e-08, 0, 0.322045, 0, -4.86275e-08, 0, -0.322045, -0.892377, 2.18225, 4.10212)
+mesh = SubResource("ArrayMesh_mdier")
+skeleton = NodePath("")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cep7cdak4bgun"]
+
+[ext_resource type="Script" path="res://scenes/ui/health_bar.gd" id="1_odnia"]
+[ext_resource type="FontFile" uid="uid://gbiwn84mtw74" path="res://fonts/Burlesk-Regular.ttf" id="2_koo4k"]
+
+[node name="HealthBar" type="Node3D" node_paths=PackedStringArray("label")]
+script = ExtResource("1_odnia")
+label = NodePath("Label3D")
+attack_color = Color(1, 0.193946, 0.14819, 1)
+defend_color = Color(0.431373, 1, 0.4, 1)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+billboard = 1
+text = "30 / 30"
+font = ExtResource("2_koo4k")
+font_size = 65
+outline_size = 9

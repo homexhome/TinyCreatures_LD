@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://bx52nw8gj40qh"]
+
+[ext_resource type="Script" path="res://scripts/mage_blast.gd" id="1_men56"]
+[ext_resource type="Texture2D" uid="uid://1twlcvj2igdv" path="res://imports/texture_import/circle32.png" id="2_kxmu6"]
+
+[sub_resource type="Gradient" id="Gradient_6ghyw"]
+colors = PackedColorArray(0, 1, 0.00392157, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gi5vx"]
+gradient = SubResource("Gradient_6ghyw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e6rmi"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+spread = 101.546
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+color = Color(0, 1, 0.0862745, 1)
+color_ramp = SubResource("GradientTexture1D_gi5vx")
+hue_variation_min = 0.34
+hue_variation_max = 0.43
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1heb"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("2_kxmu6")
+texture_filter = 2
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_6647b"]
+material = SubResource("StandardMaterial3D_c1heb")
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="Gradient" id="Gradient_y38d5"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k8qse"]
+gradient = SubResource("Gradient_y38d5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7uo8t"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+spread = 101.546
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+color_ramp = SubResource("GradientTexture1D_k8qse")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.09
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uov1f"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_kxmu6")
+texture_filter = 2
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_tqo46"]
+material = SubResource("StandardMaterial3D_uov1f")
+size = Vector2(0.3, 0.3)
+
+[node name="MageBlast" type="Node3D" node_paths=PackedStringArray("particles")]
+script = ExtResource("1_men56")
+particles = NodePath("GPUParticles3D")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 16
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 0.1
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_e6rmi")
+draw_pass_1 = SubResource("QuadMesh_6647b")
+
+[node name="MageBlast2" type="Node3D" parent="." node_paths=PackedStringArray("particles")]
+script = ExtResource("1_men56")
+particles = NodePath("GPUParticles3D")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="MageBlast2"]
+amount = 16
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 0.1
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_7uo8t")
+draw_pass_1 = SubResource("QuadMesh_tqo46")

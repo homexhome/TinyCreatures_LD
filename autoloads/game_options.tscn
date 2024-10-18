@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4bovgdvmubgg"]
+[gd_scene load_steps=8 format=3 uid="uid://b4bovgdvmubgg"]
 
 [ext_resource type="Script" path="res://autoloads/game_options.gd" id="1_6p7fo"]
 [ext_resource type="Script" path="res://autoloads/canvas_game_options.gd" id="1_41wsl"]
 [ext_resource type="Theme" uid="uid://bgyun6who488h" path="res://themes/ui_3d_theme.tres" id="2_gshxc"]
 [ext_resource type="Script" path="res://scripts/options/audio_slider.gd" id="2_u4h8u"]
 [ext_resource type="Theme" uid="uid://oat7r4nnwwvr" path="res://themes/ui_options_theme.tres" id="4_iq0v7"]
+[ext_resource type="Theme" uid="uid://dqsqm8fsfp85p" path="res://themes/ui_menu_theme.tres" id="6_brtq6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyjye"]
+bg_color = Color(0, 0, 0, 0.886275)
 
 [node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("game_options")]
 process_mode = 3
@@ -39,8 +43,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 theme = ExtResource("4_iq0v7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dyjye")
 
-[node name="HSlider" type="HSlider" parent="GameOptions"]
+[node name="Master" type="HSlider" parent="GameOptions"]
 process_mode = 3
 z_index = 10
 layout_mode = 1
@@ -55,10 +60,34 @@ offset_right = 260.0
 offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_iq0v7")
 max_value = 1.0
 step = 0.01
 value = 1.0
 script = ExtResource("2_u4h8u")
+bus_id = 2
+
+[node name="SFX" type="HSlider" parent="GameOptions"]
+process_mode = 3
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = 71.0
+offset_right = 260.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_iq0v7")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("2_u4h8u")
+bus_id = 1
 
 [node name="Label" type="Label" parent="GameOptions"]
 z_index = 10
@@ -72,8 +101,28 @@ offset_left = -211.0
 offset_top = -142.0
 offset_right = 203.0
 offset_bottom = -88.0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 60
-text = "Sound"
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GameOptions"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.0
+offset_right = 203.0
+offset_bottom = 61.0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 60
+text = "Effects"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -85,22 +134,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -286.0
-offset_top = 49.0
+offset_top = 210.0
 offset_right = 271.0
-offset_bottom = 382.0
+offset_bottom = 543.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
 [node name="BACK" type="Button" parent="GameOptions/VBoxContainer"]
 visible = false
+z_index = 12
 layout_mode = 2
+theme = ExtResource("6_brtq6")
 theme_override_font_sizes/font_size = 80
 text = "BACK"
 
 [node name="TO MENU" type="Button" parent="GameOptions/VBoxContainer"]
 visible = false
+z_index = 12
 layout_mode = 2
+theme = ExtResource("6_brtq6")
 theme_override_font_sizes/font_size = 80
 text = "TO MENU"
 

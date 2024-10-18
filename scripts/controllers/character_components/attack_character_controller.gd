@@ -66,6 +66,11 @@ func check_for_target():
 	var valid_targets : Array = []
 	var distance : float = 99999
 	if !is_instance_valid(current_target):
+		if character.at_final_stage:
+			current_target = GameManager.final_target
+			character.set_current_target(GameManager.final_target)
+			return
+			
 		for body in agressive_area.get_overlapping_bodies():
 			if validate_target(body):
 				valid_targets.append(body)
@@ -103,8 +108,13 @@ func attack():
 		area_attack(melee_area)
 	if type == CharacterStats.COMBAT_TYPE.ARCHER or type == CharacterStats.COMBAT_TYPE.MAGE:
 		var proj = projectile.instantiate()
+		if type == CharacterStats.COMBAT_TYPE.ARCHER :
+			animation_player.play(character.anim_lib_name+"archer_attack")
+		else:
+			animation_player.play(character.anim_lib_name+"mage_attack")
 		Projectiles.add_child(proj)
 		proj.setup_projectile(current_target, type,attack_damage, character, projectile_start_path.global_position)
+	character.character_sound.play_special_sound("attack")
 	attack_cooldown = attack_speed
 
 

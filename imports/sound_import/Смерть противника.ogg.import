@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bcxfxf83dmd2a"
+path="res://.godot/imported/Смерть противника.ogg-d552304ac24216949c5e3605597c267e.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/sound_import/Смерть противника.ogg"
+dest_files=["res://.godot/imported/Смерть противника.ogg-d552304ac24216949c5e3605597c267e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

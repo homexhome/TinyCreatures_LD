@@ -3,6 +3,8 @@ class_name BaseCharacterComponent
 
 var character : Character
 
+func initialize():
+	pass
 
 func component_process(_delta):
 	pass

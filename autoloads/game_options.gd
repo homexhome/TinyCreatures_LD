@@ -5,6 +5,8 @@ extends Control
 
 @export var main_menu_scene_path : String
 
+signal before_pause
+
 func _ready() -> void:
 	draw.connect(pause_game)
 	hidden.connect(unpause_game)
@@ -12,9 +14,15 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		handle_options_input()
+		var focus_owner  = get_viewport().gui_get_focus_owner() 
+		if focus_owner != null:
+			get_viewport().gui_release_focus()
+			Event.before_pause_emit()
+		else:
+			handle_options_input()
 
 func pause_game():
+	Event.event_game_paused()
 	get_tree().paused = true
 	
 func unpause_game():

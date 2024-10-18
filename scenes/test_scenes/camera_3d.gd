@@ -9,9 +9,21 @@ extends Camera3D
 @export var path_follow : PathFollow3D
 @export var path : Path3D
 
+func _ready() -> void:
+	Event.game_paused.connect(reset_time_scroll_momentum)
+
 func _process(delta):
 	move_camera_with_mouse(delta)
-
+	time_scroll_momentum = clampf(time_scroll_momentum - delta, 0, max_time_scroll_momentum)
+	if time_scroll_momentum > 0:
+		if scrolling_forward:
+			path_follow.progress += delta * camera_up_speed
+		else:
+			path_follow.progress -= delta * camera_up_speed
+			
+var scrolling_forward : bool = true
+var time_scroll_momentum : float = 0.0
+var max_time_scroll_momentum : float = 0.0
 func move_camera_with_mouse(delta):
 	#return
 	##Get the displacement from the center
@@ -33,7 +45,13 @@ func move_camera_with_mouse(delta):
 	if Input.is_action_pressed("ui_down"):
 		path_follow.progress -= delta * camera_speed
 	if Input.is_action_just_released("scroll_up"):
-		path_follow.progress += delta * camera_speed
+		scrolling_forward = true
+		time_scroll_momentum = max_time_scroll_momentum
+		path_follow.progress += delta * camera_up_speed
 	if Input.is_action_just_released("scroll_down"):
-		path_follow.progress -= delta * camera_speed
+		scrolling_forward = false
+		time_scroll_momentum = max_time_scroll_momentum
+		path_follow.progress -= delta * camera_up_speed
 		
+func reset_time_scroll_momentum():
+	time_scroll_momentum = 0

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://8s7kj0mcs8uo"]
+
+[ext_resource type="PackedScene" uid="uid://b78d1ajo7if0k" path="res://scenes/projectiles/arrow_projectile.tscn" id="1_n7sb0"]
+[ext_resource type="Script" path="res://resources/character_stats.gd" id="2_pau6p"]
+
+[resource]
+script = ExtResource("2_pau6p")
+character_name = "Human archer"
+type = 1
+max_health = 80.0
+attack_damage = 20.0
+movement_speed = 0.3
+attack_speed = 3.0
+cast_speed = 3.0
+minimum_distance_to_attack = 3.0
+projectile_scene = ExtResource("1_n7sb0")
+recieving_close_combat_damage_modifier = 1.0
+recieving_archer_damage_modifier = 0.75
+recieving_magic_damage_modifier = 1.25
+cost_on_death = 70
+cost_to_create = 0

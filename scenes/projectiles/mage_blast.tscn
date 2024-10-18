@@ -6,23 +6,23 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ngvcy"]
 height = 1.0
 
-[sub_resource type="Gradient" id="Gradient_6ghyw"]
+[sub_resource type="Gradient" id="Gradient_soxxh"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_gi5vx"]
-gradient = SubResource("Gradient_6ghyw")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_56ncq"]
+gradient = SubResource("Gradient_soxxh")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e6rmi"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s7jqa"]
 emission_shape = 1
 emission_sphere_radius = 0.5
 spread = 101.546
 gravity = Vector3(0, 0, 0)
 scale_min = 0.3
-color_ramp = SubResource("GradientTexture1D_gi5vx")
+color_ramp = SubResource("GradientTexture1D_56ncq")
 hue_variation_min = -2.23517e-08
 hue_variation_max = 0.09
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1heb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26nnc"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
@@ -34,8 +34,8 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_6647b"]
-material = SubResource("StandardMaterial3D_c1heb")
+[sub_resource type="QuadMesh" id="QuadMesh_11w53"]
+material = SubResource("StandardMaterial3D_26nnc")
 size = Vector2(0.3, 0.3)
 
 [node name="MageBlast" type="Node3D" node_paths=PackedStringArray("particles", "area")]
@@ -58,5 +58,5 @@ one_shot = true
 explosiveness = 1.0
 randomness = 0.1
 local_coords = true
-process_material = SubResource("ParticleProcessMaterial_e6rmi")
-draw_pass_1 = SubResource("QuadMesh_6647b")
+process_material = SubResource("ParticleProcessMaterial_s7jqa")
+draw_pass_1 = SubResource("QuadMesh_11w53")

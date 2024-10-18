@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameGlobals" load_steps=2 format=3 uid="uid://dw2ui05w2ev70"]
+
+[ext_resource type="Script" path="res://autoloads/game_global_usings.gd" id="1_t057o"]
+
+[resource]
+script = ExtResource("1_t057o")
+starting_bones = 700
+starting_enemies_count = 3
+max_enemies_count = 8
+time_for_enemies_to_spawn = 15.0
+chance_to_increase_wave_count = 33.0
