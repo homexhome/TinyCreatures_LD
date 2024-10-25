@@ -700,9 +700,9 @@ anim_player = NodePath("AnimationPlayer")
 [node name="Label" type="Label" parent="UI/Label"]
 visible = false
 layout_mode = 0
-offset_left = 305.0
+offset_left = 341.0
 offset_top = 4.0
-offset_right = 415.0
+offset_right = 451.0
 offset_bottom = 75.0
 theme_override_constants/shadow_offset_x = 110
 theme_override_constants/shadow_offset_y = 210
